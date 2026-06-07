@@ -118,6 +118,93 @@ body{background:var(--navy);color:var(--white);padding:0}
 .tag.b2c{background:rgba(29,190,170,0.15);color:var(--teal)}
 .tag.both{background:rgba(245,166,35,0.15);color:var(--gold)}
 
+
+/* TRUST LAYER */
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.trust-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+}
+
+.trust-icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.trust-card h3{
+  font-size:15px;
+  margin-bottom:8px;
+  color:var(--white);
+}
+
+.trust-card p{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.trust-banner{
+  margin-top:20px;
+  padding:24px;
+  border-radius:16px;
+  background:linear-gradient(
+      135deg,
+      rgba(0,194,255,.12),
+      rgba(29,190,170,.08)
+  );
+  border:1px solid var(--border2);
+}
+
+.trust-banner h3{
+  font-family:'Syne',sans-serif;
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.trust-pillars{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.trust-pillars span{
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:11px;
+  color:var(--cyan);
+  font-weight:600;
+}
+
+.trust-impact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
+}
+
+.trust-impact .card{
+  height:100%;
+}
+
+@media(max-width:768px){
+  .trust-grid,
+  .trust-impact{
+      grid-template-columns:1fr;
+  }
+}
+
+
 /* DIVIDER */
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:20px 0}
 
@@ -278,6 +365,7 @@ a{color:inherit}
   <div class="tq-menu" id="tqMenu">
     <a href="#home">Home</a>
 <a href="#platform">Platform</a>
+<a href="#trust">Trust Layer</a>
     <a href="#ecosystem">Services</a>
     <a href="#how">How It Works</a>
     <a href="#roadmap">Roadmap</a>
@@ -546,6 +634,142 @@ a{color:inherit}
 </section>
 
 
+<section class="section section-alt" id="trust">
+
+<div class="container">
+
+<div class="section-label">
+Trust Infrastructure
+</div>
+
+<h2 class="section-title">
+India's Trusted Print Network
+</h2>
+
+<p class="section-body">
+ThINQ is designed as more than a print procurement platform.
+It provides a secure, transparent and accountable framework for
+managing artwork, customer information, procurement workflows,
+vendor interactions and fulfilment operations across the print ecosystem.
+</p>
+
+<div class="divider-rule"></div>
+
+<div class="trust-grid">
+
+<div class="trust-card">
+<div class="trust-icon">🔒</div>
+<h3>Privacy by Design</h3>
+<p>
+Files, artwork and business documents remain protected through
+controlled access, secure sharing and governed fulfilment workflows.
+</p>
+</div>
+
+<div class="trust-card">
+<div class="trust-icon">📋</div>
+<h3>Complete Audit Trail</h3>
+<p>
+Every RFQ, quotation, approval, production event and delivery
+milestone is digitally recorded for transparency and accountability.
+</p>
+</div>
+
+<div class="trust-card">
+<div class="trust-icon">🏢</div>
+<h3>Enterprise Governance Ready</h3>
+<p>
+Supports procurement controls, vendor governance,
+approval workflows and operational compliance requirements.
+</p>
+</div>
+
+<div class="trust-card">
+<div class="trust-icon">✅</div>
+<h3>Verified Partner Ecosystem</h3>
+<p>
+Businesses and consumers engage with qualified,
+performance-monitored partners across the network.
+</p>
+</div>
+
+</div>
+
+<div class="trust-banner">
+
+<h4>ThINQ TrustScore</h4>
+
+<p>
+A future-ready partner trust framework that evaluates production
+partners across quality, service reliability, fulfilment performance,
+responsible data practices and customer satisfaction.
+</p>
+
+<div class="trust-pillars">
+<span>Quality</span>
+<span>Reliability</span>
+<span>Transparency</span>
+<span>Compliance</span>
+<span>Performance</span>
+<span>Trust</span>
+</div>
+
+</div>
+
+<div class="trust-impact">
+
+<div class="card">
+
+<h4>FOR CONSUMERS</h4>
+
+<h5>Confidence in Every Order</h5>
+
+<p>
+• Secure artwork handling<br>
+• Trusted local print partners<br>
+• Transparent fulfilment tracking<br>
+• Better accountability from order to delivery
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>FOR ENTERPRISES</h4>
+
+<h5>Governed Procurement Operations</h5>
+
+<p>
+• Vendor accountability<br>
+• Audit-ready workflows<br>
+• Controlled access to sensitive files<br>
+• Reduced procurement complexity
+</p>
+
+</div>
+
+</div>
+
+<div class="trust-banner" style="margin-top:20px">
+
+<h4>DPDP-Aligned by Design</h4>
+
+<p>
+As India's Digital Personal Data Protection ecosystem evolves,
+ThINQ provides organisations with a future-ready operating layer
+for responsible data exchange across customers, procurement teams,
+print partners and fulfilment networks.
+</p>
+
+<p style="margin-top:10px;color:var(--white);font-weight:600">
+Trust is not a feature. It is infrastructure.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 <section class="section serve-section" id="serve">
 <div class="container">
@@ -603,8 +827,6 @@ a{color:inherit}
 </div>
 </div>
 </section>
-
-
 
 <section class="section section-canvas" id="roadmap">
 <div class="container-wide">
