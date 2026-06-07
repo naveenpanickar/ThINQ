@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ThINQ — Concept Blueprint</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ThINQ — Black Background Themed Concept Blueprint</title>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
@@ -354,67 +355,511 @@ a{color:inherit}
 @media(max-width:380px){.tq-topnav{padding-left:10px;padding-right:10px}.page{padding-left:10px !important;padding-right:10px !important}.logo{font-size:24px}.integrated-blueprint .btn{width:100%;justify-content:center;margin-right:0}.mono-row{grid-template-columns:1fr}.mono-pct{text-align:left}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
 
+
+
+/* ── FINAL BLACK BACKGROUND THEME REFINEMENT ── */
+:root{
+  --navy:#050505;
+  --navy2:#0a0a0a;
+  --navy3:#111111;
+  --cyan:#00bfff;
+  --cyan2:#00aee8;
+  --teal:#17b9aa;
+  --gold:#f5a623;
+  --gold2:#e8941a;
+  --green:#2ecc71;
+  --red:#e74c3c;
+  --purple:#9b59b6;
+  --white:#ffffff;
+  --off:#f0f0ee;
+  --muted:#b8b8b8;
+  --card:#131313;
+  --card2:#161616;
+  --border:rgba(255,255,255,0.10);
+  --border2:rgba(0,191,255,0.34);
+}
+html{background:#050505;scroll-behavior:smooth;}
+body{
+  background:radial-gradient(circle at top right,rgba(0,191,255,.08),transparent 34%),#050505 !important;
+  color:var(--off);
+  font-family:'DM Sans','Syne',Arial,sans-serif;
+}
+.logo,.footer-logo,.tq-nav-brand .logo{
+  font-family:'Syne',Arial,sans-serif !important;
+  font-weight:800;
+  letter-spacing:-1px;
+  line-height:1;
+}
+.logo .th,.footer-logo .th{color:#fff;}
+.logo .in,.footer-logo .in{color:var(--cyan);}
+.logo .q,.footer-logo .q{color:#fff;}
+.logo .thi{color:#fff}.logo .nk,.footer-logo .nk{color:var(--cyan)}
+.tq-topnav{
+  background:rgba(5,5,5,.96) !important;
+  border-bottom:1px solid rgba(0,191,255,.28) !important;
+}
+.tq-nav-brand{font-size:0 !important;}
+.tq-nav-brand .logo{font-size:23px !important;}
+.tq-menu a.active{background:rgba(0,191,255,.14);color:var(--cyan);}
+.header{
+  background:linear-gradient(180deg,#0d0d0d,#080808) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-bottom:1px solid rgba(0,191,255,.32) !important;
+  border-radius:0 0 16px 16px;
+}
+.badge-v{background:var(--cyan) !important;color:#050505 !important;}
+.brand-note{display:none !important;}
+.sec-title,.integrated-blueprint .section-label{
+  color:var(--cyan) !important;
+}
+.card,.rev-card,.phase,.trust-card,
+.integrated-blueprint .hero,.integrated-blueprint .hero-card,.integrated-blueprint .compare-col,
+.integrated-blueprint .eco-card,.integrated-blueprint .seg-card,.integrated-blueprint .partner-card,
+.integrated-blueprint .phase-card,.integrated-blueprint .value-card,.integrated-blueprint .why-box,
+.integrated-blueprint .cta-band,.integrated-blueprint .flow-box,.integrated-blueprint .stat-box{
+  background:linear-gradient(180deg,#161616,#101010) !important;
+  border-color:rgba(255,255,255,.10) !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.03),0 12px 30px rgba(0,0,0,.22);
+}
+.integrated-blueprint .hero{
+  background:radial-gradient(circle at 85% 25%,rgba(0,191,255,.16),transparent 30%),linear-gradient(135deg,#101010,#050505) !important;
+  border-color:rgba(0,191,255,.30) !important;
+}
+.integrated-blueprint .hero::before{opacity:.55;}
+.integrated-blueprint .flow-center,
+.integrated-blueprint .compare-head.new,
+.integrated-blueprint .phase-card.current .phase-head{
+  background:linear-gradient(135deg,var(--cyan),#1dbeaa) !important;
+  color:#050505 !important;
+}
+.integrated-blueprint .flow-center .fb-label,
+.integrated-blueprint .flow-center .fb-sub,
+.integrated-blueprint .compare-head.new h3,
+.integrated-blueprint .compare-head.new p,
+.integrated-blueprint .phase-card.current .phase-head *{color:#050505 !important;}
+.integrated-blueprint h2.section-title{
+  font-size:clamp(18px,2.15vw,26px) !important;
+  line-height:1.18 !important;
+}
+.integrated-blueprint .hero h1{
+  font-size:clamp(28px,4.2vw,48px) !important;
+  line-height:1.04 !important;
+}
+.integrated-blueprint p,.integrated-blueprint li,.card p,.rev-card p,.footer-claim,.footer-sub{color:var(--muted) !important;}
+.integrated-blueprint .btn-primary,.integrated-blueprint .btn-dark,.integrated-blueprint .tab-pill.active{
+  background:var(--cyan) !important;
+  color:#050505 !important;
+}
+.integrated-blueprint .btn-white,.integrated-blueprint .btn-secondary,.integrated-blueprint .btn-ghost{
+  background:rgba(255,255,255,.06) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+}
+.footer{
+  background:#050505 !important;
+  border-top:1px solid rgba(0,191,255,.25) !important;
+  padding-bottom:22px !important;
+}
+@media(max-width:900px){
+  .tq-menu{background:#0b0b0b !important;}
+  .tq-nav-brand .logo{font-size:21px !important;}
+}
+@media(max-width:640px){
+  .header{border-radius:0 0 12px 12px;}
+  .header [style*="text-align:right"]{text-align:left !important;}
+  .integrated-blueprint .hero h1{font-size:clamp(26px,10vw,38px) !important;}
+}
+
+
+/* ── PARTNER JOIN SECTION ALIGNMENT PATCH ── */
+.integrated-blueprint .why-box{
+  display:block !important;
+  padding:22px !important;
+}
+.integrated-blueprint .why-header{
+  text-align:center;
+  margin-bottom:20px;
+}
+.integrated-blueprint .why-header h3{
+  font-family:'Syne',Arial,sans-serif;
+  font-size:22px;
+  line-height:1.2;
+  margin-bottom:8px;
+  color:var(--white);
+}
+.integrated-blueprint .why-header p{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted) !important;
+  font-size:12.5px;
+  line-height:1.65;
+}
+.integrated-blueprint .why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.integrated-blueprint .why-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-height:86px;
+  padding:14px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;
+}
+.integrated-blueprint .why-item .wi-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  min-width:34px;
+  margin:0;
+  font-size:18px;
+  background:rgba(0,191,255,.10);
+  border:1px solid rgba(0,191,255,.18);
+  border-radius:10px;
+}
+.integrated-blueprint .why-item p{
+  margin:0;
+  color:var(--off) !important;
+  font-size:12.5px;
+  font-weight:600;
+  line-height:1.45;
+}
+@media(max-width:900px){
+  .integrated-blueprint .why-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:640px){
+  .integrated-blueprint .why-box{padding:16px !important;}
+  .integrated-blueprint .why-header{text-align:left;margin-bottom:14px;}
+  .integrated-blueprint .why-header h3{font-size:19px;}
+  .integrated-blueprint .why-grid{grid-template-columns:1fr;gap:10px;}
+  .integrated-blueprint .why-item{min-height:auto;padding:12px;}
+}
+
+
+
+/* ── FINAL READABILITY & POINTER ALIGNMENT REFINEMENT ── */
+.integrated-blueprint h3.section-title{
+  font-family:'Syne',Arial,sans-serif !important;
+  font-size:clamp(18px,2.15vw,26px) !important;
+  line-height:1.18 !important;
+  letter-spacing:-.02em !important;
+  color:var(--white) !important;
+  margin-bottom:8px !important;
+}
+
+/* Platform cards: B2B / B2C pointer readability */
+.integrated-blueprint .seg-card{
+  padding:15px !important;
+}
+.integrated-blueprint .seg-card-head{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:12px !important;
+  padding:13px 14px !important;
+}
+.integrated-blueprint .seg-head-icon{
+  flex:0 0 auto !important;
+  font-size:24px !important;
+  line-height:1 !important;
+}
+.integrated-blueprint .seg-head-text h3{
+  font-size:15px !important;
+  line-height:1.22 !important;
+  letter-spacing:-.01em !important;
+  margin:0 0 3px !important;
+}
+.integrated-blueprint .seg-head-text p{
+  font-size:10.75px !important;
+  line-height:1.35 !important;
+  margin:0 !important;
+}
+.integrated-blueprint .seg-badge,
+.integrated-blueprint .vc-badge,
+.integrated-blueprint .eco-tag{
+  font-size:9px !important;
+  line-height:1.2 !important;
+  padding:3px 7px !important;
+}
+.integrated-blueprint .seg-feature-grid{
+  gap:3px 10px !important;
+}
+.integrated-blueprint .seg-feature{
+  display:flex !important;
+  align-items:center !important;
+  gap:7px !important;
+  font-size:10.75px !important;
+  line-height:1.38 !important;
+  font-weight:500 !important;
+  padding:6px 0 !important;
+  min-height:30px !important;
+}
+.integrated-blueprint .seg-feature .sf-check{
+  flex:0 0 auto !important;
+  font-size:10px !important;
+  line-height:1 !important;
+}
+
+/* Process flow: reduce dense pointer text without shrinking main titles */
+.integrated-blueprint .step-bubble{
+  width:48px !important;
+  height:48px !important;
+  font-size:20px !important;
+}
+.integrated-blueprint .step-n{
+  width:16px !important;
+  height:16px !important;
+  font-size:9px !important;
+}
+.integrated-blueprint .step-lbl{
+  font-size:10.75px !important;
+  line-height:1.25 !important;
+  margin-top:6px !important;
+}
+.integrated-blueprint .step-desc{
+  font-size:9.75px !important;
+  line-height:1.35 !important;
+  margin-top:2px !important;
+}
+.integrated-blueprint .benefit-chip,
+.integrated-blueprint .trust-item,
+.integrated-blueprint .target-chip{
+  font-size:10.75px !important;
+  line-height:1.35 !important;
+  padding:7px 10px !important;
+}
+
+/* Compare, services, partner and roadmap cards: balanced body scale */
+.integrated-blueprint .compare-row{
+  font-size:11px !important;
+  line-height:1.42 !important;
+  padding:6px 0 !important;
+}
+.integrated-blueprint .compare-head h3,
+.integrated-blueprint .eco-card h4,
+.integrated-blueprint .partner-card h4,
+.integrated-blueprint .value-card h4{
+  font-size:13px !important;
+  line-height:1.25 !important;
+}
+.integrated-blueprint .compare-head p,
+.integrated-blueprint .eco-card p,
+.integrated-blueprint .partner-card p,
+.integrated-blueprint .value-card p,
+.integrated-blueprint .section-body,
+.trust-card p,
+.trust-banner p{
+  font-size:11.25px !important;
+  line-height:1.58 !important;
+}
+.integrated-blueprint .partner-card{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:11px !important;
+}
+.integrated-blueprint .partner-icon,
+.integrated-blueprint .eco-card-icon,
+.integrated-blueprint .cr-icon{
+  min-width:28px !important;
+  min-height:28px !important;
+  font-size:17px !important;
+}
+.integrated-blueprint .tc-name{
+  font-size:11.25px !important;
+  line-height:1.3 !important;
+}
+.integrated-blueprint .tc-sub{
+  font-size:10px !important;
+  line-height:1.35 !important;
+  color:var(--muted) !important;
+}
+.integrated-blueprint .phase-name{
+  font-size:12px !important;
+  line-height:1.25 !important;
+}
+.integrated-blueprint .phase-period,
+.integrated-blueprint .phase-outcome{
+  font-size:10.25px !important;
+  line-height:1.4 !important;
+}
+.integrated-blueprint .phase-items li,
+.integrated-blueprint .vc-list li{
+  font-size:10.75px !important;
+  line-height:1.42 !important;
+  padding:6px 0 !important;
+}
+
+/* Trust impact bullet cards */
+.trust-impact .card h5{
+  font-size:12px !important;
+  line-height:1.3 !important;
+  margin-bottom:6px !important;
+}
+.trust-impact .card p{
+  font-size:11px !important;
+  line-height:1.55 !important;
+}
+
+/* Maintain the corrected partner-join section while tightening its pointer text */
+.integrated-blueprint .why-header h3{
+  font-size:20px !important;
+}
+.integrated-blueprint .why-header p{
+  font-size:11.5px !important;
+  line-height:1.6 !important;
+}
+.integrated-blueprint .why-item{
+  min-height:78px !important;
+  padding:12px !important;
+}
+.integrated-blueprint .why-item .wi-icon{
+  width:31px !important;
+  height:31px !important;
+  min-width:31px !important;
+  font-size:16px !important;
+}
+.integrated-blueprint .why-item p{
+  font-size:11.25px !important;
+  line-height:1.45 !important;
+}
+
+/* Mobile-specific comfort refinements */
+@media(max-width:640px){
+  .integrated-blueprint h3.section-title{
+    font-size:clamp(17px,6vw,23px) !important;
+    line-height:1.22 !important;
+  }
+  .integrated-blueprint .seg-card{
+    padding:13px !important;
+  }
+  .integrated-blueprint .seg-card-head{
+    padding:12px 13px !important;
+    gap:10px !important;
+  }
+  .integrated-blueprint .seg-head-icon{
+    font-size:22px !important;
+  }
+  .integrated-blueprint .seg-head-text h3{
+    font-size:14px !important;
+  }
+  .integrated-blueprint .seg-head-text p{
+    font-size:10.25px !important;
+  }
+  .integrated-blueprint .seg-feature{
+    font-size:10.5px !important;
+    min-height:auto !important;
+    padding:5.5px 0 !important;
+  }
+  .integrated-blueprint .step-bubble{
+    width:44px !important;
+    height:44px !important;
+    font-size:18px !important;
+  }
+  .integrated-blueprint .step-node{
+    text-align:left !important;
+    display:grid !important;
+    grid-template-columns:44px minmax(0,1fr) !important;
+    column-gap:10px !important;
+    align-items:center !important;
+    padding:9px !important;
+    border:1px solid rgba(255,255,255,.08) !important;
+    border-radius:12px !important;
+    background:rgba(255,255,255,.025) !important;
+  }
+  .integrated-blueprint .step-node .step-lbl,
+  .integrated-blueprint .step-node .step-desc{
+    grid-column:2 !important;
+  }
+  .integrated-blueprint .step-lbl{
+    font-size:10.5px !important;
+    margin-top:0 !important;
+  }
+  .integrated-blueprint .step-desc{
+    font-size:9.5px !important;
+  }
+  .integrated-blueprint .benefit-chip,
+  .integrated-blueprint .target-chip{
+    width:100% !important;
+    border-radius:12px !important;
+    font-size:10.5px !important;
+  }
+  .integrated-blueprint .compare-row,
+  .integrated-blueprint .phase-items li,
+  .integrated-blueprint .vc-list li{
+    font-size:10.5px !important;
+  }
+  .integrated-blueprint .partner-card{
+    gap:10px !important;
+  }
+  .integrated-blueprint .partner-card h4,
+  .integrated-blueprint .eco-card h4{
+    font-size:12.25px !important;
+  }
+  .integrated-blueprint .partner-card p,
+  .integrated-blueprint .eco-card p,
+  .integrated-blueprint .section-body{
+    font-size:10.75px !important;
+  }
+  .integrated-blueprint .why-header h3{
+    font-size:18px !important;
+  }
+  .integrated-blueprint .why-item p{
+    font-size:10.75px !important;
+  }
+}
+
 </style>
 </head>
 <body id="home">
-<nav class="tq-topnav" aria-label="Primary navigation">
-  <a class="tq-nav-brand" href="#home" aria-label="ThINQ home"><div class="logo"><span class="thi">Th</span><span class="nk">IN</span><span class="q">Q</span></div></a>
-  <button class="tq-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="tqMenu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="tq-menu" id="tqMenu">
-    <a href="#home">Home</a>
-<a href="#platform">Platform</a>
-<a href="#trust">Trust Layer</a>
-    <a href="#ecosystem">Services</a>
-    <a href="#how">How It Works</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#partners">Partners</a>
-    <a href="#value">Value</a>
-    <a href="#contact">Contact</a>
-  </div>
+<nav aria-label="Primary navigation" class="tq-topnav">
+<a aria-label="ThINQ home" class="tq-nav-brand" href="#home"><div class="logo"><span class="th">Th</span><span class="in">IN</span><span class="q">Q</span></div></a>
+<button aria-controls="tqMenu" aria-expanded="false" aria-label="Open menu" class="tq-menu-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<div class="tq-menu" id="tqMenu">
+<a class="nav-item" href="#home">Home</a>
+<a class="nav-item" href="#platform">Platform</a>
+<a class="nav-item" href="#trust">Trust Layer</a>
+<a class="nav-item" href="#ecosystem">Services</a>
+<a class="nav-item" href="#how">How It Works</a>
+<a class="nav-item" href="#roadmap">Roadmap</a>
+<a class="nav-item" href="#partners">Partners</a>
+<a class="nav-item" href="#value">Value</a>
+<a class="nav-item" href="#contact">Contact</a>
+</div>
 </nav>
 <div class="page">
-
 <!-- HEADER -->
 <div class="header">
-  <div>
-    <div class="logo"><span class="thi">Th</span><span class="nk">IN</span><span class="q">Q</span></div>
-    <div class="tagline">Think · Ink · Q'nnect</div>
-  </div>
-  <div style="text-align:right">
-    <div class="badge-v">CONCEPT BLUEPRINT</div>
-    <div style="font-size:11px;color:var(--muted);margin-top:6px">India's Q'nnected Print, Branding &amp; Fulfilment Platform</div>
-  </div>
+<div>
+<div class="logo"><span class="th">Th</span><span class="in">IN</span><span class="q">Q</span></div>
+<div class="tagline">Think · Ink · Q'nnect</div>
 </div>
-
+<div style="text-align:right">
+<div class="badge-v">CONCEPT BLUEPRINT</div>
+<div style="font-size:11px;color:var(--muted);margin-top:6px">India's Q'nnected Print, Branding &amp; Fulfilment Platform</div>
+</div>
+</div>
 <div class="page">
-
 <!-- BRAND CORRECTION NOTE -->
 <div class="brand-note">
-  <div class="icon">✦</div>
-  <p><strong>Brand Name: ThINQ</strong> — Always render as Th<strong>INQ</strong> with 'INQ' in emphasis . The wordmark encodes the three brand pillars: <strong>Think</strong> (strategy), <strong>Ink</strong> (print), <strong>Q'nnect</strong> (network).</p>
+<div class="icon">✦</div>
+<p><strong>Brand Name: ThINQ</strong> — Always render as Th<strong>INQ</strong> with 'INQ' in emphasis . The wordmark encodes the three brand pillars: <strong>Think</strong> (strategy), <strong>Ink</strong> (print), <strong>Q'nnect</strong> (network).</p>
 </div>
-
-
-
 <div class="divider"></div>
-
 <div class="integrated-blueprint">
-
 <div class="hero">
 <div class="hero-inner">
 <div class="hero-left">
-<div class="hero-eyebrow"><span class="pulse"></span>India's Q'nnected Infrastructure</div>
-
+<div class="hero-eyebrow"><span class="pulse"></span>India's Q'nnected ThINQ'frastructure</div>
 <h1>Print. Brand.<br/>Q'nnected <em>Xperience.</em></h1>
 <p class="hero-desc">
         Connecting enterprises, institutions &amp; event companies to a verified network of print, branding, merchandise, signage and fulfilment partners across India.
       </p>
-
-
 </div>
-
 <section class="section section-alt" id="platform">
 <div class="hero-card reveal">
 <div class="hero-card-title">Platform Overview</div>
@@ -437,21 +882,19 @@ a{color:inherit}
 <div class="fb-sub">Local Partners · Delivery</div>
 </div>
 </div>
-<br>
+<br/>
 <div class="stats-row">
 <div class="stat-box"><div class="s-val">B2B</div><div class="s-lbl">Procurement Platform</div></div>
 <div class="stat-box"><div class="s-val">5</div><div class="s-lbl">Phase Roadmap</div></div>
 <div class="stat-box"><div class="s-val">B2C</div><div class="s-lbl">Consumer Marketplace</div></div>
 </div>
 </div>
+</section></div>
 </div>
-</div>
-
-<br>
-
+<br/>
 <div class="container">
 <div class="section-label">The Difference</div>
-<h2 class="section-title">Traditional Procurement vs ThINQ</h2>
+<h3>Traditional Procurement vs ThINQ</h3>
 <div class="divider-rule"></div>
 <div class="compare-grid reveal">
 <!-- Old -->
@@ -470,7 +913,7 @@ a{color:inherit}
 <div class="compare-row old-row"><div class="cr-icon">👁️</div>No Visibility / Tracking</div>
 <div class="compare-row old-row"><div class="cr-icon">⏳</div>Long Procurement Cycle</div>
 </div>
-<div class="compare-footer old-foot">Slow · Fragmented · Non-Transparent</div>
+<div class="compare-footer old-foot"><h5>Slow · Fragmented · Non-Transparent</h5></div>
 </div>
 <div class="vs-circle">VS</div>
 <!-- New -->
@@ -489,18 +932,15 @@ a{color:inherit}
 <div class="compare-row new-row"><div class="cr-icon">💰</div>Invoice &amp; GST Compliance</div>
 <div class="compare-row new-row"><div class="cr-icon">📈</div>Analytics &amp; Performance Insights</div>
 </div>
-<div class="compare-footer new-foot">Fast · Digital · Transparent · Scalable</div>
+<div class="compare-footer new-foot"><h5>Fast · Digital · Transparent · Scalable</h5></div>
 </div>
 </div>
 </div>
-</section>
-
-
 
 <section class="section section-canvas" id="ecosystem">
 <div class="container">
 <div class="section-label">Services</div>
-<h2 class="section-title">Comprehensive Print, Branding<br/>&amp; Merchandise Ecosystem</h2>
+<h3>Comprehensive Print, Branding &amp; Merchandise Ecosystem</br></h3>
 <div class="divider-rule"></div>
 <div class="eco-grid">
 <div class="eco-card reveal reveal-d1"><div class="eco-card-icon">🖨️</div><h4>Business Print</h4><p>Documents, Reports, Brochures, Catalogues, Stationery &amp; More</p><div class="eco-tags"><span class="eco-tag">Reports</span><span class="eco-tag">Stationery</span></div></div>
@@ -515,13 +955,10 @@ a{color:inherit}
 </div>
 </div>
 </section>
-
-
-
 <section class="section section-alt" id="how">
 <div class="container">
 <div class="section-label">Process</div>
-<h2 class="section-title">How ThINQ Works</h2>
+<h3>How ThINQ Works</h3>
 <div class="divider-rule"></div>
 <div class="tab-bar">
 <button class="tab-pill active" onclick="switchTab(this,'b2b')">B2B — Enterprise</button>
@@ -576,13 +1013,10 @@ a{color:inherit}
 </div>
 </div>
 </section>
-
-
-
 <section class="section section-canvas" id="segments">
 <div class="container">
 <div class="section-label">Platform</div>
-<h2 class="section-title">Two Powerful Platforms,<br/>One Network</h2>
+<h3>Two Powerful Platforms,<br>One Network</br></h3>
 <div class="divider-rule"></div>
 <div class="seg-grid reveal">
 <div class="seg-card">
@@ -632,31 +1066,22 @@ a{color:inherit}
 </div>
 </div>
 </section>
-
-
 <section class="section section-alt" id="trust">
-
 <div class="container">
-
 <div class="section-label">
-Trust Infrastructure
+Trust ThINQ'frastructure
 </div>
-
-<h2 class="section-title">
+<h3>
 India's Trusted Print Network
-</h2>
-
+</h3>
 <p class="section-body">
 ThINQ is designed as more than a print procurement platform.
 It provides a secure, transparent and accountable framework for
 managing artwork, customer information, procurement workflows,
 vendor interactions and fulfilment operations across the print ecosystem.
 </p>
-
 <div class="divider-rule"></div>
-
 <div class="trust-grid">
-
 <div class="trust-card">
 <div class="trust-icon">🔒</div>
 <h3>Privacy by Design</h3>
@@ -665,7 +1090,6 @@ Files, artwork and business documents remain protected through
 controlled access, secure sharing and governed fulfilment workflows.
 </p>
 </div>
-
 <div class="trust-card">
 <div class="trust-icon">📋</div>
 <h3>Complete Audit Trail</h3>
@@ -674,7 +1098,6 @@ Every RFQ, quotation, approval, production event and delivery
 milestone is digitally recorded for transparency and accountability.
 </p>
 </div>
-
 <div class="trust-card">
 <div class="trust-icon">🏢</div>
 <h3>Enterprise Governance Ready</h3>
@@ -683,7 +1106,6 @@ Supports procurement controls, vendor governance,
 approval workflows and operational compliance requirements.
 </p>
 </div>
-
 <div class="trust-card">
 <div class="trust-icon">✅</div>
 <h3>Verified Partner Ecosystem</h3>
@@ -692,19 +1114,14 @@ Businesses and consumers engage with qualified,
 performance-monitored partners across the network.
 </p>
 </div>
-
 </div>
-
 <div class="trust-banner">
-
 <h4>ThINQ TrustScore</h4>
-
 <p>
 A future-ready partner trust framework that evaluates production
 partners across quality, service reliability, fulfilment performance,
 responsible data practices and customer satisfaction.
 </p>
-
 <div class="trust-pillars">
 <span>Quality</span>
 <span>Reliability</span>
@@ -713,68 +1130,47 @@ responsible data practices and customer satisfaction.
 <span>Performance</span>
 <span>Trust</span>
 </div>
-
 </div>
-
 <div class="trust-impact">
-
 <div class="card">
-
 <h4>FOR CONSUMERS</h4>
-
 <h5>Confidence in Every Order</h5>
-
 <p>
-• Secure artwork handling<br>
-• Trusted local print partners<br>
-• Transparent fulfilment tracking<br>
+• Secure artwork handling<br/>
+• Trusted local print partners<br/>
+• Transparent fulfilment tracking<br/>
 • Better accountability from order to delivery
 </p>
-
 </div>
-
 <div class="card">
-
 <h4>FOR ENTERPRISES</h4>
-
 <h5>Governed Procurement Operations</h5>
-
 <p>
-• Vendor accountability<br>
-• Audit-ready workflows<br>
-• Controlled access to sensitive files<br>
+• Vendor accountability<br/>
+• Audit-ready workflows<br/>
+• Controlled access to sensitive files<br/>
 • Reduced procurement complexity
 </p>
-
 </div>
-
 </div>
-
 <div class="trust-banner" style="margin-top:20px">
-
 <h4>DPDP-Aligned by Design</h4>
-
 <p>
 As India's Digital Personal Data Protection ecosystem evolves,
 ThINQ provides organisations with a future-ready operating layer
 for responsible data exchange across customers, procurement teams,
 print partners and fulfilment networks.
 </p>
-
 <p style="margin-top:10px;color:var(--white);font-weight:600">
-Trust is not a feature. It is infrastructure.
+Trust is not a feature. It is ThINQ'frastructure.
 </p>
-
 </div>
-
 </div>
-
 </section>
-
 <section class="section serve-section" id="serve">
 <div class="container">
 <div class="section-label">Market</div>
-<h2 class="section-title">Who We Serve</h2>
+<h3>Who We Serve</h3>
 <p class="section-body">Initial focus on B2B — serving enterprises, institutions, and event-driven organisations across India.</p>
 <div class="serve-row-label reveal">Primary Targets</div>
 <div class="target-row reveal">
@@ -794,13 +1190,10 @@ Trust is not a feature. It is infrastructure.
 </div>
 </div>
 </section>
-
-
- 
 <section class="section section-alt" id="partners">
 <div class="container">
 <div class="section-label">Ecosystem</div>
-<h2 class="section-title">Partner Ecosystem</h2>
+<h3>Partner Ecosystem</h3>
 <p class="section-body">A verified network of specialised print, branding &amp; fulfilment partners across India.</p>
 <div class="partner-grid reveal">
 <div class="partner-card"><div class="partner-icon">🖨️</div><div><h4>Commercial Printers</h4><p>Offset, digital, wide-format production houses</p></div></div>
@@ -813,26 +1206,30 @@ Trust is not a feature. It is infrastructure.
 <div class="partner-card"><div class="partner-icon">🎉</div><div><h4>Event Branding Partners</h4><p>Stage, backdrops, delegate kits &amp; activations</p></div></div>
 <div class="partner-card"><div class="partner-icon">🌐</div><div><h4>Pan-India Logistics</h4><p>Installation, delivery &amp; fulfilment network</p></div></div>
 </div>
+<br>
 <div class="why-box reveal">
-<div class="why-header">
 <h3>Why Partners Join ThINQ</h3>
-<p>Access a platform built to grow your business with institutional clients and recurring orders.</p>
+<p>Grow through qualified demand, recurring orders and access to enterprise customers across the ThINQ network.</p>
+<div class="why-header">
+
+
 </div>
-<div class="why-item"><div class="wi-icon">🏆</div><p>Access to Institutional &amp; Enterprise Contracts</p></div>
-<div class="why-item"><div class="wi-icon">🔁</div><p>Recurring Business &amp; Better Capacity Utilisation</p></div>
-<div class="why-item"><div class="wi-icon">💸</div><p>Reduced Customer Acquisition Cost</p></div>
-<div class="why-item"><div class="wi-icon">📱</div><p>Digital Workflow &amp; Easy Order Management</p></div>
-<div class="why-item"><div class="wi-icon">📈</div><p>Performance-based Visibility &amp; Growth</p></div>
-<div class="why-item"><div class="wi-icon">🗺️</div><p>Pan-city &amp; Pan-India Expansion Opportunities</p></div>
+<div class="why-grid">
+<div class="why-item"><div class="wi-icon">🏆</div><p>Access Enterprise &amp; Institutional Opportunities</p></div>
+<div class="why-item"><div class="wi-icon">🔁</div><p>Recurring Orders &amp; Better Capacity Utilisation</p></div>
+<div class="why-item"><div class="wi-icon">💸</div><p>Lower Customer Acquisition Costs</p></div>
+<div class="why-item"><div class="wi-icon">📱</div><p>Digital Order &amp; Workflow Management</p></div>
+<div class="why-item"><div class="wi-icon">📈</div><p>Performance Visibility &amp; Growth Insights</p></div>
+<div class="why-item"><div class="wi-icon">🗺️</div><p>Regional &amp; Pan-India Expansion Opportunities</p></div>
+</div>
 </div>
 </div>
 </section>
-
 <section class="section section-canvas" id="roadmap">
 <div class="container-wide">
 <div class="container" style="padding:0">
 <div class="section-label">Go-to-Market Roadmap</div>
-<h2 class="section-title">5-Phase Growth Journey</h2>
+<h3>5-Phase Growth Journey</h3>
 <div class="divider-rule"></div>
 </div>
 <div class="roadmap-track reveal">
@@ -903,7 +1300,7 @@ Trust is not a feature. It is infrastructure.
 <div class="phase-card">
 <div class="phase-head">
 <div class="phase-num">Phase 5</div>
-<div class="phase-name">National Print Infrastructure</div>
+<div class="phase-name">National Print ThINQ'frastructure</div>
 <div class="phase-period">Months 24+</div>
 </div>
 <div class="phase-body">
@@ -915,165 +1312,153 @@ Trust is not a feature. It is infrastructure.
 <li>Partner APIs &amp; Integrations</li>
 </ul>
 </div>
-<div class="phase-outcome"><strong>Outcome: </strong>India's Q'nnected Print Infrastructure</div>
+<div class="phase-outcome"><strong>Outcome: </strong>India's Q'nnected Print ThINQ'frastructure</div>
 </div>
 </div>
 </div>
 </section>
-
-
 <div class="divider"></div>
-
 <!-- ─── SECTION 2: CHENNAI LAUNCH ─── -->
 <div class="sec-title">Chennai — Primary Launch Market</div>
-
 <div class="chennai-header">
-  <div class="chennai-icon">🏙</div>
-  <div style="flex:1">
-    <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px">Why Chennai First?</div>
-    <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px">Chennai is India's strongest convergence of print-demand density and print-supply fragmentation. A Metro with 12,000+ registered print &amp; signage units, 3 major IT corridors generating enterprise B2B demand, 6 universities creating institutional print volume, and a thriving SME culture. ThINQ's Q'nnect model maps directly onto this existing but unorganised ecosystem.</p>
-    <div class="stat-row">
-      <div class="stat-pill"><strong>~12,000+</strong> print units in GCA</div>
-      <div class="stat-pill"><strong>₹1,400 Cr+</strong> est. annual print GMV</div>
-      <div class="stat-pill"><strong>3 IT Corridors</strong> — OMR, Old Mahabalipuram Rd, Ambattur</div>
-      <div class="stat-pill"><strong>6 major universities</strong> institutional demand</div>
-      <div class="stat-pill"><strong>2,200+ corporates</strong> registered in GCA</div>
-      <div class="stat-pill">Multi-lingual: Tamil + English demand</div>
-    </div>
-  </div>
+<div class="chennai-icon">🏙</div>
+<div style="flex:1">
+<div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px">Why Chennai First?</div>
+<p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px">Chennai is India's strongest convergence of print-demand density and print-supply fragmentation. A Metro with 12,000+ registered print &amp; signage units, 3 major IT corridors generating enterprise B2B demand, 6 universities creating institutional print volume, and a thriving SME culture. ThINQ's Q'nnect model maps directly onto this existing but unorganised ecosystem.</p>
+<div class="stat-row">
+<div class="stat-pill"><strong>~12,000+</strong> print units in GCA</div>
+<div class="stat-pill"><strong>₹1,400 Cr+</strong> est. annual print GMV</div>
+<div class="stat-pill"><strong>3 IT Corridors</strong> — OMR, Old Mahabalipuram Rd, Ambattur</div>
+<div class="stat-pill"><strong>6 major universities</strong> institutional demand</div>
+<div class="stat-pill"><strong>2,200+ corporates</strong> registered in GCA</div>
+<div class="stat-pill">Multi-lingual: Tamil + English demand</div>
 </div>
-
+</div>
+</div>
 <!-- District priority map table -->
 <div class="g2" style="margin-bottom:14px">
-  <div class="card">
-    <h4>Priority Micro-markets — B2B Demand Zones</h4>
-    <table class="dtable">
-      <thead><tr><th>Zone</th><th>Primary Demand Segment</th><th>Priority</th></tr></thead>
-      <tbody>
-        <tr><td><span class="dot" style="background:#00C2FF"></span>OMR / Sholinganallur</td><td>IT Corporates, SaaS startups</td><td><span style="color:var(--cyan);font-weight:600">P1</span></td></tr>
-        <tr><td><span class="dot" style="background:#00C2FF"></span>Anna Nagar / Kilpauk</td><td>Educational Institutions, Clinics</td><td><span style="color:var(--cyan);font-weight:600">P1</span></td></tr>
-        <tr><td><span class="dot" style="background:#1DBEAA"></span>T. Nagar / Nungambakkam</td><td>Retail, Franchise, Branding agencies</td><td><span style="color:var(--teal);font-weight:600">P2</span></td></tr>
-        <tr><td><span class="dot" style="background:#1DBEAA"></span>Ambattur / Padi</td><td>Manufacturing, Industrial signage</td><td><span style="color:var(--teal);font-weight:600">P2</span></td></tr>
-        <tr><td><span class="dot" style="background:#F5A623"></span>Velachery / Guindy</td><td>Govt PSUs, Event companies</td><td><span style="color:var(--gold);font-weight:600">P3</span></td></tr>
-        <tr><td><span class="dot" style="background:#F5A623"></span>Perambur / Madhavaram</td><td>SMEs, Packaging labels</td><td><span style="color:var(--gold);font-weight:600">P3</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="card">
-    <h4>Priority Supply Zones — Partner Onboarding</h4>
-    <table class="dtable">
-      <thead><tr><th>Hub</th><th>Partner Type Concentration</th><th>Target</th></tr></thead>
-      <tbody>
-        <tr><td><span class="dot" style="background:#2ECC71"></span>Royapettah / Mylapore</td><td>Offset, Digital, Flex printing</td><td><span style="color:var(--green);font-weight:600">50 partners</span></td></tr>
-        <tr><td><span class="dot" style="background:#2ECC71"></span>Vadapalani / KK Nagar</td><td>Apparel, Uniforms, Embroidery</td><td><span style="color:var(--green);font-weight:600">30 partners</span></td></tr>
-        <tr><td><span class="dot" style="background:#2ECC71"></span>Chromepet / Pallavaram</td><td>Packaging, Labels, Stickers</td><td><span style="color:var(--green);font-weight:600">25 partners</span></td></tr>
-        <tr><td><span class="dot" style="background:#7DEFA0"></span>Porur / Poonamallee</td><td>Large Format, Hoarding, Vinyl</td><td><span style="color:#7DEFA0;font-weight:600">20 partners</span></td></tr>
-        <tr><td><span class="dot" style="background:#7DEFA0"></span>Perungudi / Thoraipakkam</td><td>IT Campus print, Photo books</td><td><span style="color:#7DEFA0;font-weight:600">15 partners</span></td></tr>
-        <tr><td><span class="dot" style="background:#7DEFA0"></span>Egmore / Park Town</td><td>Govt stationery, Legal docs</td><td><span style="color:#7DEFA0;font-weight:600">10 partners</span></td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="card">
+<h4>Priority Micro-markets — B2B Demand Zones</h4>
+<table class="dtable">
+<thead><tr><th>Zone</th><th>Primary Demand Segment</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td><span class="dot" style="background:#00C2FF"></span>OMR / Sholinganallur</td><td>IT Corporates, SaaS startups</td><td><span style="color:var(--cyan);font-weight:600">P1</span></td></tr>
+<tr><td><span class="dot" style="background:#00C2FF"></span>Anna Nagar / Kilpauk</td><td>Educational Institutions, Clinics</td><td><span style="color:var(--cyan);font-weight:600">P1</span></td></tr>
+<tr><td><span class="dot" style="background:#1DBEAA"></span>T. Nagar / Nungambakkam</td><td>Retail, Franchise, Branding agencies</td><td><span style="color:var(--teal);font-weight:600">P2</span></td></tr>
+<tr><td><span class="dot" style="background:#1DBEAA"></span>Ambattur / Padi</td><td>Manufacturing, Industrial signage</td><td><span style="color:var(--teal);font-weight:600">P2</span></td></tr>
+<tr><td><span class="dot" style="background:#F5A623"></span>Velachery / Guindy</td><td>Govt PSUs, Event companies</td><td><span style="color:var(--gold);font-weight:600">P3</span></td></tr>
+<tr><td><span class="dot" style="background:#F5A623"></span>Perambur / Madhavaram</td><td>SMEs, Packaging labels</td><td><span style="color:var(--gold);font-weight:600">P3</span></td></tr>
+</tbody>
+</table>
 </div>
-
+<div class="card">
+<h4>Priority Supply Zones — Partner Onboarding</h4>
+<table class="dtable">
+<thead><tr><th>Hub</th><th>Partner Type Concentration</th><th>Target</th></tr></thead>
+<tbody>
+<tr><td><span class="dot" style="background:#2ECC71"></span>Royapettah / Mylapore</td><td>Offset, Digital, Flex printing</td><td><span style="color:var(--green);font-weight:600">50 partners</span></td></tr>
+<tr><td><span class="dot" style="background:#2ECC71"></span>Vadapalani / KK Nagar</td><td>Apparel, Uniforms, Embroidery</td><td><span style="color:var(--green);font-weight:600">30 partners</span></td></tr>
+<tr><td><span class="dot" style="background:#2ECC71"></span>Chromepet / Pallavaram</td><td>Packaging, Labels, Stickers</td><td><span style="color:var(--green);font-weight:600">25 partners</span></td></tr>
+<tr><td><span class="dot" style="background:#7DEFA0"></span>Porur / Poonamallee</td><td>Large Format, Hoarding, Vinyl</td><td><span style="color:#7DEFA0;font-weight:600">20 partners</span></td></tr>
+<tr><td><span class="dot" style="background:#7DEFA0"></span>Perungudi / Thoraipakkam</td><td>IT Campus print, Photo books</td><td><span style="color:#7DEFA0;font-weight:600">15 partners</span></td></tr>
+<tr><td><span class="dot" style="background:#7DEFA0"></span>Egmore / Park Town</td><td>Govt stationery, Legal docs</td><td><span style="color:#7DEFA0;font-weight:600">10 partners</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
 <!-- Chennai-specific seasonal demand -->
 <div class="card" style="margin-bottom:14px">
-  <h4>Chennai Demand Calendar — Monetization Spikes</h4>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
-    <div style="flex:1;min-width:120px;background:rgba(0,194,255,0.07);border:1px solid rgba(0,194,255,0.2);border-radius:8px;padding:10px 12px">
-      <div style="font-size:10px;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Jan – Feb</div>
-      <div style="font-size:12px;font-weight:600;margin-bottom:3px">Pongal &amp; Board Exams</div>
-      <div style="font-size:11px;color:var(--muted)">Gifting, stationery, institutional exam kits</div>
-    </div>
-    <div style="flex:1;min-width:120px;background:rgba(29,190,170,0.07);border:1px solid rgba(29,190,170,0.2);border-radius:8px;padding:10px 12px">
-      <div style="font-size:10px;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Apr – May</div>
-      <div style="font-size:12px;font-weight:600;margin-bottom:3px">Academic Cycle Start</div>
-      <div style="font-size:11px;color:var(--muted)">Uniforms, ID cards, prospectus, campus branding</div>
-    </div>
-    <div style="flex:1;min-width:120px;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.2);border-radius:8px;padding:10px 12px">
-      <div style="font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Jul – Sep</div>
-      <div style="font-size:12px;font-weight:600;margin-bottom:3px">Corporate Budget Spend</div>
-      <div style="font-size:11px;color:var(--muted)">H2 branding, POSM, event materials, annual reports</div>
-    </div>
-    <div style="flex:1;min-width:120px;background:rgba(155,89,182,0.07);border:1px solid rgba(155,89,182,0.2);border-radius:8px;padding:10px 12px">
-      <div style="font-size:10px;color:#C39BD3;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Oct – Dec</div>
-      <div style="font-size:12px;font-weight:600;margin-bottom:3px">Festive &amp; Year-End</div>
-      <div style="font-size:11px;color:var(--muted)">Diwali gifting, corporate hampers, year-end collateral</div>
-    </div>
-  </div>
+<h4>Chennai Demand Calendar — Monetization Spikes</h4>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
+<div style="flex:1;min-width:120px;background:rgba(0,194,255,0.07);border:1px solid rgba(0,194,255,0.2);border-radius:8px;padding:10px 12px">
+<div style="font-size:10px;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Jan – Feb</div>
+<div style="font-size:12px;font-weight:600;margin-bottom:3px">Pongal &amp; Board Exams</div>
+<div style="font-size:11px;color:var(--muted)">Gifting, stationery, institutional exam kits</div>
 </div>
-
+<div style="flex:1;min-width:120px;background:rgba(29,190,170,0.07);border:1px solid rgba(29,190,170,0.2);border-radius:8px;padding:10px 12px">
+<div style="font-size:10px;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Apr – May</div>
+<div style="font-size:12px;font-weight:600;margin-bottom:3px">Academic Cycle Start</div>
+<div style="font-size:11px;color:var(--muted)">Uniforms, ID cards, prospectus, campus branding</div>
+</div>
+<div style="flex:1;min-width:120px;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.2);border-radius:8px;padding:10px 12px">
+<div style="font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Jul – Sep</div>
+<div style="font-size:12px;font-weight:600;margin-bottom:3px">Corporate Budget Spend</div>
+<div style="font-size:11px;color:var(--muted)">H2 branding, POSM, event materials, annual reports</div>
+</div>
+<div style="flex:1;min-width:120px;background:rgba(155,89,182,0.07);border:1px solid rgba(155,89,182,0.2);border-radius:8px;padding:10px 12px">
+<div style="font-size:10px;color:#C39BD3;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Oct – Dec</div>
+<div style="font-size:12px;font-weight:600;margin-bottom:3px">Festive &amp; Year-End</div>
+<div style="font-size:11px;color:var(--muted)">Diwali gifting, corporate hampers, year-end collateral</div>
+</div>
+</div>
+</div>
 <!-- Chennai GTM Phases -->
 <div class="sec-title" style="margin-top:20px">Chennai Go-to-Market — Phase Roadmap</div>
 <div class="timeline" style="margin-bottom:14px">
-  <div class="phase phase-chennai">
-    <div class="phase-num">Phase 1</div>
-    <div class="phase-title" style="color:var(--green)">Chennai B2B Seed</div>
-    <div class="phase-months">Months 1–6</div>
-    <ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
-      <li>150 partner onboarding</li>
-      <li>20 enterprise B2B pilots</li>
-      <li>RFQ + PO live in OMR, Anna Nagar</li>
-      <li>Tamil language UX</li>
-    </ul>
-  </div>
-  <div class="phase phase-chennai">
-    <div class="phase-num">Phase 2</div>
-    <div class="phase-title" style="color:var(--green)">Chennai Scale + B2C</div>
-    <div class="phase-months">Months 6–14</div>
-    <ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
-      <li>500+ partners across GCA</li>
-      <li>Consumer marketplace live</li>
-      <li>3 institutional anchor contracts</li>
-      <li>Real-time tracking &amp; GST suite</li>
-    </ul>
-  </div>
-  <div class="phase phase-other">
-    <div class="phase-num">Phase 3</div>
-    <div class="phase-title">Chennai Dominant + Bengaluru Seed</div>
-    <div class="phase-months">Months 14–20</div>
-    <ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
-      <li>₹5 Cr+ monthly GMV Chennai</li>
-      <li>Procurement Intelligence product</li>
-      <li>Bengaluru pilot (50 partners)</li>
-      <li>National franchise enquiries</li>
-    </ul>
-  </div>
-  <div class="phase phase-other">
-    <div class="phase-num">Phase 4–5</div>
-    <div class="phase-title">Multi-city National</div>
-    <div class="phase-months">Months 20–36</div>
-    <ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
-      <li>Hyderabad, Mumbai, Delhi</li>
-      <li>SaaS procurement exchange</li>
-      <li>Pan-India network &gt;5,000 partners</li>
-      <li>Series A readiness</li>
-    </ul>
-  </div>
+<div class="phase phase-chennai">
+<div class="phase-num">Phase 1</div>
+<div class="phase-title" style="color:var(--green)">Chennai B2B Seed</div>
+<div class="phase-months">Months 1–6</div>
+<ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
+<li>150 partner onboarding</li>
+<li>20 enterprise B2B pilots</li>
+<li>RFQ + PO live in OMR, Anna Nagar</li>
+<li>Tamil language UX</li>
+</ul>
 </div>
-
+<div class="phase phase-chennai">
+<div class="phase-num">Phase 2</div>
+<div class="phase-title" style="color:var(--green)">Chennai Scale + B2C</div>
+<div class="phase-months">Months 6–14</div>
+<ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
+<li>500+ partners across GCA</li>
+<li>Consumer marketplace live</li>
+<li>3 institutional anchor contracts</li>
+<li>Real-time tracking &amp; GST suite</li>
+</ul>
+</div>
+<div class="phase phase-other">
+<div class="phase-num">Phase 3</div>
+<div class="phase-title">Chennai Dominant + Bengaluru Seed</div>
+<div class="phase-months">Months 14–20</div>
+<ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
+<li>₹5 Cr+ monthly GMV Chennai</li>
+<li>Procurement Intelligence product</li>
+<li>Bengaluru pilot (50 partners)</li>
+<li>National franchise enquiries</li>
+</ul>
+</div>
+<div class="phase phase-other">
+<div class="phase-num">Phase 4–5</div>
+<div class="phase-title">Multi-city National</div>
+<div class="phase-months">Months 20–36</div>
+<ul style="font-size:10.5px;color:var(--muted);margin-top:7px;padding-left:14px;line-height:1.7">
+<li>Hyderabad, Mumbai, Delhi</li>
+<li>SaaS procurement exchange</li>
+<li>Pan-India network &gt;5,000 partners</li>
+<li>Series A readiness</li>
+</ul>
+</div>
+</div>
 <!-- Why Chennai wins -->
 <div class="g3" style="margin-bottom:0">
-  <div class="card">
-    <h4>Competitive Moat</h4>
-    <p>Chennai's print ecosystem is hyper-fragmented — no dominant aggregator exists. First-mover with verified partner network creates a defensible local data moat before national players notice.</p>
-  </div>
-  <div class="card highlight">
-    <h4>Institutional Anchor Strategy</h4>
-    <p>Target 3 large anchor clients (IT company, hospital chain, university) in Month 1–3. Each generates ₹15–40L annual procurement — funds partner growth and validates the platform publicly.</p>
-  </div>
-  <div class="card">
-    <h4>Partner Retention Flywheel</h4>
-    <p>ThINQ's GST-ready invoicing, SLA dashboard, and recurring order flow create switching costs for partners. A verified ThINQ badge becomes a trust signal for their own B2B clients.</p>
-  </div>
+<div class="card">
+<h4>Competitive Moat</h4>
+<p>Chennai's print ecosystem is hyper-fragmented — no dominant aggregator exists. First-mover with verified partner network creates a defensible local data moat before national players notice.</p>
 </div>
-
-
- 
+<div class="card highlight">
+<h4>Institutional Anchor Strategy</h4>
+<p>Target 3 large anchor clients (IT company, hospital chain, university) in Month 1–3. Each generates ₹15–40L annual procurement — funds partner growth and validates the platform publicly.</p>
+</div>
+<div class="card">
+<h4>Partner Retention Flywheel</h4>
+<p>ThINQ's GST-ready invoicing, SLA dashboard, and recurring order flow create switching costs for partners. A verified ThINQ badge becomes a trust signal for their own B2B clients.</p>
+</div>
+</div>
 <section class="section section-alt" id="value">
 <div class="container">
 <div class="section-label">Value Proposition</div>
-<h2 class="section-title">Built for Every Stakeholder</h2>
+<h3>Built for Every Stakeholder</h3>
 <div class="divider-rule"></div>
 <div class="value-triptych reveal">
 <div class="value-card">
@@ -1129,164 +1514,155 @@ Trust is not a feature. It is infrastructure.
 </div>
 </div>
 </section>
-
-
-
-
-
-
 <!-- ─── SECTION 1: MONETIZATION ─── -->
 <div class="sec-title">Monetization Architecture — B2B &amp; B2C Revenue Streams</div>
-
 <!-- Revenue stream mix bar -->
 <div class="card" style="margin-bottom:14px">
-  <div style="font-size:12px;color:var(--muted);margin-bottom:12px;font-weight:500">Projected revenue composition (Year 3 steady state)</div>
-  <div class="mono-row">
-    <span class="mono-label">B2B Transaction Commission</span>
-    <div class="mono-bar-wrap"><div class="mono-bar" style="width:38%;background:var(--cyan)"></div></div>
-    <span class="mono-pct" style="color:var(--cyan)">38%</span>
-  </div>
-  <div class="mono-row">
-    <span class="mono-label">B2C Marketplace GMV Take-rate</span>
-    <div class="mono-bar-wrap"><div class="mono-bar" style="width:22%;background:var(--teal)"></div></div>
-    <span class="mono-pct" style="color:var(--teal)">22%</span>
-  </div>
-  <div class="mono-row">
-    <span class="mono-label">Platform SaaS &amp; Subscriptions</span>
-    <div class="mono-bar-wrap"><div class="mono-bar" style="width:18%;background:var(--gold)"></div></div>
-    <span class="mono-pct" style="color:var(--gold)">18%</span>
-  </div>
-  <div class="mono-row">
-    <span class="mono-label">Data, Analytics &amp; Insights</span>
-    <div class="mono-bar-wrap"><div class="mono-bar" style="width:12%;background:#C39BD3"></div></div>
-    <span class="mono-pct" style="color:#C39BD3">12%</span>
-  </div>
-  <div class="mono-row">
-    <span class="mono-label">Partner Onboarding &amp; Tooling</span>
-    <div class="mono-bar-wrap"><div class="mono-bar" style="width:10%;background:var(--green)"></div></div>
-    <span class="mono-pct" style="color:var(--green)">10%</span>
-  </div>
+<div style="font-size:12px;color:var(--muted);margin-bottom:12px;font-weight:500">Projected revenue composition (Year 3 steady state)</div>
+<div class="mono-row">
+<span class="mono-label">B2B Transaction Commission</span>
+<div class="mono-bar-wrap"><div class="mono-bar" style="width:38%;background:var(--cyan)"></div></div>
+<span class="mono-pct" style="color:var(--cyan)">38%</span>
 </div>
-
+<div class="mono-row">
+<span class="mono-label">B2C Marketplace GMV Take-rate</span>
+<div class="mono-bar-wrap"><div class="mono-bar" style="width:22%;background:var(--teal)"></div></div>
+<span class="mono-pct" style="color:var(--teal)">22%</span>
+</div>
+<div class="mono-row">
+<span class="mono-label">Platform SaaS &amp; Subscriptions</span>
+<div class="mono-bar-wrap"><div class="mono-bar" style="width:18%;background:var(--gold)"></div></div>
+<span class="mono-pct" style="color:var(--gold)">18%</span>
+</div>
+<div class="mono-row">
+<span class="mono-label">Data, Analytics &amp; Insights</span>
+<div class="mono-bar-wrap"><div class="mono-bar" style="width:12%;background:#C39BD3"></div></div>
+<span class="mono-pct" style="color:#C39BD3">12%</span>
+</div>
+<div class="mono-row">
+<span class="mono-label">Partner Onboarding &amp; Tooling</span>
+<div class="mono-bar-wrap"><div class="mono-bar" style="width:10%;background:var(--green)"></div></div>
+<span class="mono-pct" style="color:var(--green)">10%</span>
+</div>
+</div>
 <!-- Revenue cards 2x3 grid -->
 <div class="g2" style="margin-bottom:14px">
-
-  <div class="rev-card b2b">
-    <span class="rev-type b2b">B2B · Core</span>
-    <h3>Transaction Commission</h3>
-    <p>2–5% commission on every PO value processed through ThINQ. Tiered by volume — enterprise clients at lower rates drive high absolute INR value.</p>
-    <div class="rev-metric">Est. avg. order: <span>₹45,000–₹2L+</span></div>
-  </div>
-
-  <div class="rev-card b2b">
-    <span class="rev-type b2b">B2B · SaaS</span>
-    <h3>Enterprise Subscription</h3>
-    <p>Monthly SaaS fee for RFQ automation, multi-branch procurement dashboard, GST compliance suite, and spend analytics. Scalable per seat or per entity.</p>
-    <div class="rev-metric">Pricing: <span>₹4,999–₹24,999/mo</span></div>
-  </div>
-
-  <div class="rev-card b2c">
-    <span class="rev-type b2c">B2C · Core</span>
-    <h3>Marketplace Take-rate</h3>
-    <p>8–15% platform fee on every consumer order fulfilled through ThINQ. Consumers pay for convenience, speed, and trust; partners pay nothing extra.</p>
-    <div class="rev-metric">Est. consumer basket: <span>₹800–₹8,000</span></div>
-  </div>
-
-  <div class="rev-card b2c">
-    <span class="rev-type b2c">B2C · Premium</span>
-    <h3>Express &amp; Priority Fees</h3>
-    <p>Surge pricing for same-day and next-day print delivery. Premium placement on the consumer discovery feed. Event-season dynamic pricing (Pongal, festivals, exams).</p>
-    <div class="rev-metric">Express premium: <span>+20–35% per order</span></div>
-  </div>
-
-  <div class="rev-card plat">
-    <span class="rev-type plat">Platform</span>
-    <h3>Partner Listing &amp; Boost</h3>
-    <p>Verified badge onboarding fee (one-time) + optional monthly boost to appear first in geo-matched partner results for both B2B RFQ auto-matching and B2C discovery.</p>
-    <div class="rev-metric">Onboarding: <span>₹2,999 one-time</span> · Boost: <span>₹999/mo</span></div>
-  </div>
-
-  <div class="rev-card data">
-    <span class="rev-type data">Data Layer</span>
-    <h3>Procurement Intelligence</h3>
-    <p>Anonymised category spend benchmarks, vendor SLA performance indices, and regional pricing trends sold as API or dashboard access to enterprise procurement heads and sourcing consultants.</p>
-    <div class="rev-metric">Access tiers: <span>₹9,999–₹49,999/qtr</span></div>
-  </div>
-
+<div class="rev-card b2b">
+<span class="rev-type b2b">B2B · Core</span>
+<h3>Transaction Commission</h3>
+<p>2–5% commission on every PO value processed through ThINQ. Tiered by volume — enterprise clients at lower rates drive high absolute INR value.</p>
+<div class="rev-metric">Est. avg. order: <span>₹45,000–₹2L+</span></div>
 </div>
-
+<div class="rev-card b2b">
+<span class="rev-type b2b">B2B · SaaS</span>
+<h3>Enterprise Subscription</h3>
+<p>Monthly SaaS fee for RFQ automation, multi-branch procurement dashboard, GST compliance suite, and spend analytics. Scalable per seat or per entity.</p>
+<div class="rev-metric">Pricing: <span>₹4,999–₹24,999/mo</span></div>
+</div>
+<div class="rev-card b2c">
+<span class="rev-type b2c">B2C · Core</span>
+<h3>Marketplace Take-rate</h3>
+<p>8–15% platform fee on every consumer order fulfilled through ThINQ. Consumers pay for convenience, speed, and trust; partners pay nothing extra.</p>
+<div class="rev-metric">Est. consumer basket: <span>₹800–₹8,000</span></div>
+</div>
+<div class="rev-card b2c">
+<span class="rev-type b2c">B2C · Premium</span>
+<h3>Express &amp; Priority Fees</h3>
+<p>Surge pricing for same-day and next-day print delivery. Premium placement on the consumer discovery feed. Event-season dynamic pricing (Pongal, festivals, exams).</p>
+<div class="rev-metric">Express premium: <span>+20–35% per order</span></div>
+</div>
+<div class="rev-card plat">
+<span class="rev-type plat">Platform</span>
+<h3>Partner Listing &amp; Boost</h3>
+<p>Verified badge onboarding fee (one-time) + optional monthly boost to appear first in geo-matched partner results for both B2B RFQ auto-matching and B2C discovery.</p>
+<div class="rev-metric">Onboarding: <span>₹2,999 one-time</span> · Boost: <span>₹999/mo</span></div>
+</div>
+<div class="rev-card data">
+<span class="rev-type data">Data Layer</span>
+<h3>Procurement Intelligence</h3>
+<p>Anonymised category spend benchmarks, vendor SLA performance indices, and regional pricing trends sold as API or dashboard access to enterprise procurement heads and sourcing consultants.</p>
+<div class="rev-metric">Access tiers: <span>₹9,999–₹49,999/qtr</span></div>
+</div>
+</div>
 <!-- Partner economics table -->
 <div class="card" style="margin-bottom:0">
-  <div style="font-size:11px;font-weight:600;color:var(--white);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Partner economics at a glance</div>
-  <table class="econ-table">
-    <thead><tr><th>Partner Type</th><th>Segment</th><th>Revenue Share</th><th>ThINQ Take</th><th>Value Add</th></tr></thead>
-    <tbody>
-      <tr><td>Offset / Digital Print</td><td><span class="tag b2b">B2B</span></td><td class="up">72–78%</td><td>22–28%</td><td>RFQ flow, GST, SLA tracking</td></tr>
-      <tr><td>Signage &amp; Large Format</td><td><span class="tag b2b">B2B</span></td><td class="up">70–75%</td><td>25–30%</td><td>Auto PO, bulk matching</td></tr>
-      <tr><td>Photo &amp; Custom Gift</td><td><span class="tag b2c">B2C</span></td><td class="up">78–85%</td><td>15–22%</td><td>Consumer discovery, payments</td></tr>
-      <tr><td>Apparel &amp; Merchandise</td><td><span class="tag both">Both</span></td><td class="up">70–80%</td><td>20–30%</td><td>Catalogue tools, repeat orders</td></tr>
-      <tr><td>Pan-India Logistics</td><td><span class="tag both">Both</span></td><td class="up">82–88%</td><td>12–18%</td><td>Order visibility, COD mgmt</td></tr>
-    </tbody>
-  </table>
+<div style="font-size:11px;font-weight:600;color:var(--white);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Partner economics at a glance</div>
+<table class="econ-table">
+<thead><tr><th>Partner Type</th><th>Segment</th><th>Revenue Share</th><th>ThINQ Take</th><th>Value Add</th></tr></thead>
+<tbody>
+<tr><td>Offset / Digital Print</td><td><span class="tag b2b">B2B</span></td><td class="up">72–78%</td><td>22–28%</td><td>RFQ flow, GST, SLA tracking</td></tr>
+<tr><td>Signage &amp; Large Format</td><td><span class="tag b2b">B2B</span></td><td class="up">70–75%</td><td>25–30%</td><td>Auto PO, bulk matching</td></tr>
+<tr><td>Photo &amp; Custom Gift</td><td><span class="tag b2c">B2C</span></td><td class="up">78–85%</td><td>15–22%</td><td>Consumer discovery, payments</td></tr>
+<tr><td>Apparel &amp; Merchandise</td><td><span class="tag both">Both</span></td><td class="up">70–80%</td><td>20–30%</td><td>Catalogue tools, repeat orders</td></tr>
+<tr><td>Pan-India Logistics</td><td><span class="tag both">Both</span></td><td class="up">82–88%</td><td>12–18%</td><td>Order visibility, COD mgmt</td></tr>
+</tbody>
+</table>
 </div>
-
-
 <div class="container" id="contact">
 <div class="cta-band reveal">
 <div class="cta-band-text">
 <h2>ThINQ.ink | Think. Ink. Q'nnect</h2>
-<p>Join India's Q'nnected print and branding infrastructure today.</p>
-</div>
-
+<p>Join India's Q'nnected print and branding ThINQ'frastructure today.</p>
 </div>
 </div>
-
-
+</div>
 <div class="divider"></div>
-
 </div>
-
-
-
 <!-- FOOTER -->
 <div class="footer">
-  <div>
-    <div class="footer-logo">Th<span class="nk">IN</span>Q</div>
-    <div class="footer-sub">Think · Ink · Q'nnect</div>
-  </div>
-  <div class="footer-claim">India's Q'nnected Print &amp; Branding Infrastructure<br><span style="color:var(--cyan)">CONCEPT BLUEPRINT</span></div>
-</div>
+<div>
 
+<div class="footer-sub">Think · Ink · Q'nnect</div>
+</div>
+<div class="footer-claim">India's Q'nnected Print &amp; Branding ThINQ'frastructure<br/><span style="color:var(--cyan)">CONCEPT BLUEPRINT</span></div>
+</div>
 </div><!-- /page -->
 </div>
 <script>
 // Tab switching
 function switchTab(btn, id) {
-  document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  var pills = document.querySelectorAll('.tab-pill');
+  for (var i = 0; i < pills.length; i++) pills[i].classList.remove('active');
+  var panels = document.querySelectorAll('.tab-panel');
+  for (var j = 0; j < panels.length; j++) panels[j].classList.remove('active');
   btn.classList.add('active');
-  document.getElementById(id).classList.add('active');
+  var panel = document.getElementById(id);
+  if (panel) panel.classList.add('active');
 }
 
-// Scroll reveal
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Scroll reveal with fallback
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    for (var r = 0; r < els.length; r++) els[r].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  for (var k = 0; k < els.length; k++) io.observe(els[k]);
+})();
 
 // Active nav link on scroll
-const sections = document.querySelectorAll('section[id], div[id]');
-const navItems = document.querySelectorAll('.nav-item');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
-  navItems.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
-  });
-});
+(function(){
+  var sections = document.querySelectorAll('section[id], div[id]');
+  var navItems = document.querySelectorAll('.tq-menu a');
+  function setActive(){
+    var cur = '';
+    for (var i = 0; i < sections.length; i++) {
+      if (window.pageYOffset >= sections[i].offsetTop - 120) cur = sections[i].id;
+    }
+    for (var j = 0; j < navItems.length; j++) {
+      navItems[j].classList.remove('active');
+      if (navItems[j].getAttribute('href') === '#' + cur) navItems[j].classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+})();
 </script>
-
 <script>
 (function(){
   var toggle=document.querySelector('.tq-menu-toggle');
