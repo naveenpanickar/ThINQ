@@ -649,6 +649,136 @@
     color: #3a6070;
   }
 
+  /* ── CONTACT SECTION ── */
+  .contact-section {
+    background: #080808;
+    padding: 88px var(--content-pad-desktop);
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .contact-section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    margin-bottom: 16px;
+  }
+
+  .contact-headline {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .contact-accent { color: var(--brand-blue); }
+
+  .contact-intro {
+    font-size: 15px;
+    color: #999;
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto 52px;
+  }
+
+  .contact-intro strong { color: #d0d0d0; font-weight: 600; }
+
+  .contact-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 56px;
+    text-align: left;
+  }
+
+  .contact-audience-card {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 6px;
+    padding: 24px 22px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.04);
+    transition: border-color 0.2s ease;
+  }
+
+  .contact-audience-card:hover { border-color: #2a2a2a; }
+
+  .contact-audience-icon {
+    font-size: 14px;
+    color: var(--brand-blue);
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .contact-audience-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .contact-audience-card p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.7;
+  }
+
+  .contact-cta-block {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 40px;
+  }
+
+  .contact-cta-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .contact-email-link {
+    display: inline-block;
+    font-size: clamp(20px, 3vw, 10px);
+    font-weight: 500;
+    color: var(--brand-blue);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 16px;
+  }
+
+  .contact-email-link:hover {
+    color: #33ccff;
+    border-bottom-color: #33ccff;
+  }
+
+  .contact-cta-note {
+    font-size: 12px;
+    color: #444;
+    letter-spacing: 0.3px;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .contact-section { padding: 60px var(--content-pad-tablet); }
+    .contact-audience-grid { grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .contact-section { padding: 48px var(--content-pad-mobile); }
+  }
+
   /* ── FOOTER ── */
   footer {
     background: var(--brand-dark);
@@ -856,6 +986,7 @@
 <a href="#what" onclick="scrollToSection(event,'what')">What It Is</a>
     <a href="#how" onclick="scrollToSection(event,'how')">How It Works</a>
     <a href="#who" onclick="scrollToSection(event,'who')">Who It's For</a>
+    <a href="#contact" onclick="scrollToSection(event,'contact')">Get In Touch</a>
   </nav>
   <div class="mobile-menu-badge">
     Pre-Launch · 2026
@@ -881,7 +1012,7 @@
 <li><a href="#what">What It Is</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#who">Who It's For</a></li>
-
+      <li><a href="#contact">Get In Touch</a></li>
     </ul>
   </nav>
 
@@ -915,7 +1046,7 @@
   <section class="hero">
     <div class="section-label">What It Is</div>
 
-<div class="logo">India's Q'nnected <span class="th">Th</span><span class="in">IN</span><span class="q">Q</span>'frastructure.</div>
+<div class="logo">Q'nnected Print <span class="in">IN</span><span class="q">Q</span>'frastructure.</div>
     
     <p>One platform q'nnecting enterprises and consumers <strong>Print</strong> to a verified partner network — from Requisition to Fulfillment.</p>
   </section>
@@ -1118,6 +1249,47 @@
 </main>
 
 
+
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <div class="contact-section-inner">
+
+    <div class="contact-eyebrow">Pre-Launch · Chennai 2026</div>
+    <h3 class="contact-headline">Get In <span class="contact-accent">Touch</span></h3>
+    <p class="contact-intro">
+      ThINQ is building South India's print infrastructure — and we're looking for the right people to build it with.
+      Whether you're a <strong>Founding Member</strong>, an <strong>Early Print Partner</strong>, or an <strong>Enterprise</strong> ready to modernise your procurement,
+      we'd love to hear from you before we launch.
+    </p>
+
+    <div class="contact-audience-grid">
+      <div class="contact-audience-card">
+        <div class="contact-audience-icon">◈</div>
+        <h3>Founding Members</h3>
+        <p>Individuals and small businesses who want to be among the first to experience ThINQ in Chennai. Shape the product before it goes live.</p>
+      </div>
+      <div class="contact-audience-card">
+        <div class="contact-audience-icon">◈</div>
+        <h3>Early Print Partners</h3>
+        <p>Print vendors and service providers ready to go digital, join a verified network, and grow their order pipeline through the platform.</p>
+      </div>
+      <div class="contact-audience-card">
+        <div class="contact-audience-icon">◈</div>
+        <h3>Enterprise &amp; Procurement</h3>
+        <p>Finance, admin, and marketing teams managing recurring print spend who want structured RFQs, GST-ready POs, and full delivery visibility.</p>
+      </div>
+    </div>
+
+    <div class="contact-cta-block">
+      <p class="contact-cta-label">Reach us directly</p>
+      <a class="contact-email-link" href="mailto:hello@thinq.in">hello@thinq.in</a>
+      <p class="contact-cta-note">We read every message. If you're serious about building India's <div class="logo">Q'nnected Print <span class="in">IN</span><span class="q">Q</span>'frastructure</div><span class="contact-cta-note">so are we.</span></p>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1138,7 +1310,8 @@
 </footer>
 
 <script>
-  // Hamburger menu toggle
+
+
   function toggleMenu() {
     var btn = document.getElementById('hamburgerBtn');
     var menu = document.getElementById('mobileMenu');
