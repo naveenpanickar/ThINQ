@@ -425,6 +425,11 @@
     color: var(--brand-blue);
     border: 1px solid #1a4a5a;
   }
+  .badge-supplies {
+    background: #050505;
+    color: #00e5a0;
+    border: 1px solid #003d2a;
+  }
 
   .how-card-header span {
     font-size: 13px;
@@ -649,6 +654,121 @@
     color: #3a6070;
   }
 
+  /* ── SUPPLIES & SERVICES SECTION ── */
+  .supplies-section {
+    margin-top: 0;
+  }
+
+  .supplies-intro {
+    font-size: 14px;
+    color: #d0d0d0;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .supplies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .supply-card {
+    border: 1px solid #1e1e1e;
+    background: #111;
+    border-radius: 6px;
+    padding: 24px 22px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.04);
+    transition: border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .supply-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00e5a0, transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .supply-card:hover { border-color: #1e3d30; }
+  .supply-card:hover::before { opacity: 1; }
+
+  .supply-card-icon {
+    font-size: 20px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .supply-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .supply-card p {
+    font-size: 12.5px;
+    color: #888;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .supply-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  .supply-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #051a10;
+    color: #00e5a0;
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid #003d20;
+  }
+
+  .eco-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #00e5a0;
+    border: 1px solid #003d20;
+    background: #051a10;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-top: 4px;
+  }
+
+  .supplies-why-block {
+    background: #0a1a12;
+    border-left: 3px solid #00e5a0;
+    padding: 24px 28px;
+    margin-top: 8px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .supplies-why-block p {
+    font-size: 14px;
+    color: #c0d8cc;
+    line-height: 1.8;
+  }
+
+  .supplies-why-block strong { color: #e0f0e8; font-weight: 600; }
+
   /* ── CONTACT SECTION ── */
   .contact-section {
     background: #080808;
@@ -694,7 +814,7 @@
 
   .contact-audience-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-bottom: 56px;
     text-align: left;
@@ -985,6 +1105,7 @@
     <a href="#" onclick="closeMenu()">Home</a>
 <a href="#what" onclick="scrollToSection(event,'what')">What It Is</a>
     <a href="#how" onclick="scrollToSection(event,'how')">How It Works</a>
+    
     <a href="#who" onclick="scrollToSection(event,'who')">Who It's For</a>
     <a href="#contact" onclick="scrollToSection(event,'contact')">Get In Touch</a>
   </nav>
@@ -1011,6 +1132,7 @@
       <li><a href="#">Home</a></li>
 <li><a href="#what">What It Is</a></li>
       <li><a href="#how">How It Works</a></li>
+     
       <li><a href="#who">Who It's For</a></li>
       <li><a href="#contact">Get In Touch</a></li>
     </ul>
@@ -1048,7 +1170,7 @@
 
 <div class="logo">Q'nnected Print <span class="in">IN</span><span class="q">Q</span>'frastructure.</div>
     
-    <p>One platform q'nnecting enterprises and consumers <strong>Print</strong> to a verified partner network — from Requisition to Fulfillment.</p>
+    <p>One platform q'nnecting enterprises and consumers <strong>Print</strong> to a verified partner network — from Requisition to Fulfillment. Now extending into <strong>ink &amp; toner supplies, printer maintenance, and eco-friendly recycling</strong> — everything your office prints with, sorted in one place.</p>
   </section>
 
   <!-- WHY -->
@@ -1057,6 +1179,7 @@
   <div class="why-block">
     <p>The print industry runs on <strong>WhatsApp quotes, paper POs, and word of mouth.</strong> No vendor discovery. No price transparency. No compliance trail.</p>
     <p>ThINQ fixes the entire chain — for the CFO managing <strong>₹50L in annual print spend,</strong> and the student ordering 50 visiting cards before a campus fair.</p>
+    <p>And ThINQ goes further: q'nnecting homes and businesses to <strong>verified suppliers of ink, toner, and compatible cartridges</strong> — plus on-site printer repair and eco-conscious recycling — all at transparent, cost-saving prices.</p>
   </div>
 
   <!-- HOW IT WORKS -->
@@ -1089,6 +1212,19 @@
         <li><span class="step-num">5</span> Pick up or get delivered</li>
       </ul>
     </div>
+    <div class="how-card">
+      <div class="how-card-header">
+        <span class="badge badge-supplies">Supplies</span>
+        <span>Ink, Toner &amp; Care</span>
+      </div>
+      <ul class="step-list">
+        <li><span class="step-num">1</span> Search by printer model or cartridge code</li>
+        <li><span class="step-num">2</span> Choose OEM, compatible, or remanufactured</li>
+        <li><span class="step-num">3</span> Order supplies or book an on-site repair</li>
+        <li><span class="step-num">4</span> Verified provider dispatched to you</li>
+        <li><span class="step-num">5</span> Return empties through our recycling pickup</li>
+      </ul>
+    </div>
   </div>
 
   <!-- WHO IT'S FOR -->
@@ -1097,16 +1233,95 @@
   <div class="who-grid">
     <div class="who-card">
       <h4>Enterprise</h4>
-      <p>Finance, admin &amp; marketing heads with serious print budgets.</p>
+      <p>Finance, admin &amp; marketing heads with serious print budgets — and procurement teams sourcing ink, toner, and supplies at volume.</p>
     </div>
     <div class="who-card">
-      <h4>Consumers</h4>
-      <p>Individuals &amp; small businesses needing fast, trusted print.</p>
+      <h4>Consumers &amp; SMEs</h4>
+      <p>Individuals &amp; small businesses needing fast, trusted print — plus compatible cartridges and on-site printer care at fair prices.</p>
     </div>
     <div class="who-card">
       <h4>Print Partners</h4>
-      <p>Vendors ready to go digital and grow their order pipeline.</p>
+      <p>Vendors ready to go digital and grow their order pipeline — from commercial printers to cartridge suppliers and repair technicians.</p>
     </div>
+  </div>
+
+  <!-- SUPPLIES & SERVICES -->
+  <span class="section-anchor" id="supplies" aria-hidden="true"></span>
+  <div class="section-label" style="margin-top:8px;"></div>
+  <div class="supplies-section">
+
+    <p class="supplies-intro">
+      ThINQ extends beyond print jobs — becoming the q'nnected marketplace for everything your printers consume and need.
+      Verified providers offer <strong>OEM and premium compatible cartridges, on-site maintenance, office consumables, and eco-friendly recycling</strong>,
+      bringing genuine cost-savings to local homes and businesses across Chennai.
+    </p>
+
+    <div class="supplies-grid">
+
+      <div class="supply-card">
+        <div class="supply-card-icon">🖨️</div>
+        <h4>Ink &amp; Toner Procurement</h4>
+        <p>Source OEM and premium compatible cartridges for inkjet, laser, plotter, and copier machines — with full model compatibility verified before dispatch. Remanufactured options available for significant cost savings without compromising yield.</p>
+        <div class="supply-tags">
+          <span class="supply-tag">OEM</span>
+          <span class="supply-tag">Compatible</span>
+          <span class="supply-tag">Remanufactured</span>
+          <span class="supply-tag">Inkjet</span>
+          <span class="supply-tag">Laser</span>
+          <span class="supply-tag">Plotter</span>
+          <span class="supply-tag">Copier</span>
+        </div>
+      </div>
+
+      <div class="supply-card">
+        <div class="supply-card-icon">📦</div>
+        <h4>Office Supplies</h4>
+        <p>Beyond ink — cables, paper products, labels, and thermal POS &amp; debit paper rolls sourced from verified suppliers. Reduce the vendor sprawl of managing multiple stationery accounts.</p>
+        <div class="supply-tags">
+          <span class="supply-tag">Paper</span>
+          <span class="supply-tag">Labels</span>
+          <span class="supply-tag">Thermal Rolls</span>
+          <span class="supply-tag">POS Paper</span>
+          <span class="supply-tag">Cables</span>
+        </div>
+      </div>
+
+      <div class="supply-card">
+        <div class="supply-card-icon">🔧</div>
+        <h4>Printer Maintenance</h4>
+        <p>On-site troubleshooting, routine cleaning, and repairs carried out during regular business hours by vetted technicians. No waiting on slow manufacturer service channels — book through ThINQ and get a confirmed slot.</p>
+        <div class="supply-tags">
+          <span class="supply-tag">On-Site</span>
+          <span class="supply-tag">Troubleshooting</span>
+          <span class="supply-tag">Cleaning</span>
+          <span class="supply-tag">Repairs</span>
+          <span class="supply-tag">Business Hours</span>
+        </div>
+      </div>
+
+      <div class="supply-card">
+        <div class="supply-card-icon">♻️</div>
+        <h4>Recycling Programs</h4>
+        <p>Eco-friendly disposal and collection of used ink and toner cartridges to prevent landfill waste. Schedule a free pickup for your empties — ThINQ partners ensure responsible processing and provide collection certificates for ESG reporting.</p>
+        <div class="supply-tags">
+          <span class="supply-tag">Free Pickup</span>
+          <span class="supply-tag">Eco-Friendly</span>
+          <span class="supply-tag">ESG Ready</span>
+          <span class="supply-tag">Zero Landfill</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="supplies-why-block">
+      <p>
+        Most offices overpay for cartridges by defaulting to OEM retail or relying on unverified grey-market sources.
+        ThINQ q'nnects buyers to <strong>verified compatible and remanufactured cartridge providers</strong> at transparent, competitive pricing —
+        typically <strong>30–60% below OEM retail</strong> — while maintaining quality assurance through provider ratings and yield tracking.
+        The recycling loop closes the circle: fewer empties in landfills, and a sustainable supply chain built into the platform from day one.
+      </p>
+    </div>
+
   </div>
 
   <!-- MARKET OPPORTUNITY -->
@@ -1148,12 +1363,15 @@
       <span class="tag">Offline Procurement</span>
       <span class="tag">Price Discovery Gap</span>
       <span class="tag">Marketplace Opportunity</span>
+      <span class="tag">Cartridge &amp; Supplies Market</span>
+      <span class="tag">Eco Recycling Gap</span>
     </div>
 
     <p class="tier-note">
       The opportunity extends beyond printing itself. ThINQ aims to become the
       <strong>digital inq'frastructure layer</strong> q'nnecting buyers, suppliers,
-      quotations, fulfilment and delivery across a fragmented industry.
+      quotations, fulfilment and delivery across a fragmented industry —
+      including the adjacent <strong>ink, toner, and printer services market</strong> serving the same enterprise and SME customers.
     </p>
   </div>
 
@@ -1186,6 +1404,8 @@
       <span class="tag">SME</span>
       <span class="tag">Procurement</span>
       <span class="tag">Marketing Teams</span>
+      <span class="tag">Supplies Providers</span>
+      <span class="tag">Repair Technicians</span>
     </div>
 
     <p class="tier-note">
@@ -1259,7 +1479,7 @@
     <h3 class="contact-headline">Get In <span class="contact-accent">Touch</span></h3>
     <p class="contact-intro">
       ThINQ is building India's print inq'frastructure — and we're looking for the right people to build it with.
-      Whether you're a <strong>Founding Member</strong>, an <strong>Early Print Partner</strong>, or an <strong>Enterprise</strong> ready to modernise your procurement,
+      Whether you're a <strong>Founding Member</strong>, an <strong>Early Print Partner</strong>, a <strong>Supplies or Cartridge Provider</strong>, a <strong>Printer Repair Technician</strong>, or an <strong>Enterprise</strong> ready to modernise your procurement,
       we'd love to hear from you before we launch.
     </p>
 
@@ -1278,6 +1498,11 @@
         <div class="contact-audience-icon">◈</div>
         <h3>Enterprise &amp; Procurement</h3>
         <p>Finance, admin, and marketing teams managing recurring print spend who want structured RFQs, GST-ready POs, and full delivery visibility.</p>
+      </div>
+      <div class="contact-audience-card">
+        <div class="contact-audience-icon">◈</div>
+        <h3>Supplies &amp; Repair Providers</h3>
+        <p>Cartridge distributors, compatible ink suppliers, remanufacturers, and on-site printer repair technicians ready to reach verified business buyers through a trusted platform.</p>
       </div>
     </div>
 
@@ -1302,7 +1527,7 @@
 
   <div class="footer-center">
    
-    <div class="footer-copy">© 2026 ThINQ. All rights reserved.</div>
+    <div class="footer-copy">© 2026 ThINQ. All rights reserved. · Print · Ink · Toner · Repair · Recycle</div>
   </div>
 
   
