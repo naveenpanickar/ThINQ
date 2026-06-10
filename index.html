@@ -1102,6 +1102,71 @@
     .hamburger, .mobile-menu, .header-nav { display: none; }
     body { background: #fff; color: #000; }
   }
+
+  /* ── WHY THINQ SECTION ── */
+
+  /* Thin rule separating roadmap from Why ThINQ — same visual weight as other dividers */
+  .wt-divider {
+    height: 1px;
+    background: #1a1a1a;
+    margin: 40px 0 0;
+  }
+
+  /* 3×2 desktop · 2×3 tablet · 1×6 mobile — always fills evenly, never orphans */
+  .wt-pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 860px) {
+    .wt-pillar-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .wt-pillar-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Q&A table: question left col, answer right — collapses stacked on mobile */
+  .wt-qa-stack {
+    border: 1px solid #1e1e1e;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #0d0d0d;
+  }
+  .wt-qa-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .wt-qa-q {
+    font-size: 12px;
+    font-weight: 700;
+    color: #d0d0d0;
+    padding: 18px 20px;
+    border-right: 1px solid #1a1a1a;
+    line-height: 1.5;
+    background: #111;
+  }
+  .wt-qa-a {
+    font-size: 12.5px;
+    color: #888;
+    line-height: 1.75;
+    padding: 18px 20px;
+  }
+  .wt-qa-a strong { color: #b8b8b8; font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .wt-qa-row { grid-template-columns: 1fr; }
+    .wt-qa-q {
+      border-right: none;
+      border-bottom: 1px solid #1a1a1a;
+      padding: 12px 16px;
+      background: #0a1620;
+      color: var(--brand-blue);
+      font-size: 11px;
+      letter-spacing: 0.4px;
+    }
+    .wt-qa-a { padding: 14px 16px; }
+  }
 </style>
 </head>
 <body>
@@ -1120,6 +1185,7 @@
     <a href="#how" onclick="scrollToSection(event,'how')">How It Works</a>
     <a href="#who" onclick="scrollToSection(event,'who')">Who It's For</a>
     <a href="#roadmap" onclick="scrollToSection(event,'roadmap')">Roadmap</a>
+    <a href="#why-thinq" onclick="scrollToSection(event,'why-thinq')">Why ThINQ'</a>
     <a href="#contact" onclick="scrollToSection(event,'contact')">Get In Touch</a>
   </nav>
   <div class="mobile-menu-badge">
@@ -1147,6 +1213,7 @@
       <li><a href="#how">How It Works</a></li>
       <li><a href="#who">Who It's For</a></li>
       <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#why-thinq">Why ThINQ'</a></li>
       <li><a href="#contact">Get In Touch</a></li>
     </ul>
   </nav>
@@ -1183,7 +1250,7 @@
 
    <h1>Digital creates awareness.<br><span class="accent">Ink creates presence.</span></h1>
 
-    <p>Customers see your brand online. They <em>experience</em> it through printed, branded, physical touchpoints. <br> <strong>ThINQ'</strong> is the <strong>Q'nnected INQ'frastructure platform </strong> for physical brand presence — one platform to plan, execute, and prove every campaign, across every location, at scale.</p>
+    <p><strong>ThINQ'</strong> is the <strong>Q'nnected INQ'frastructure platform</strong> for physical brand presence — plan, execute, and prove every campaign, across every location, at scale.</p>
   </section>
 
   <!-- BRAND POSITIONING TRIO -->
@@ -1209,8 +1276,8 @@
   <span class="section-anchor" id="why" aria-hidden="true"></span>
   <div class="section-label" style="margin-top:44px;"></div>
   <div class="why-block">
-    <p>Enterprises still run brand campaigns on WhatsApp, email threads, and shared spreadsheets. Vendors miss deadlines. Proof never arrives. No one knows what's actually done.</p>
-    <p>ThINQ' is the <strong>SaaS platform</strong> that fixes this — the <strong>Q'nnected INQ'frastructure</strong> for physical brand presence. Not a print marketplace. Not a vendor directory. The INQ'frastructure layer that connects brand intent to on-ground execution, everywhere.</p>
+    <p>Campaigns run on WhatsApp. Vendors miss deadlines. Nobody knows what's done.</p>
+    <p>ThINQ' fixes this — the <strong>Q'nnected INQ'frastructure</strong> for physical brand presence. Not a print marketplace. The execution layer that connects brand intent to on-ground proof, everywhere.</p>
   </div>
 
   <!-- INK FRAMEWORK -->
@@ -1218,15 +1285,15 @@
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;" class="ink-framework-grid">
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Identity</h4>
-      <p>Business cards. Signage. Store branding. Packaging. Promotional materials. The visible face of your brand in the physical world.</p>
+      <p>Signage, packaging, print, store branding — every physical face of your brand.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Network</h4>
-      <p>Print partners. Installation teams. Branding vendors. Local execution crews. ThINQ' lets brands scale consistently across every location.</p>
+      <p>Print partners, installers, local vendors — coordinated and scaling consistently across every location.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Knowledge</h4>
-      <p>Brand guidelines. Asset repositories. Campaign standards. Compliance controls. Every physical output reflects the intended brand — always.</p>
+      <p>Brand guidelines, asset standards, compliance controls — every output reflects the intended brand, always.</p>
     </div>
   </div>
 
@@ -1266,7 +1333,7 @@
   <!-- PLATFORM (part of What It Is) -->
   <div class="section-label" style="margin-top:40px;">The Platform</div>
   <p class="supplies-intro" style="margin-bottom:20px;">
-    ThINQ' is a <strong>purpose-built Q'nnected INQ'frastructure platform</strong>. Three interfaces, three roles — enterprise admin, vendor partner, location manager — each seeing exactly what they need, nothing they don't.
+    Three interfaces, three roles — enterprise admin, vendor partner, location manager — each seeing exactly what they need, nothing they don't.
   </p>
 
   <div class="supplies-grid">
@@ -1274,7 +1341,7 @@
     <div class="supply-card">
       <div class="supply-card-icon">📊</div>
       <h4>Campaign Dashboard</h4>
-      <p>Every campaign, every location, every vendor — live. One screen to govern the entire operation.</p>
+      <p>Every campaign, location, and vendor — live. One screen. Full control.</p>
       <div class="supply-tags">
         <span class="supply-tag">Campaign Overview</span>
         <span class="supply-tag">Completion %</span>
@@ -1286,7 +1353,7 @@
     <div class="supply-card">
       <div class="supply-card-icon">📋</div>
       <h4>Work Order View</h4>
-      <p>Every location has a work order. Every work order has a vendor, a deadline, and a proof trail — all in one view.</p>
+      <p>Every location. Every vendor. Every deadline. One view — with a full proof trail.</p>
       <div class="supply-tags">
         <span class="supply-tag">Multi-Vendor</span>
         <span class="supply-tag">State Machine</span>
@@ -1298,7 +1365,7 @@
     <div class="supply-card">
       <div class="supply-card-icon">🤝</div>
       <h4>Vendor Portal</h4>
-      <p>Partners see only their orders. Clean, focused, isolated. Upload proof, track SLA, raise issues — without touching anything else.</p>
+      <p>Partners see only their orders. Upload proof, track SLA, raise issues — nothing else in the way.</p>
       <div class="supply-tags">
         <span class="supply-tag">Partner Login</span>
         <span class="supply-tag">Order Feed</span>
@@ -1310,7 +1377,7 @@
     <div class="supply-card">
       <div class="supply-card-icon">🔐</div>
       <h4>Access &amp; Roles</h4>
-      <p>Admin, manager, vendor — three roles, precisely scoped. SSO, invite onboarding, full org isolation. Enterprise-grade from day one.</p>
+      <p>Three roles, precisely scoped. SSO, invite onboarding, full org isolation. Enterprise-grade from day one.</p>
       <div class="supply-tags">
         <span class="supply-tag">RBAC</span>
         <span class="supply-tag">SSO</span>
@@ -1618,7 +1685,7 @@
     </div>
 
     <p class="tier-note">
-      Launch with the five core modules. Prove execution ops value with reference accounts. Revenue: pilot setup fee + enterprise subscription.
+      Five core modules. Two reference accounts. Prove execution value — then scale.
     </p>
   </div>
 
@@ -1655,7 +1722,7 @@
     </div>
 
     <p class="tier-note">
-      No vendor disruption — ThINQ' works with existing enterprise relationships. Preferred vendor support lets enterprises specify their own vendors while ThINQ' orchestrates execution. Optional 5–10% managed campaign fee layers onto SaaS base.
+      Works with existing vendor relationships. Enterprises specify their own partners — ThINQ' orchestrates. Optional 5–10% managed campaign fee on top of SaaS.
     </p>
   </div>
 
@@ -1694,7 +1761,7 @@
     </div>
 
     <p class="tier-note">
-      ThINQ' begins recommending vendors for new cities and categories. Beyond print: store graphics, POS displays, corporate gifting, installation partners. ThINQ' executes campaigns — not print jobs — generating margins across multiple categories.
+      ThINQ' recommends vendors for new cities and categories — store graphics, POS, gifting, installation. Campaign execution across multiple categories, not just print jobs.
     </p>
   </div>
 
@@ -1732,19 +1799,117 @@
     </div>
 
     <p class="tier-note">
-      Consumers buy outcomes — not individual products. A 'Diwali Ready Package' or 'Creator Launch Space' abstracts the entire supply chain behind a single purchase.
+      Consumers buy the outcome, not the process. One order. One deadline. ThINQ' handles the rest.
     </p>
   </div>
 
   <!-- OPPORTUNITY STATEMENT -->
   <div class="why-block" style="margin-top:32px;">
     <p>
-      <strong>From design strategy to local execution, ThINQ' powers the last mile of branding.</strong> Not a print marketplace. Not a vendor directory.
-      The <strong>Q'nnected INQ'frastructure platform</strong> that orchestrates every touchpoint — from brand guidelines to on-ground proof — across distributed locations at scale.
+      <strong>ThINQ' powers the last mile of branding.</strong> Not a print marketplace. Not a vendor directory. The <strong>Q'nnected INQ'frastructure</strong> — from brand guidelines to on-ground proof, at scale.
     </p>
-    <p style="margin-top:12px;font-size:13px;color:#888;font-style:italic;">"Ideas become visible through Ink. ThINQ' makes sure they look the same everywhere."</p>
+    <p style="margin-top:12px;font-size:13px;color:#888;font-style:italic;">"Ideas become visible through Ink. ThINQ' makes sure they look the same — everywhere."</p>
   </div>
 
+
+  <!-- WHY THINQ — lives inside main, same padding/rhythm as every other section -->
+  <span class="section-anchor" id="why-thinq" aria-hidden="true"></span>
+  <div class="wt-divider"></div>
+  <div class="section-label">Why ThINQ' — The Investment Case</div>
+
+  <!-- Thesis -->
+  <div class="why-block" style="margin-bottom:28px;">
+    <p><strong>Not a print marketplace.</strong> A large, fragmented operational problem — brand execution across distributed locations — with near-zero tech penetration. That's the thesis.</p>
+  </div>
+
+  <!-- 6 pillars — 3×2 desktop · 2×3 tablet · 1×6 mobile. Always fills evenly. -->
+  <div class="section-label">Six Reasons Investors Find This Interesting</div>
+  <div class="wt-pillar-grid" style="margin-bottom:28px;">
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">01</span>Large, Fragmented Market</h4>
+      <p>Enterprises still run brand execution on email and spreadsheets. No category leader owns this. Spend is live, processes are broken, tech penetration is near zero.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">02</span>Recurring Operational Spend</h4>
+      <p>Banks, retailers, hospitals, franchise chains — they never stop ordering brand materials. Predictable, repeat demand. Subscription revenue, not one-off transactions.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">03</span>Vendor Data Moat</h4>
+      <p>Every campaign builds SLA history, pricing benchmarks, and capacity data. That intelligence compounds with every transaction — impossible for a late entrant to replicate.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">04</span>Multiple Revenue Levers</h4>
+      <p>SaaS · Setup fee · Transaction % · Supplier membership · Analytics · Managed services. Six revenue paths. No single-source dependency.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">05</span>Expansion Beyond Print</h4>
+      <p>Signage, merchandise, installation, retail fixtures — the same platform, a wider market. No rebuild required.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">06</span>Enterprise Workflow Lock-in</h4>
+      <p>Once SLA tracking, approvals, and proof-of-completion are embedded in daily ops, switching cost is high. Retention from workflow dependency — not just product stickiness.</p>
+    </div>
+  </div>
+
+  <!-- Investor Q&A -->
+  <div class="section-label">Investor Questions — Addressed</div>
+  <div class="wt-qa-stack" style="margin-bottom:28px;">
+    <div class="wt-qa-row">
+      <div class="wt-qa-q">Is print a declining industry?</div>
+      <div class="wt-qa-a">Not about print growth — it's operational efficiency. Enterprises already spend on physical execution. ThINQ' improves how that spend is managed. Efficiency software for stable-spend categories is a proven model.</div>
+    </div>
+    <div class="wt-qa-row">
+      <div class="wt-qa-q">Won't SAP Ariba or Coupa solve this?</div>
+      <div class="wt-qa-a">Generic procurement handles PO workflow — not vendor networks, production routing, or SLA tracking for brand jobs. Vertical SaaS beats horizontal platforms in niche ops categories. Every time.
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Ariba — generic PO</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Coupa — spend mgmt</span>
+          <span class="tag">ThINQ' — brand execution OS</span>
+        </div>
+      </div>
+    </div>
+    <div class="wt-qa-row">
+      <div class="wt-qa-q">What about Printo, Printstop, Gelato, or RRD?</div>
+      <div class="wt-qa-a"><strong>They print. ThINQ' orchestrates.</strong> Printo, Printstop, Gelato, RRD — fulfilment businesses. None manages campaign workflows, multi-vendor coordination, or proof-of-completion for enterprise ops. ThINQ' routes work <em>to</em> them — they're the network, not the competition.
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Printo / Printstop — retail fulfilment</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Gelato / RRD — production network</span>
+          <span class="tag">ThINQ' — campaign &amp; execution OS</span>
+        </div>
+      </div>
+    </div>
+    <div class="wt-qa-row">
+      <div class="wt-qa-q">Can you sign enterprises and suppliers at the same time?</div>
+      <div class="wt-qa-a"><strong>Enterprise demand first. Suppliers second.</strong> Secure accounts, then onboard vendors to serve committed demand. No speculative supply build — the classic cold-start failure, avoided by design.</div>
+    </div>
+    <div class="wt-qa-row" style="border-bottom:none;">
+      <div class="wt-qa-q">We already work with local partners directly — why do we need ThINQ'?</div>
+      <div class="wt-qa-a">
+        <strong>Local partners solve fulfilment. ThINQ' solves operations.</strong>
+        <p style="margin-top:10px;font-size:13px;color:#b8b8b8;line-height:1.7;">
+          Brief on WhatsApp. Confirmation on a call. Proof three days late on email. Nobody knows if Location 47 is done. The campaign closes, and someone builds a spreadsheet to figure out what happened.
+        </p>
+        <p style="margin-top:8px;font-size:13px;color:#b8b8b8;line-height:1.7;">
+          ThINQ' doesn't replace your vendors — <strong>it brings them into a governed workflow</strong>. Same relationships. Structured briefs, real-time status, SLA accountability, and timestamped proof for every location.
+        </p>
+        <p style="margin-top:8px;font-size:13px;color:#b8b8b8;line-height:1.7;">
+          The real cost isn't vendor cost — it's <strong>coordination cost</strong>. ThINQ' eliminates the chase.
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Status on WhatsApp</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Proof over email</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Reporting from memory</span>
+          <span class="tag">ThINQ' — same vendors, governed ops</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="why-block" style="text-align:center;padding:28px 32px;margin-bottom:0;">
+    <p style="font-size:14px;color:#d8e8f0;font-style:italic;">"Governance, visibility, and fulfilment orchestration for <strong>physical brand operations</strong> — at every location, at scale."</p>
+    <p style="margin-top:10px;font-size:12px;color:#555;">Enterprise infrastructure. Not a print business.</p>
+  </div>
 
 </main>
 
@@ -1755,29 +1920,29 @@
     <div class="contact-eyebrow">Phase 0 · Launching 2026</div>
     <h3 class="contact-headline">Get In <span class="contact-accent">Touch</span></h3>
     <p class="contact-intro">
-      ThINQ' is building the Q'nnected INQ'frastructure platform for Physical Brand Presence. We're looking for the right people to build it with — enterprises ready to ditch the spreadsheets, vendors ready to scale, investors who see the network, and builders who want to build something that matters.
+      We're looking for the right people to build this with — enterprises ready to ditch the chaos, vendors ready to scale, investors who see the network, and builders who want to build something that matters.
     </p>
 
     <div class="contact-audience-grid">
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Enterprise Clients</h3>
-        <p>50–500 locations. Brand campaigns running on chaos. ThINQ' replaces the spreadsheet stack with a proper INQ'frastructure platform — and gives you proof it's done.</p>
+        <p>50–500 locations. Campaigns running on chaos. ThINQ' replaces the spreadsheet stack — and gives you proof every location is done.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Vendor Partners</h3>
-        <p>Stop chasing briefs over WhatsApp. Get structured work orders, clear deadlines, and a portal to upload proof — all in one place.</p>
+        <p>No more WhatsApp briefs. Structured work orders, clear deadlines, one portal to upload proof.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Investors &amp; Advisors</h3>
-        <p>The gap between brand intent and on-ground execution is enormous. ThINQ' is the platform that closes it — and scales into the Q'nnected INQ'frastructure for every physical brand operation.</p>
+        <p>Brand intent to on-ground execution — the gap is enormous. ThINQ' closes it, and scales into infrastructure for every physical brand operation.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Builders &amp; Team</h3>
-        <p>Small team. High ownership. Category-defining enterprise SaaS from scratch. If that sounds like your kind of problem — let's talk.</p>
+        <p>Small team. High ownership. Category-defining SaaS from scratch. If that's your kind of problem — let's talk.</p>
       </div>
     </div>
 
