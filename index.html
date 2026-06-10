@@ -1091,6 +1091,11 @@
     .footer-nav { -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 12px; }
   }
 
+  @media (max-width: 768px) {
+    .ink-trio { grid-template-columns: 1fr !important; }
+    .ink-framework-grid { grid-template-columns: 1fr !important; }
+  }
+
   /* ── PRINT STYLES ── */
   @media print {
     header { position: static; }
@@ -1118,7 +1123,7 @@
     <a href="#contact" onclick="scrollToSection(event,'contact')">Get In Touch</a>
   </nav>
   <div class="mobile-menu-badge">
-    Enterprise SaaS · Phase 0
+    Phase 0
     <span>Launching 2026</span>
   </div>
 </div>
@@ -1148,7 +1153,7 @@
 
   <!-- PRE-LAUNCH BADGE (desktop) -->
   <div class="pre-launch-badge">
-    <div class="status">Enterprise SaaS · Phase 0</div>
+    <div class="status">Phase 0</div>
     <div class="location">Launching 2026</div>
   </div>
 
@@ -1176,23 +1181,92 @@
   <section class="hero">
     <div class="section-label">What It Is</div>
 
-    <h1>Physical Brand Presence<br><span class="accent">Q'nnected INQ'frastructure.</span></h1>
-    
-    <p>ThINQ' is a <strong>tech platform for Physical Brand Presence operations</strong>. One platform to run campaigns, assign vendors, track execution, and collect proof — across every location, in real time. No spreadsheets. No WhatsApp chains. No gaps.</p>
+    <h1>Digital creates awareness.<br><span class="accent">Ink creates presence.</span></h1>
+
+    <p>Customers see your brand online. They <em>experience</em> it through printed, branded, physical touchpoints. <strong>ThINQ' is the Q'nnected INQ'frastructure for physical brand presence</strong> — one platform to plan, execute, and prove every campaign, across every location, at scale.</p>
   </section>
+
+  <!-- BRAND POSITIONING TRIO -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;" class="ink-trio">
+    <div class="why-block" style="margin-top:0;text-align:center;padding:28px 20px;">
+      <div style="font-size:36px;font-weight:500;color:#ffffff;letter-spacing:-1px;line-height:1;margin-bottom:6px;">Th</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8b8b8;margin-bottom:8px;">Think</div>
+      <p style="font-size:12.5px;color:#999;margin:0;">Strategy, brand guidelines &amp; campaign planning — in one place.</p>
+    </div>
+    <div class="why-block" style="margin-top:0;text-align:center;padding:28px 20px;border-left-color:var(--brand-blue);">
+      <div style="font-size:36px;font-weight:500;color:var(--brand-blue);letter-spacing:-1px;line-height:1;margin-bottom:6px;">IN</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8b8b8;margin-bottom:8px;">Ink</div>
+      <p style="font-size:12.5px;color:#999;margin:0;">How a brand becomes visible — print, signage, packaging &amp; every physical touchpoint.</p>
+    </div>
+    <div class="why-block" style="margin-top:0;text-align:center;padding:28px 20px;">
+      <div style="font-size:36px;font-weight:500;color:#ffffff;letter-spacing:-1px;line-height:1;margin-bottom:6px;">Q'</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8b8b8;margin-bottom:8px;">Q'nnect</div>
+      <p style="font-size:12.5px;color:#999;margin:0;">Distributed vendors, partners &amp; local teams — coordinated, tracked, proven.</p>
+    </div>
+  </div>
 
   <!-- WHY / THESIS -->
   <span class="section-anchor" id="why" aria-hidden="true"></span>
   <div class="section-label" style="margin-top:44px;"></div>
   <div class="why-block">
     <p>Enterprises still run brand campaigns on WhatsApp, email threads, and shared spreadsheets. Vendors miss deadlines. Proof never arrives. No one knows what's actually done.</p>
-    <p>ThINQ' is the <strong>SaaS platform that fixes this</strong> — purpose-built for distributed brand execution.<strong>ThINQ' builds Q'nnected INQ'frastructure — the operating layer that Q'onnects brand intent to on-ground execution.</strong></p>
+    <p>ThINQ' is the <strong>SaaS platform that fixes this</strong> — the <strong>Q'nnected INQ'frastructure</strong> for physical brand presence. Not a print marketplace. Not a vendor directory. The INQ'frastructure layer that connects brand intent to on-ground execution, everywhere.</p>
+  </div>
+
+  <!-- INK FRAMEWORK -->
+  <div class="section-label" style="margin-top:40px;">INK = Identity · Network · Knowledge</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;" class="ink-framework-grid">
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Identity</h4>
+      <p>Business cards. Signage. Store branding. Packaging. Promotional materials. The visible face of your brand in the physical world.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Network</h4>
+      <p>Print partners. Installation teams. Branding vendors. Local execution crews. ThINQ' lets brands scale consistently across every location.</p>
+    </div>
+    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
+      <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Knowledge</h4>
+      <p>Brand guidelines. Asset repositories. Campaign standards. Compliance controls. Every physical output reflects the intended brand — always.</p>
+    </div>
+  </div>
+
+  <!-- ENTERPRISE PAIN POINTS -->
+  <div class="section-label" style="margin-top:40px;">The Enterprise Problem</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:28px;">
+    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
+      <div style="font-size:18px;margin-bottom:6px;">⚡</div>
+      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Inconsistent Branding</div>
+      <div style="font-size:11.5px;color:#888;">Every branch looks different. No central control.</div>
+    </div>
+    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
+      <div style="font-size:18px;margin-bottom:6px;">🧩</div>
+      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Multiple Local Vendors</div>
+      <div style="font-size:11.5px;color:#888;">Fragmented vendors, no unified workflow.</div>
+    </div>
+    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
+      <div style="font-size:18px;margin-bottom:6px;">📉</div>
+      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">No Spend Visibility</div>
+      <div style="font-size:11.5px;color:#888;">No tracking on what's spent, where, or why.</div>
+    </div>
+    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
+      <div style="font-size:18px;margin-bottom:6px;">🐢</div>
+      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Delayed Rollouts</div>
+      <div style="font-size:11.5px;color:#888;">Campaigns miss launch windows. Deadlines slip.</div>
+    </div>
+    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
+      <div style="font-size:18px;margin-bottom:6px;">🚫</div>
+      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Brand Compliance Gaps</div>
+      <div style="font-size:11.5px;color:#888;">No proof. No audit trail. No accountability.</div>
+    </div>
+  </div>
+  <div class="why-block" style="margin-top:0;margin-bottom:32px;">
+    <p><strong>ThINQ' solves all five.</strong> One platform. Every location. Every vendor. Every proof — verified.</p>
   </div>
 
   <!-- PLATFORM (part of What It Is) -->
   <div class="section-label" style="margin-top:40px;">The Platform</div>
   <p class="supplies-intro" style="margin-bottom:20px;">
-    ThINQ' is a <strong>purpose-built enterprise SaaS platform</strong>. Three interfaces, three roles — enterprise admin, vendor partner, location manager — each seeing exactly what they need, nothing they don't.
+    ThINQ' is a <strong>purpose-built Q'nnected INQ'frastructure platform</strong>. Three interfaces, three roles — enterprise admin, vendor partner, location manager — each seeing exactly what they need, nothing they don't.
   </p>
 
   <div class="supplies-grid">
@@ -1248,10 +1322,55 @@
   </div>
 
   <div class="supplies-why-block" style="margin-top:16px; margin-bottom:0;">
-    <p>
-      Built on <strong>Next.js 14, PostgreSQL, and Redis</strong>. BullMQ handles deadline alerts. AWS S3 stores proof. Clerk powers multi-tenant auth.
-      Vendors stay in the loop via WhatsApp and email — no app required. <strong>Full MVP in 10–14 weeks. Q'nnected INQ'frastructure cost at scale: ₹3–5L/month.</strong>
-    </p>
+    <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00e5a0;margin-bottom:16px;">Tech Stack &amp; Build</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px;">
+
+      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Frontend &amp; API</div>
+        <div style="font-size:12.5px;color:#c0d8cc;">Next.js 14 — App Router, server components, SSR for enterprise dashboards.</div>
+      </div>
+
+      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Database</div>
+        <div style="font-size:12.5px;color:#c0d8cc;">PostgreSQL with row-level security. Redis for caching &amp; session management.</div>
+      </div>
+
+      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Job Queue</div>
+        <div style="font-size:12.5px;color:#c0d8cc;">BullMQ on Redis — deadline alerts, SLA breach triggers, async notification jobs.</div>
+      </div>
+
+      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Proof Storage</div>
+        <div style="font-size:12.5px;color:#c0d8cc;">AWS S3 for photo, PDF &amp; GPS proof uploads. Signed URLs, versioned, audit-safe.</div>
+      </div>
+
+      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Auth &amp; Multi-Tenancy</div>
+        <div style="font-size:12.5px;color:#c0d8cc;">Clerk — SSO, invite-based onboarding, org isolation, RBAC. Enterprise-ready from day one.</div>
+      </div>
+
+      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Vendor Comms</div>
+        <div style="font-size:12.5px;color:#c0d8cc;">WhatsApp &amp; email alerts notify vendors of new orders and deadlines — deeplinks bring them straight into the web portal to act.</div>
+      </div>
+
+    </div>
+
+    <div style="display:flex;gap:24px;flex-wrap:wrap;padding-top:14px;border-top:1px solid #0a2a1a;">
+      <div>
+        <div style="font-size:22px;font-weight:200;color:#ffffff;line-height:1.2;">10–14 weeks</div>
+        <div style="font-size:11px;color:#3a6070;margin-top:3px;">Full MVP build timeline</div>
+      </div>
+      <div>
+        <div style="font-size:22px;font-weight:200;color:#ffffff;line-height:1.2;">₹3–5L/mo</div>
+        <div style="font-size:11px;color:#3a6070;margin-top:3px;">Estimated infra cost at early-scale (2–5 enterprise clients)</div>
+      </div>
+      <div style="margin-left:auto;align-self:center;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;border:1px solid #003d20;background:#051a10;padding:5px 12px;border-radius:2px;">Production-Grade from Week 1</span>
+      </div>
+    </div>
   </div>
 
 
@@ -1334,7 +1453,7 @@
         <li><span class="step-num">▸</span> Three roles: admin, location manager, vendor partner</li>
         <li><span class="step-num">▸</span> SSO-ready — onboard teams in minutes via invite</li>
         <li><span class="step-num">▸</span> Row-level security baked into the database layer</li>
-        <li><span class="step-num">▸</span> WhatsApp + email alerts — vendors stay in the loop</li>
+        <li><span class="step-num">▸</span> WhatsApp + email alerts notify vendors — deeplinks into the portal to act</li>
       </ul>
     </div>
   </div>
@@ -1430,6 +1549,31 @@
       </p>
     </div>
 
+  </div>
+
+  <!-- EVOLUTION NARRATIVE -->
+  <div class="section-label" style="margin-top:40px;">The Evolution</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:32px;">
+    <div class="metric-card" style="border-top:2px solid #1a3a4a;position:relative;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 1</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;">Print Management</div>
+      <div class="metric-label">Order printed materials anywhere.</div>
+    </div>
+    <div class="metric-card" style="border-top:2px solid #1a3050;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 2</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;">Brand Asset Distribution</div>
+      <div class="metric-label">Control and distribute approved brand assets.</div>
+    </div>
+    <div class="metric-card" style="border-top:2px solid var(--brand-blue);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand-blue);margin-bottom:8px;">Stage 3 — Now</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;color:var(--brand-blue);">Physical Brand Presence</div>
+      <div class="metric-label">Ensure every location represents your brand consistently.</div>
+    </div>
+    <div class="metric-card" style="border-top:2px solid #0a3a2a;opacity:0.7;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#444;margin-bottom:8px;">Stage 4 — Horizon</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;color:#555;">Brand Experience Network</div>
+      <div class="metric-label">Manage every physical customer touchpoint through one platform.</div>
+    </div>
   </div>
 
   <!-- ROADMAP SECTION -->
@@ -1600,9 +1744,10 @@
   <!-- OPPORTUNITY STATEMENT -->
   <div class="why-block" style="margin-top:32px;">
     <p>
-      <strong>The Opportunity in One Sentence:</strong>
-      ThINQ' is not a print marketplace. It is the <strong>Q'nnected INQ'frastructure platform that governs physical brand presence execution across distributed partner networks</strong> — print is just where the model gets proven.
+      <strong>From design strategy to local execution, ThINQ' powers the last mile of branding.</strong> Not a print marketplace. Not a vendor directory.
+      The <strong>Q'nnected INQ'frastructure</strong> that orchestrates every touchpoint — from brand guidelines to on-ground proof — across distributed locations at scale.
     </p>
+    <p style="margin-top:12px;font-size:13px;color:#888;font-style:italic;">"Ideas become visible through Ink. ThINQ' makes sure they look the same everywhere."</p>
   </div>
 
 
@@ -1612,7 +1757,7 @@
 <section class="contact-section" id="contact">
   <div class="contact-section-inner">
 
-    <div class="contact-eyebrow">Enterprise SaaS · Launching 2026</div>
+    <div class="contact-eyebrow">Phase 0 · Launching 2026</div>
     <h3 class="contact-headline">Get In <span class="contact-accent">Touch</span></h3>
     <p class="contact-intro">
       ThINQ' is building the Q'nnected INQ'frastructure platform for Physical Brand Presence. We're looking for the right people to build it with — enterprises ready to ditch the spreadsheets, vendors ready to scale, investors who see the network, and builders who want to ship something that matters.
@@ -1622,7 +1767,7 @@
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Enterprise Clients</h3>
-        <p>50–500 locations. Brand campaigns running on chaos. ThINQ' replaces the spreadsheet stack with a proper execution platform — and gives you proof it's done.</p>
+        <p>50–500 locations. Brand campaigns running on chaos. ThINQ' replaces the spreadsheet stack with a proper INQ'frastructure platform — and gives you proof it's done.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
