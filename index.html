@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="description" content="ThINQ' — India's Q'nnected Print INQ'frastructure | Launching Chennai 2026.">
+<meta name="description" content="ThINQ' — Q'nnected INQ'frastructure platform for Physical Brand Presence. Run campaigns, coordinate vendors, and track execution across every location — in one place.">
 <title>ThINQ' — Think · Ink · Q'nnect</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -349,7 +349,7 @@
   .hero { padding: 52px 0 0; }
   .hero h1 {
     font-size: clamp(28px, 3.5vw, 52px);
-    font-weight: 800;
+    font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.5px;
     margin-bottom: 16px;
@@ -381,13 +381,12 @@
 
   /* ── HOW IT WORKS ── */
   .how-grid {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 20px 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 16px;
   }
+
 
   .how-card {
     border: 1px solid #1e1e1e;
@@ -466,10 +465,8 @@
 
   /* ── WHO IT'S FOR ── */
   .who-grid {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 16px 1fr 16px 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-top: 16px;
   }
@@ -1018,13 +1015,16 @@
 
     main { padding: 0 var(--content-pad-tablet) 60px; }
 
-    .how-grid {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-    }
-
     .who-grid {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .how-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .how-card:nth-child(4),
+    .how-card:nth-child(5) {
+      grid-column: auto;
     }
 
     .metrics-grid {
@@ -1067,6 +1067,14 @@
       grid-template-columns: 1fr;
     }
 
+    .how-grid {
+      grid-template-columns: 1fr;
+    }
+    .how-card:nth-child(4),
+    .how-card:nth-child(5) {
+      grid-column: auto;
+    }
+
     .metrics-grid {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
@@ -1103,15 +1111,15 @@
   </div>
   <nav>
     <a href="#" onclick="closeMenu()">Home</a>
-<a href="#what" onclick="scrollToSection(event,'what')">What It Is</a>
+    <a href="#what" onclick="scrollToSection(event,'what')">What It Is</a>
     <a href="#how" onclick="scrollToSection(event,'how')">How It Works</a>
-    
     <a href="#who" onclick="scrollToSection(event,'who')">Who It's For</a>
+    <a href="#roadmap" onclick="scrollToSection(event,'roadmap')">Roadmap</a>
     <a href="#contact" onclick="scrollToSection(event,'contact')">Get In Touch</a>
   </nav>
   <div class="mobile-menu-badge">
-    Pre-Launch · 2026
-    <span>Chennai, India</span>
+    Enterprise SaaS · Phase 0
+    <span>Launching 2026</span>
   </div>
 </div>
 
@@ -1130,18 +1138,18 @@
   <nav aria-label="Main navigation">
     <ul class="header-nav">
       <li><a href="#">Home</a></li>
-<li><a href="#what">What It Is</a></li>
+      <li><a href="#what">What It Is</a></li>
       <li><a href="#how">How It Works</a></li>
-     
       <li><a href="#who">Who It's For</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
       <li><a href="#contact">Get In Touch</a></li>
     </ul>
   </nav>
 
   <!-- PRE-LAUNCH BADGE (desktop) -->
   <div class="pre-launch-badge">
-    <div class="status">Pre-Launch · 2026</div>
-    <div class="location">Chennai, India</div>
+    <div class="status">Enterprise SaaS · Phase 0</div>
+    <div class="location">Launching 2026</div>
   </div>
 
   <!-- HAMBURGER (mobile) -->
@@ -1168,19 +1176,84 @@
   <section class="hero">
     <div class="section-label">What It Is</div>
 
-<div class="logo">Q'nnected Print <span class="in">IN</span><span class="q">Q'</span>frastructure.</div>
+    <h1>Physical Brand Presence<br><span class="accent">Q'nnected INQ'frastructure.</span></h1>
     
-    <p>One platform Q'nnecting Enterprises and Consumers print to Verified Partner Network — from Requisition to Fulfillment. Extended into <strong>ink &amp; toner supplies, printer maintenance, and eco-friendly recycling</strong> — your <strong>Print</strong>, sorted in one place.</p>
+    <p>ThINQ' is a <strong>tech platform for Physical Brand Presence operations</strong>. One platform to run campaigns, assign vendors, track execution, and collect proof — across every location, in real time. No spreadsheets. No WhatsApp chains. No gaps.</p>
   </section>
 
-  <!-- WHY -->
+  <!-- WHY / THESIS -->
   <span class="section-anchor" id="why" aria-hidden="true"></span>
   <div class="section-label" style="margin-top:44px;"></div>
   <div class="why-block">
-    <p>The print industry runs on <strong>WhatsApp quotes, paper POs, and word of mouth.</strong> No vendor discovery. No price transparency. No compliance trail.</p>
-    <p>ThINQ' fixes the entire chain — for the CFO managing <strong>₹50L in annual print spend,</strong> and the student ordering 50 visiting cards before a campus fair.</p>
-    <p>And goes further, Q'nnecting homes and businesses to <strong>verified suppliers of ink, toner, and compatible cartridges</strong> — plus on-site printer repair and eco-conscious recycling — all at transparent, cost-saving prices.</p>
+    <p>Enterprises with <strong>50–500 locations</strong> still run brand campaigns on WhatsApp, email threads, and shared spreadsheets. Vendors miss deadlines. Proof never arrives. No one knows what's actually done.</p>
+    <p>ThINQ' is the <strong>SaaS platform that fixes this</strong> — purpose-built for distributed brand execution. Printo sells print. PrintStop sells procurement. <strong>ThINQ' sells Q'nnected INQ'frastructure — the operating layer that Q'onnects brand intent to on-ground execution.</strong></p>
   </div>
+
+  <!-- PLATFORM (part of What It Is) -->
+  <div class="section-label" style="margin-top:40px;">The Platform</div>
+  <p class="supplies-intro" style="margin-bottom:20px;">
+    ThINQ' is a <strong>purpose-built enterprise SaaS platform</strong>. Three interfaces, three roles — enterprise admin, vendor partner, location manager — each seeing exactly what they need, nothing they don't.
+  </p>
+
+  <div class="supplies-grid">
+
+    <div class="supply-card">
+      <div class="supply-card-icon">📊</div>
+      <h4>Campaign Dashboard</h4>
+      <p>Every campaign, every location, every vendor — live. One screen to govern the entire operation.</p>
+      <div class="supply-tags">
+        <span class="supply-tag">Campaign Overview</span>
+        <span class="supply-tag">Completion %</span>
+        <span class="supply-tag">SLA Alerts</span>
+        <span class="supply-tag">Multi-Campaign</span>
+      </div>
+    </div>
+
+    <div class="supply-card">
+      <div class="supply-card-icon">📋</div>
+      <h4>Work Order View</h4>
+      <p>Every location has a work order. Every work order has a vendor, a deadline, and a proof trail — all in one view.</p>
+      <div class="supply-tags">
+        <span class="supply-tag">Multi-Vendor</span>
+        <span class="supply-tag">State Machine</span>
+        <span class="supply-tag">Deadline Mgmt</span>
+        <span class="supply-tag">Issue Tracking</span>
+      </div>
+    </div>
+
+    <div class="supply-card">
+      <div class="supply-card-icon">🤝</div>
+      <h4>Vendor Portal</h4>
+      <p>Partners see only their orders. Clean, focused, isolated. Upload proof, track SLA, raise issues — without touching anything else.</p>
+      <div class="supply-tags">
+        <span class="supply-tag">Partner Login</span>
+        <span class="supply-tag">Order Feed</span>
+        <span class="supply-tag">Proof Upload</span>
+        <span class="supply-tag">SLA Score</span>
+      </div>
+    </div>
+
+    <div class="supply-card">
+      <div class="supply-card-icon">🔐</div>
+      <h4>Access &amp; Roles</h4>
+      <p>Admin, manager, vendor — three roles, precisely scoped. SSO, invite onboarding, full org isolation. Enterprise-grade from day one.</p>
+      <div class="supply-tags">
+        <span class="supply-tag">RBAC</span>
+        <span class="supply-tag">SSO</span>
+        <span class="supply-tag">Multi-Tenant</span>
+        <span class="supply-tag">Audit Trail</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="supplies-why-block" style="margin-top:16px; margin-bottom:0;">
+    <p>
+      Built on <strong>Next.js 14, PostgreSQL, and Redis</strong>. BullMQ handles deadline alerts. AWS S3 stores proof. Clerk powers multi-tenant auth.
+      Vendors stay in the loop via WhatsApp and email — no app required. <strong>Full MVP in 10–14 weeks. Q'nnected INQ'frastructure cost at scale: ₹3–5L/month.</strong>
+    </p>
+  </div>
+
 
   <!-- HOW IT WORKS -->
   <span class="section-anchor" id="how" aria-hidden="true"></span>
@@ -1188,41 +1261,80 @@
   <div class="how-grid">
     <div class="how-card">
       <div class="how-card-header">
-        <span class="badge badge-b2b">B2B</span>
-        <span>For procurement teams</span>
+        <span class="badge badge-b2b">01</span>
+        <span>Campaign Engine</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">1</span> Post an RFQ with your specs</li>
-        <li><span class="step-num">2</span> Auto-matched to verified vendors</li>
-        <li><span class="step-num">3</span> Compare quotes side by side</li>
-        <li><span class="step-num">4</span> GST-ready PO in one click</li>
-        <li><span class="step-num">5</span> Track delivery in real time</li>
+        <li><span class="step-num">▸</span> Launch a campaign — name, dates, budget, locations</li>
+        <li><span class="step-num">▸</span> Platform auto-generates work orders for every location</li>
+        <li><span class="step-num">▸</span> Attach brand guidelines and specs at campaign level</li>
+        <li><span class="step-num">▸</span> Live completion % across all locations</li>
+        <li><span class="step-num">▸</span> One-click campaign rollup — CSV or PDF export</li>
       </ul>
     </div>
     <div class="how-card">
       <div class="how-card-header">
-        <span class="badge badge-b2c">B2C</span>
-        <span>For everyday orders</span>
+        <span class="badge badge-b2b">02</span>
+        <span>Work Order Engine</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">1</span> Upload your artwork or idea</li>
-        <li><span class="step-num">2</span> Find a partner near you</li>
-        <li><span class="step-num">3</span> Instant pricing, no haggling</li>
-        <li><span class="step-num">4</span> Pay safely online</li>
-        <li><span class="step-num">5</span> Pick up or get delivered</li>
+        <li><span class="step-num">▸</span> Each location gets its own work order — auto-assigned</li>
+        <li><span class="step-num">▸</span> Multiple vendors per order: print, brand, delivery</li>
+        <li><span class="step-num">▸</span> Clear states: Draft → Assigned → In Progress → Done</li>
+        <li><span class="step-num">▸</span> Rejected? Back to vendor with a reason — instantly</li>
+        <li><span class="step-num">▸</span> Deliverable specs and assets attached per order</li>
       </ul>
     </div>
     <div class="how-card">
       <div class="how-card-header">
-        <span class="badge badge-supplies">Supplies</span>
-        <span>Ink, Toner &amp; Care</span>
+        <span class="badge badge-b2c">03</span>
+        <span>Vendor Portal</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">1</span> Search by printer model or cartridge code</li>
-        <li><span class="step-num">2</span> Choose OEM, compatible, or remanufactured</li>
-        <li><span class="step-num">3</span> Order supplies or book an on-site repair</li>
-        <li><span class="step-num">4</span> Verified provider dispatched to you</li>
-        <li><span class="step-num">5</span> Return empties through our recycling pickup</li>
+        <li><span class="step-num">▸</span> Dedicated vendor login — isolated from enterprise data</li>
+        <li><span class="step-num">▸</span> See orders, specs, and deadlines in one clean view</li>
+        <li><span class="step-num">▸</span> Upload proof directly — photo, PDF, receipt</li>
+        <li><span class="step-num">▸</span> Track your own SLA scorecard in real time</li>
+        <li><span class="step-num">▸</span> Raise issues without leaving the portal</li>
+      </ul>
+    </div>
+    <div class="how-card">
+      <div class="how-card-header">
+        <span class="badge badge-b2c">04</span>
+        <span>Proof of Completion</span>
+      </div>
+      <ul class="step-list">
+        <li><span class="step-num">▸</span> Every order needs evidence — photo, PDF, GPS tag</li>
+        <li><span class="step-num">▸</span> Vendor submits. Admin approves or rejects with reason</li>
+        <li><span class="step-num">▸</span> Rejected submissions loop back — no gaps in the trail</li>
+        <li><span class="step-num">▸</span> Full audit log on every submission, every order</li>
+        <li><span class="step-num">▸</span> Compliance-ready export at any point</li>
+      </ul>
+    </div>
+    <div class="how-card">
+      <div class="how-card-header">
+        <span class="badge badge-supplies">05</span>
+        <span>Dashboard &amp; Analytics</span>
+      </div>
+      <ul class="step-list">
+        <li><span class="step-num">▸</span> See every location's completion status instantly</li>
+        <li><span class="step-num">▸</span> Vendor SLA scores — who's on time, who isn't</li>
+        <li><span class="step-num">▸</span> Overdue alerts before deadlines are missed</li>
+        <li><span class="step-num">▸</span> Campaign rollup across all locations at once</li>
+        <li><span class="step-num">▸</span> Export any view — CSV or PDF, one click</li>
+      </ul>
+    </div>
+    <div class="how-card">
+      <div class="how-card-header">
+        <span class="badge badge-supplies">06</span>
+        <span>Auth &amp; Multi-Tenancy</span>
+      </div>
+      <ul class="step-list">
+        <li><span class="step-num">▸</span> Each enterprise is fully isolated — no data bleed</li>
+        <li><span class="step-num">▸</span> Three roles: admin, location manager, vendor partner</li>
+        <li><span class="step-num">▸</span> SSO-ready — onboard teams in minutes via invite</li>
+        <li><span class="step-num">▸</span> Row-level security baked into the database layer</li>
+        <li><span class="step-num">▸</span> WhatsApp + email alerts — vendors stay in the loop</li>
       </ul>
     </div>
   </div>
@@ -1232,82 +1344,80 @@
   <div class="section-label">Who It's For</div>
   <div class="who-grid">
     <div class="who-card">
-      <h4>Enterprise</h4>
-      <p>Finance, admin &amp; marketing heads with serious print budgets — and procurement teams sourcing ink, toner, and supplies at volume.</p>
+      <h4>Retail Chains</h4>
+      <p>Run seasonal campaigns across every store — assign vendors, track execution, collect proof. All in one platform.</p>
     </div>
     <div class="who-card">
-      <h4>Consumers &amp; SMEs</h4>
-      <p>Individuals &amp; small businesses needing fast, trusted print — plus compatible cartridges and on-site printer care at fair prices.</p>
+      <h4>Franchise Networks</h4>
+      <p>Push brand rollouts to every franchise — owned or partner — with built-in vendor coordination and compliance trail.</p>
     </div>
     <div class="who-card">
-      <h4>Print Partners</h4>
-      <p>Vendors ready to go digital and grow their order pipeline — from commercial printers to cartridge suppliers and repair technicians.</p>
+      <h4>Healthcare Groups</h4>
+      <p>Keep signage, branding, and campaign materials consistent across every campus and branch — without the chase.</p>
+    </div>
+    <div class="who-card">
+      <h4>Education Networks</h4>
+      <p>Coordinate events, campaigns, and brand materials across institutions simultaneously — one platform, full visibility.</p>
+    </div>
+    <div class="who-card">
+      <h4>QSR &amp; F&amp;B</h4>
+      <p>Seasonal promos, menu updates, POS material changes — executed across hundreds of outlets, tracked to completion.</p>
+    </div>
+    <div class="who-card">
+      <h4>Creators &amp; Consumers</h4>
+      <p>Buy the outcome, not the process. Wedding Pack, Creator Launch, Event Branding — ThINQ' coordinates execution so you don't have to.</p>
     </div>
   </div>
 
-  <!-- SUPPLIES & SERVICES -->
-  <span class="section-anchor" id="supplies" aria-hidden="true"></span>
-  <div class="section-label" style="margin-top:8px;"></div>
+
+  <!-- B2C EXTENSION -->
+  <span class="section-anchor" id="b2c" aria-hidden="true"></span>
+  <div class="section-label" style="margin-top:8px;">B2C Extension</div>
   <div class="supplies-section">
 
     <p class="supplies-intro">
-      ThINQ' extends beyond print jobs — becoming the Q'nnected marketplace for everything your printers consume and need.
-      Verified providers offer <strong>OEM and premium compatible cartridges, on-site maintenance, office consumables, and eco-friendly recycling</strong>,
-      bringing genuine cost-savings to local homes and businesses across Chennai.
+      The same Q'nnected INQ'frastructure that runs enterprise campaigns powers consumer outcomes too.
+      ThINQ' B2C layer is built on one idea: <strong>buy the result, not the process</strong>. Consumers pick a Space, set a date. ThINQ' routes, assigns, and delivers.
     </p>
 
     <div class="supplies-grid">
 
       <div class="supply-card">
-        <div class="supply-card-icon">🖨️</div>
-        <h4>Ink &amp; Toner Procurement</h4>
-        <p>Source OEM and premium compatible cartridges for inkjet, laser, plotter, and copier machines — with full model compatibility verified before dispatch. Remanufactured options available for significant cost savings without compromising yield.</p>
+        <div class="supply-card-icon">💍</div>
+        <h4>Wedding &amp; Events Space</h4>
+        <p>Invites, signage, backdrops, welcome boards, packaging — every piece for the big day, coordinated through one order with one deadline.</p>
         <div class="supply-tags">
-          <span class="supply-tag">OEM</span>
-          <span class="supply-tag">Compatible</span>
-          <span class="supply-tag">Remanufactured</span>
-          <span class="supply-tag">Inkjet</span>
-          <span class="supply-tag">Laser</span>
-          <span class="supply-tag">Plotter</span>
-          <span class="supply-tag">Copier</span>
+          <span class="supply-tag">Invitations</span>
+          <span class="supply-tag">Signage</span>
+          <span class="supply-tag">Backdrops</span>
+          <span class="supply-tag">Venue Branding</span>
+          <span class="supply-tag">Packaging</span>
         </div>
       </div>
 
       <div class="supply-card">
-        <div class="supply-card-icon">📦</div>
-        <h4>Office Supplies</h4>
-        <p>Beyond ink — cables, paper products, labels, and thermal POS &amp; debit paper rolls sourced from verified suppliers. Reduce the vendor sprawl of managing multiple stationery accounts.</p>
+        <div class="supply-card-icon">🎂</div>
+        <h4>Birthday &amp; Celebration Space</h4>
+        <p>Pick a theme, set a date. Banners, standees, photo prints, merchandise — delivered ready to go. Zero vendor management.</p>
         <div class="supply-tags">
-          <span class="supply-tag">Paper</span>
-          <span class="supply-tag">Labels</span>
-          <span class="supply-tag">Thermal Rolls</span>
-          <span class="supply-tag">POS Paper</span>
-          <span class="supply-tag">Cables</span>
+          <span class="supply-tag">Banners</span>
+          <span class="supply-tag">Standees</span>
+          <span class="supply-tag">Photo Prints</span>
+          <span class="supply-tag">Merchandise</span>
+          <span class="supply-tag">Décor</span>
         </div>
       </div>
 
       <div class="supply-card">
-        <div class="supply-card-icon">🔧</div>
-        <h4>Printer Maintenance</h4>
-        <p>On-site troubleshooting, routine cleaning, and repairs carried out during regular business hours by vetted technicians. No waiting on slow manufacturer service channels — book through ThINQ' and get a confirmed slot.</p>
+        <div class="supply-card-icon">🎬</div>
+        <h4>Creator Launch Space</h4>
+        <p>Merch drops, pop-up kits, collateral, packaging — your physical launch, fully executed through ThINQ' verified partner network.</p>
         <div class="supply-tags">
-          <span class="supply-tag">On-Site</span>
-          <span class="supply-tag">Troubleshooting</span>
-          <span class="supply-tag">Cleaning</span>
-          <span class="supply-tag">Repairs</span>
-          <span class="supply-tag">Business Hours</span>
-        </div>
-      </div>
-
-      <div class="supply-card">
-        <div class="supply-card-icon">♻️</div>
-        <h4>Recycling Programs</h4>
-        <p>Eco-friendly disposal and collection of used ink and toner cartridges to prevent landfill waste. Schedule a free pickup for your empties — ThINQ' partners ensure responsible processing and provide collection certificates for ESG reporting.</p>
-        <div class="supply-tags">
-          <span class="supply-tag">Free Pickup</span>
-          <span class="supply-tag">Eco-Friendly</span>
-          <span class="supply-tag">ESG Ready</span>
-          <span class="supply-tag">Zero Landfill</span>
+          <span class="supply-tag">Merch Drops</span>
+          <span class="supply-tag">Pop-Up Kits</span>
+          <span class="supply-tag">Brand Collateral</span>
+          <span class="supply-tag">Packaging</span>
+          <span class="supply-tag">Stickers &amp; Labels</span>
         </div>
       </div>
 
@@ -1315,201 +1425,226 @@
 
     <div class="supplies-why-block">
       <p>
-        Most offices overpay for cartridges by defaulting to OEM retail or relying on unverified grey-market sources.
-        ThINQ' Q'nnects buyers to <strong>verified compatible and remanufactured cartridge providers</strong> at transparent, competitive pricing —
-        typically <strong>30–60% below OEM retail</strong> — while maintaining quality assurance through provider ratings and yield tracking.
-        The recycling loop closes the circle: fewer empties in landfills, and a sustainable supply chain built into the platform from day one.
+        B2C is the <strong>long-term network dividend</strong> — not the starting point. The same vendor relationships and execution Q'nnected INQ'frastructure built for enterprise powers consumer spaces at Phase 4–5.
+        When the network is dense enough, <strong>a 'Diwali Ready Package' gets bought the way a flight does</strong> — outcome first, logistics invisible.
       </p>
     </div>
 
   </div>
 
-  <!-- MARKET OPPORTUNITY -->
-  <span class="section-anchor" id="market" aria-hidden="true"></span>
- <br>
+  <!-- ROADMAP SECTION -->
+  <span class="section-anchor" id="roadmap" aria-hidden="true"></span>
+  <br>
+
+  <div class="market-header">
+    <div>
+      <div class="section-label">Roadmap &amp; Revenue</div>
+    </div>
+    <div class="market-subtitle">5-Phase Expansion</div>
+  </div>
 
   <p class="market-intro">
-    India's print ecosystem remains highly fragmented despite serving every major industry —
-    manufacturing, retail, education, healthcare, IT services, events and packaging.
-    While ordering experiences have digitised across most categories, print procurement continues
-    to rely heavily on phone calls, WhatsApp messages, spreadsheets and local relationships.<br><br>
-    ThINQ' addresses this gap through a Q'nnected marketplace model.
+    ThINQ' starts as an <strong>Enterprise Brand Execution Platform</strong> and scales into the Q'nnected INQ'frastructure layer for physical brand presence — across every category, every city, every format.
   </p>
 
-  <!-- INDIA OPPORTUNITY -->
-  <div class="market-tier">
-    <div class="tier-heading">
-      <div class="tier-dot"></div>
-      <h3>India — Structural Opportunity</h3>
-    </div>
-
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-value">₹50K+ Cr</div>
-        <div class="metric-label">Estimated commercial print &amp; related services opportunity</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">90%+</div>
-        <div class="metric-label">Supplier ecosystem driven by MSMEs and local operators</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">Low Digital</div>
-        <div class="metric-label">Procurement, discovery and vendor comparison remain largely offline</div>
-      </div>
-    </div>
-
-    <div class="tags-row">
-      <span class="tag">Fragmented Supply</span>
-      <span class="tag">Offline Procurement</span>
-      <span class="tag">Price Discovery Gap</span>
-      <span class="tag">Marketplace Opportunity</span>
-      <span class="tag">Cartridge &amp; Supplies Market</span>
-      <span class="tag">Eco Recycling Gap</span>
-    </div>
-
-    <p class="tier-note">
-      The opportunity extends beyond printing itself. ThINQ' aims to become the
-      <strong>digital INQ'frastructure layer</strong> Q'nnecting buyers, suppliers,
-      quotations, fulfilment and delivery across a fragmented industry —
-      including the adjacent <strong>ink, toner, and printer services market</strong> serving the same enterprise and SME customers.
-    </p>
-  </div>
-
-  <div class="narrows">▼ Focuses On ▼</div>
-
-  <!-- B2B FIRST -->
-  <div class="market-tier">
-    <div class="tier-heading">
-      <div class="tier-dot"></div>
-      <h3>Primary Launch Segment — B2B Procurement</h3>
-    </div>
-
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-value">Admin Teams</div>
-        <div class="metric-label">Procurement, facilities and marketing stakeholders</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">Multi-Vendor</div>
-        <div class="metric-label">Frequent RFQs across multiple print categories</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">Recurring Spend</div>
-        <div class="metric-label">Higher order values and repeat purchasing behaviour</div>
-      </div>
-    </div>
-
-    <div class="tags-row">
-      <span class="tag">Enterprise</span>
-      <span class="tag">SME</span>
-      <span class="tag">Procurement</span>
-      <span class="tag">Marketing Teams</span>
-      <span class="tag">Supplies Providers</span>
-      <span class="tag">Repair Technicians</span>
-    </div>
-
-    <p class="tier-note">
-      B2B provides the fastest route to transaction volume because organisations
-      purchase print repeatedly and require supplier comparison, compliance,
-      GST documentation and delivery visibility.
-    </p>
-  </div>
-
-  <div class="narrows">▼ Launches In ▼</div>
-
-  <!-- CHENNAI -->
+  <!-- PHASE 0 -->
   <div class="market-tier launch-tier">
     <div class="tier-heading">
       <div class="tier-dot"></div>
-      <h3>Chennai — Phase 1 Launch Market</h3>
-      <span class="tier-phase">Q4 2026</span>
+      <h3>Phase 0 — Enterprise SaaS Launch</h3>
+      <span class="tier-phase">0–6 Months</span>
     </div>
 
     <div class="metrics-grid">
       <div class="metric-card">
-        <div class="metric-value">100+</div>
-        <div class="metric-label">Verified supplier onboarding target</div>
+        <div class="metric-value">₹50k–2L</div>
+        <div class="metric-label">Pilot setup fee per enterprise account</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">25+</div>
-        <div class="metric-label">Anchor enterprise and SME customers target</div>
+        <div class="metric-value">₹50k–2L</div>
+        <div class="metric-label">Monthly enterprise subscription</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">1 City</div>
-        <div class="metric-label">Controlled launch before regional expansion</div>
+        <div class="metric-value">2 Pilots</div>
+        <div class="metric-label">Target enterprise pilots at Month 6</div>
       </div>
     </div>
 
     <div class="tags-row">
-      <span class="tag">Supplier Density</span>
-      <span class="tag">Manufacturing Hub</span>
-      <span class="tag">IT Corridor</span>
-      <span class="tag">Expansion Ready</span>
+      <span class="tag">Campaign Engine</span>
+      <span class="tag">Work Order Engine</span>
+      <span class="tag">Vendor Portal</span>
+      <span class="tag">Proof of Completion</span>
+      <span class="tag">Dashboard &amp; Analytics</span>
     </div>
 
     <p class="tier-note">
-      Chennai offers an ideal launch environment with strong industrial demand,
-      a dense supplier ecosystem, mature logistics INQ'frastructure and access
-      to enterprise procurement teams. Success here creates the 'bluːprint for
-      expansion into Bengaluru, Hyderabad and other South Indian markets.
+      Launch with the five core modules. Prove execution ops value with reference accounts. Revenue: pilot setup fee + enterprise subscription.
     </p>
   </div>
 
-  <!-- 2027 EXPANSION -->
+  <div class="narrows">▼ Grows Into ▼</div>
+
+  <!-- PHASE 1 -->
+  <div class="market-tier">
+    <div class="tier-heading">
+      <div class="tier-dot"></div>
+      <h3>Phase 1 — Enterprise Moat</h3>
+      <span class="tier-phase">6–18 Months</span>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">5–8</div>
+        <div class="metric-label">Enterprise accounts by Month 12</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">₹5–12L</div>
+        <div class="metric-label">MRR target by Month 12</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">SLA Intel</div>
+        <div class="metric-label">Vendor scorecards, turnaround &amp; completion rates live</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag">Vendor Intelligence</span>
+      <span class="tag">Preferred Vendor Support</span>
+      <span class="tag">SLA Scorecard</span>
+      <span class="tag">Managed Campaign Fee</span>
+    </div>
+
+    <p class="tier-note">
+      No vendor disruption — ThINQ' works with existing enterprise relationships. Preferred vendor support lets enterprises specify their own vendors while ThINQ' orchestrates execution. Optional 5–10% managed campaign fee layers onto SaaS base.
+    </p>
+  </div>
+
+  <div class="narrows">▼ Expands To ▼</div>
+
+  <!-- PHASE 2-3 -->
+  <div class="market-tier">
+    <div class="tier-heading">
+      <div class="tier-dot"></div>
+      <h3>Phase 2–3 — Network Fulfillment &amp; Full Brand Presence</h3>
+      <span class="tier-phase">18 Months–5 Years</span>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">20+</div>
+        <div class="metric-label">Enterprise accounts target by Month 24</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">₹30L+</div>
+        <div class="metric-label">MRR target at Month 24</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Multi-Cat</div>
+        <div class="metric-label">Signage, vehicle branding, merchandise, installation</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag">Vendor Discovery</span>
+      <span class="tag">Partner Referral Margin</span>
+      <span class="tag">Store Graphics</span>
+      <span class="tag">Vehicle Branding</span>
+      <span class="tag">Merchandise</span>
+      <span class="tag">Exhibition Setups</span>
+    </div>
+
+    <p class="tier-note">
+      ThINQ' begins recommending vendors for new cities and categories. Beyond print: store graphics, POS displays, corporate gifting, installation partners. ThINQ' executes campaigns — not print jobs — generating margins across multiple categories.
+    </p>
+  </div>
+
+  <div class="narrows">▼ Evolves ▼</div>
+
+  <!-- PHASE 4-5 -->
+  <div class="market-tier launch-tier">
+    <div class="tier-heading">
+      <div class="tier-dot"></div>
+      <h3>Phase 4–5 — Q'nnected INQ'frastructure Layer + B2C</h3>
+      <span class="tier-phase">5–10 Years</span>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">OS Layer</div>
+        <div class="metric-label">The Q'nnected INQ'frastructure layer for physical brand presence</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Auto-Route</div>
+        <div class="metric-label">Auto vendor selection, routing, tracking &amp; evidence</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">B2C Stream</div>
+        <div class="metric-label">Wedding, Birthday, Creator Launch outcome packages</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag">Network OS</span>
+      <span class="tag">Auto-Routing</span>
+      <span class="tag">B2C Streams</span>
+      <span class="tag">SaaS + Marketplace</span>
+      <span class="tag">Outcome Packages</span>
+    </div>
+
+    <p class="tier-note">
+      Consumers buy outcomes — not individual products. A 'Diwali Ready Package' or 'Creator Launch Space' abstracts the entire supply chain behind a single purchase.
+    </p>
+  </div>
+
+  <!-- OPPORTUNITY STATEMENT -->
   <div class="why-block" style="margin-top:32px;">
     <p>
-      <strong>2027 Growth Objective:</strong>
-      Expand across Chennai, Bengaluru and Hyderabad, targeting
-      <strong>500+ suppliers, 250+ business buyers and ₹25 Cr annual GMV run-rate</strong>
-      while establishing ThINQ' as South India's leading print procurement marketplace.
+      <strong>The Opportunity in One Sentence:</strong>
+      ThINQ' is not a print marketplace. It is the <strong>Q'nnected INQ'frastructure platform that governs physical brand presence execution across distributed partner networks</strong> — print is just where the model gets proven.
     </p>
   </div>
 
 
 </main>
 
-
-
-
 <!-- CONTACT SECTION -->
 <section class="contact-section" id="contact">
   <div class="contact-section-inner">
 
-    <div class="contact-eyebrow">Pre-Launch · Chennai 2026</div>
+    <div class="contact-eyebrow">Enterprise SaaS · Launching 2026</div>
     <h3 class="contact-headline">Get In <span class="contact-accent">Touch</span></h3>
     <p class="contact-intro">
-      ThINQ' is building India's print INQ'frastructure — and we're looking for the right people to build it with.
-      Whether you're a <strong>Founding Member</strong>, an <strong>Early Print Partner</strong>, a <strong>Supplies or Cartridge Provider</strong>, a <strong>Printer Repair Technician</strong>, or an <strong>Enterprise</strong> ready to modernise your procurement,
-      we'd love to hear from you before we launch.
+      ThINQ' is building the Q'nnected INQ'frastructure platform for Physical Brand Presence. We're looking for the right people to build it with — enterprises ready to ditch the spreadsheets, vendors ready to scale, investors who see the network, and builders who want to ship something that matters.
     </p>
 
     <div class="contact-audience-grid">
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
-        <h3>Founding Members</h3>
-        <p>Individuals and small businesses who want to be among the first to experience ThINQ' in Chennai. Shape the product before it goes live.</p>
+        <h3>Enterprise Clients</h3>
+        <p>50–500 locations. Brand campaigns running on chaos. ThINQ' replaces the spreadsheet stack with a proper execution platform — and gives you proof it's done.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
-        <h3>Early Print Partners</h3>
-        <p>Print vendors and service providers ready to go digital, join a verified network, and grow their order pipeline through the platform.</p>
+        <h3>Vendor Partners</h3>
+        <p>Stop chasing briefs over WhatsApp. Get structured work orders, clear deadlines, and a portal to upload proof — all in one place.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
-        <h3>Enterprise &amp; Procurement</h3>
-        <p>Finance, admin, and marketing teams managing recurring print spend who want structured RFQs, GST-ready POs, and full delivery visibility.</p>
+        <h3>Investors &amp; Advisors</h3>
+        <p>The gap between brand intent and on-ground execution is enormous. ThINQ' is the platform that closes it — and scales into the Q'nnected INQ'frastructure layer for every physical brand operation.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
-        <h3>Supplies &amp; Repair Providers</h3>
-        <p>Cartridge distributors, compatible ink suppliers, remanufacturers, and on-site printer repair technicians ready to reach verified business buyers through a trusted platform.</p>
+        <h3>Builders &amp; Team</h3>
+        <p>Small team. High ownership. Category-defining enterprise SaaS from scratch. If that sounds like your kind of problem — let's talk.</p>
       </div>
     </div>
 
     <div class="contact-cta-block">
       <p class="contact-cta-label">Reach us directly</p>
       <a class="contact-email-link" href="mailto:hello@thinq.ink">hello@thinq.ink</a>
-      <p class="contact-cta-note">We read every message. If you're serious about building India's <div class="logo">Q'nnected Print <span class="in">IN</span><span class="q">Q'</span>frastructure.</div><span class="contact-cta-note">so are we.</span></p>
+      <p class="contact-cta-note">We read every message. If you're serious about this — so are we.</p>
     </div>
 
   </div>
