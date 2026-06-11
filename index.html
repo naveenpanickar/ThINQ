@@ -1167,6 +1167,156 @@
     }
     .wt-qa-a { padding: 14px 16px; }
   }
+
+  /* ── COLLAPSIBLE SECTIONS ── */
+  .collapsible-section {
+    margin-top: 40px;
+    border: 1px solid #1e1e1e;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #0d0d0d;
+  }
+
+  .collapsible-section + .collapsible-section {
+    margin-top: 16px;
+  }
+
+  .collapsible-toggle {
+    width: 100%;
+    background: #111;
+    border: none;
+    cursor: pointer;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease;
+    position: relative;
+  }
+
+  .collapsible-toggle:hover {
+    background: #161616;
+  }
+
+  .collapsible-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .collapsible-toggle-number {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--brand-blue);
+    min-width: 24px;
+    opacity: 0.6;
+  }
+
+  .collapsible-toggle-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+  }
+
+  .collapsible-toggle-meta {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    margin-left: 4px;
+  }
+
+  .collapsible-toggle-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .collapsible-status {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #444;
+    transition: color 0.2s;
+  }
+
+  .collapsible-section.open .collapsible-status {
+    color: var(--brand-blue);
+  }
+
+  .collapsible-chevron {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, border-color 0.2s, background 0.2s;
+    background: #0a0a0a;
+  }
+
+  .collapsible-chevron svg {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .collapsible-section.open .collapsible-chevron {
+    border-color: var(--brand-blue);
+    background: #041820;
+  }
+
+  .collapsible-section.open .collapsible-chevron svg {
+    transform: rotate(180deg);
+  }
+
+  .collapsible-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .collapsible-section.open .collapsible-body {
+    max-height: 9999px;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .collapsible-body-inner {
+    padding: 24px 24px 28px;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  /* Remove top margin from first section-label inside collapsible */
+  .collapsible-body-inner > .section-label:first-child,
+  .collapsible-body-inner > [class*="section-label"]:first-child {
+    margin-top: 0;
+  }
+
+  /* Hero section stays uncollapsed — just tighten spacing */
+  .hero { padding: 52px 0 0; }
+
+  /* Thin accent line on left of open section */
+  .collapsible-section.open {
+    border-color: #1e3a4a;
+    box-shadow: 0 0 0 1px rgba(0,191,255,0.06);
+  }
+
+  @media (max-width: 480px) {
+    .collapsible-toggle { padding: 14px 16px; }
+    .collapsible-body-inner { padding: 16px 16px 20px; }
+    .collapsible-toggle-meta { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -1280,8 +1430,32 @@
     <p>ThINQ' fixes this — the <strong>Q'nnected INQ'frastructure</strong> for physical brand presence. Not a print marketplace. The execution layer that connects brand intent to on-ground proof, everywhere.</p>
   </div>
 
+  <!-- COLLAPSE CONTROLS -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:40px;margin-bottom:4px;">
+    <span style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444;">Sections</span>
+    <div style="display:flex;gap:8px;">
+      <button onclick="expandAll()" style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:none;border:1px solid #2a2a2a;color:#666;padding:5px 12px;border-radius:2px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='#00bfff';this.style.color='#00bfff'" onmouseout="this.style.borderColor='#2a2a2a';this.style.color='#666'">Expand All</button>
+      <button onclick="collapseAll()" style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:none;border:1px solid #2a2a2a;color:#666;padding:5px 12px;border-radius:2px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='#00bfff';this.style.color='#00bfff'" onmouseout="this.style.borderColor='#2a2a2a';this.style.color='#666'">Collapse All</button>
+    </div>
+  </div>
+
+  <!-- COLLAPSIBLE: PLATFORM DETAIL -->
+  <div class="collapsible-section open" id="cs-platform">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-platform')" aria-expanded="true">
+      <div class="collapsible-toggle-left">
+        <span class="collapsible-toggle-number">01</span>
+        <span class="collapsible-toggle-title">Platform Detail <span class="collapsible-toggle-meta">— INK Framework, Problem &amp; Modules</span></span>
+      </div>
+      <div class="collapsible-toggle-right">
+        <span class="collapsible-status">Expanded</span>
+        <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="#00bfff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </button>
+    <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+
   <!-- INK FRAMEWORK -->
-  <div class="section-label" style="margin-top:40px;">INK = Identity·Network·Knowledge</div>
+  <div class="section-label" style="margin-top:0;">INK = Identity·Network·Knowledge</div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;" class="ink-framework-grid">
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Identity</h4>
@@ -1436,10 +1610,28 @@
     </div>
   </div>
 
+    </div><!-- /collapsible-body-inner -->
+    </div><!-- /collapsible-body -->
+  </div><!-- /cs-platform -->
+
+  <!-- COLLAPSIBLE: HOW IT WORKS -->
+  <div class="collapsible-section open" id="cs-how">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-how')" aria-expanded="true">
+      <div class="collapsible-toggle-left">
+        <span class="collapsible-toggle-number">02</span>
+        <span class="collapsible-toggle-title">How It Works <span class="collapsible-toggle-meta">— 6 Core Modules</span></span>
+      </div>
+      <div class="collapsible-toggle-right">
+        <span class="collapsible-status">Expanded</span>
+        <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="#00bfff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </button>
+    <div class="collapsible-body">
+    <div class="collapsible-body-inner">
 
   <!-- HOW IT WORKS -->
   <span class="section-anchor" id="how" aria-hidden="true"></span>
-  <div class="section-label">How It Works</div>
+  <div class="section-label" style="margin-top:0;">How It Works</div>
   <div class="how-grid">
     <div class="how-card">
       <div class="how-card-header">
@@ -1521,9 +1713,28 @@
     </div>
   </div>
 
+    </div><!-- /collapsible-body-inner -->
+    </div><!-- /collapsible-body -->
+  </div><!-- /cs-how -->
+
+  <!-- COLLAPSIBLE: WHO IT'S FOR -->
+  <div class="collapsible-section open" id="cs-who">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-who')" aria-expanded="true">
+      <div class="collapsible-toggle-left">
+        <span class="collapsible-toggle-number">03</span>
+        <span class="collapsible-toggle-title">Who It's For <span class="collapsible-toggle-meta">— Target Segments &amp; B2C Extension</span></span>
+      </div>
+      <div class="collapsible-toggle-right">
+        <span class="collapsible-status">Expanded</span>
+        <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="#00bfff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </button>
+    <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+
   <!-- WHO IT'S FOR -->
   <span class="section-anchor" id="who" aria-hidden="true"></span>
-  <div class="section-label">Who It's For</div>
+  <div class="section-label" style="margin-top:0;">Who It's For</div>
   <div class="who-grid">
     <div class="who-card">
       <h4>Retail Chains</h4>
@@ -1613,8 +1824,27 @@
 
   </div>
 
+    </div><!-- /collapsible-body-inner -->
+    </div><!-- /collapsible-body -->
+  </div><!-- /cs-who -->
+
+  <!-- COLLAPSIBLE: ROADMAP & REVENUE -->
+  <div class="collapsible-section open" id="cs-roadmap">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-roadmap')" aria-expanded="true">
+      <div class="collapsible-toggle-left">
+        <span class="collapsible-toggle-number">04</span>
+        <span class="collapsible-toggle-title">Roadmap &amp; Revenue <span class="collapsible-toggle-meta">— 5-Phase Expansion</span></span>
+      </div>
+      <div class="collapsible-toggle-right">
+        <span class="collapsible-status">Expanded</span>
+        <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="#00bfff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </button>
+    <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+
   <!-- EVOLUTION NARRATIVE -->
-  <div class="section-label" style="margin-top:40px;">The Evolution</div>
+  <div class="section-label" style="margin-top:0;">The Evolution</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:32px;">
     <div class="metric-card" style="border-top:2px solid #1a3a4a;position:relative;">
       <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 1</div>
@@ -1811,11 +2041,28 @@
     <p style="margin-top:12px;font-size:13px;color:#888;font-style:italic;">"Ideas become visible through Ink. ThINQ' makes sure they look the same — everywhere."</p>
   </div>
 
+    </div><!-- /collapsible-body-inner -->
+    </div><!-- /collapsible-body -->
+  </div><!-- /cs-roadmap -->
 
-  <!-- WHY THINQ — lives inside main, same padding/rhythm as every other section -->
+  <!-- COLLAPSIBLE: WHY THINQ (INVESTOR CASE) -->
+  <div class="collapsible-section open" id="cs-why">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-why')" aria-expanded="true">
+      <div class="collapsible-toggle-left">
+        <span class="collapsible-toggle-number">05</span>
+        <span class="collapsible-toggle-title">Why ThINQ' <span class="collapsible-toggle-meta">— The Investment Case</span></span>
+      </div>
+      <div class="collapsible-toggle-right">
+        <span class="collapsible-status">Expanded</span>
+        <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="#00bfff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </button>
+    <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+
+  <!-- WHY THINQ -->
   <span class="section-anchor" id="why-thinq" aria-hidden="true"></span>
-  <div class="wt-divider"></div>
-  <div class="section-label">Why ThINQ' — The Investment Case</div>
+  <div class="section-label" style="margin-top:0;">Why ThINQ' — The Investment Case</div>
 
   <!-- Thesis -->
   <div class="why-block" style="margin-bottom:28px;">
@@ -1911,6 +2158,10 @@
     <p style="margin-top:10px;font-size:12px;color:#555;">Enterprise infrastructure. Not a print business.</p>
   </div>
 
+    </div><!-- /collapsible-body-inner -->
+    </div><!-- /collapsible-body -->
+  </div><!-- /cs-why -->
+
 </main>
 
 <!-- CONTACT SECTION -->
@@ -1975,6 +2226,44 @@
 </footer>
 
 <script>
+
+  /* ── COLLAPSIBLE SECTIONS ── */
+  function toggleSection(id) {
+    var section = document.getElementById(id);
+    var btn = section.querySelector('.collapsible-toggle');
+    var status = section.querySelector('.collapsible-status');
+    var isOpen = section.classList.contains('open');
+
+    if (isOpen) {
+      section.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      if (status) status.textContent = 'Collapsed';
+    } else {
+      section.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      if (status) status.textContent = 'Expanded';
+    }
+  }
+
+  function expandAll() {
+    document.querySelectorAll('.collapsible-section').forEach(function(s) {
+      s.classList.add('open');
+      var btn = s.querySelector('.collapsible-toggle');
+      var status = s.querySelector('.collapsible-status');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (status) status.textContent = 'Expanded';
+    });
+  }
+
+  function collapseAll() {
+    document.querySelectorAll('.collapsible-section').forEach(function(s) {
+      s.classList.remove('open');
+      var btn = s.querySelector('.collapsible-toggle');
+      var status = s.querySelector('.collapsible-status');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      if (status) status.textContent = 'Collapsed';
+    });
+  }
 
 
   function toggleMenu() {
