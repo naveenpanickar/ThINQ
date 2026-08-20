@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="description" content="ThINQ' — Q'nnected INQ'frastructure platform for Physical Brand Presence. Run campaigns, coordinate vendors, and track execution across every location — in one place.">
-<title>ThINQ' — Think · Ink · Q'nnect</title>
+<meta name="description" content="ThINQ' — the Physical Brand Production &amp; Execution Exchange. Tell us what you need made. We turn it into a production spec, match it to the right capacity, and execute — anywhere.">
+<title>ThINQ' — Physical Brand Production &amp; Execution Exchange</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -766,6 +766,176 @@
 
   .supplies-why-block strong { color: #e0f0e8; font-weight: 600; }
 
+  /* ── PLATFORM MOCK-SCREENS ── */
+  .mockscreens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .mockscreen-card {
+    background: #0b0b0b;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.03);
+  }
+
+  .mockscreen-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 12px;
+    background: #101010;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .mockscreen-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #2a2a2a;
+  }
+
+  .mockscreen-role {
+    margin-left: 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6b6b6b;
+  }
+
+  .mockscreen-body {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    min-height: 190px;
+  }
+
+  .mockscreen-nav {
+    background: #0e0e0e;
+    border-right: 1px solid #191919;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mockscreen-nav-item {
+    width: 22px; height: 22px;
+    border-radius: 5px;
+    background: #181818;
+    border: 1px solid #232323;
+  }
+
+  .mockscreen-nav-item.active {
+    background: rgba(0,229,160,0.12);
+    border-color: #00e5a0;
+  }
+
+  .mockscreen-main {
+    padding: 14px 16px;
+  }
+
+  .mockscreen-heading {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-bottom: 3px;
+  }
+
+  .mockscreen-sub {
+    font-size: 10px;
+    color: #6b6b6b;
+    margin-bottom: 12px;
+  }
+
+  .mockscreen-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .mockscreen-stat {
+    background: #111;
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    padding: 7px 8px;
+  }
+
+  .mockscreen-stat-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00e5a0;
+  }
+
+  .mockscreen-stat-label {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .mockscreen-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mockscreen-row-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #101010;
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+    padding: 6px 8px;
+  }
+
+  .mockscreen-row-bar {
+    height: 5px;
+    border-radius: 3px;
+    background: #1c1c1c;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mockscreen-row-bar::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: var(--fill, 60%);
+    background: linear-gradient(90deg, #00bfff, #00e5a0);
+    border-radius: 3px;
+  }
+
+  .mockscreen-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #00e5a0;
+    background: #051a10;
+    border: 1px solid #003d20;
+    border-radius: 2px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+
+  .mockscreen-caption {
+    padding: 10px 16px;
+    border-top: 1px solid #191919;
+    font-size: 12px;
+    color: #a8bcb2;
+    line-height: 1.6;
+  }
+
+  .mockscreen-caption strong { color: #e0f0e8; }
+
   /* ── CONTACT SECTION ── */
   .contact-section {
     background: #080808;
@@ -1398,27 +1568,46 @@
   <section class="hero">
     <div class="section-label">What It Is</div>
 
-   <h1>Digital creates awareness.<br><span class="accent">Ink creates presence.</span></h1>
+   <h1>ThINQ' powers the last mile of branding.<br><span class="accent">Not a catalogue. Not a directory. A live capacity exchange.</span></h1>
 
-    <p><strong>ThINQ'</strong> is the <strong>Q'nnected INQ'frastructure platform</strong> for physical brand presence — plan, execute, and prove every campaign, across every location, at scale.</p>
+    <p><strong>Ideas become visible through Ink.</strong> ThINQ' finds who can make them real — everywhere. From requirement to on-ground proof, at scale: tell us what you need made, we turn it into a production specification, match it to the right capacity, and execute. From packaging and labels to signage, displays, print and physical advertising — one requirement, one execution network.</p>
   </section>
+
+  <!-- HERO INTERACTION -->
+  <div class="why-block" style="margin-top:24px;padding:26px 28px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00bfff;margin-bottom:10px;">What do you need produced?</div>
+    <div style="font-size:13.5px;color:#888;margin-bottom:16px;">Describe your requirement, upload artwork or a specification, or start from a category.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
+      <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a0a0a;background:#00bfff;padding:9px 16px;border-radius:2px;">Upload Brief</span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#00bfff;border:1px solid #1a3a4a;background:transparent;padding:9px 16px;border-radius:2px;">Upload Artwork</span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#00bfff;border:1px solid #1a3a4a;background:transparent;padding:9px 16px;border-radius:2px;">Start from Category</span>
+    </div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:10px;">Example requirements</div>
+    <div class="supply-tags">
+      <span class="supply-tag">5,000 product boxes</span>
+      <span class="supply-tag">100 acrylic retail displays</span>
+      <span class="supply-tag">20 store signage kits</span>
+      <span class="supply-tag">10,000 labels</span>
+      <span class="supply-tag">OOH campaign across Chennai</span>
+    </div>
+  </div>
 
   <!-- BRAND POSITIONING TRIO -->
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;" class="ink-trio">
     <div class="why-block" style="margin-top:0;text-align:center;padding:28px 20px;">
       <div style="font-size:36px;font-weight:500;color:#ffffff;letter-spacing:-1px;line-height:1;margin-bottom:6px;">Th</div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8b8b8;margin-bottom:8px;">Think</div>
-      <p style="font-size:12.5px;color:#999;margin:0;">Strategy, brand guidelines &amp; campaign planning — in one place.</p>
+      <p style="font-size:12.5px;color:#999;margin:0;">Tell us what you need — brief, artwork, quantity, material, location, deadline.</p>
     </div>
     <div class="why-block" style="margin-top:0;text-align:center;padding:28px 20px;border-left-color:var(--brand-blue);">
       <div style="font-size:36px;font-weight:500;color:var(--brand-blue);letter-spacing:-1px;line-height:1;margin-bottom:6px;">IN</div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8b8b8;margin-bottom:8px;">Ink</div>
-      <p style="font-size:12.5px;color:#999;margin:0;">How a brand becomes visible — print, signage, packaging &amp; every physical touchpoint.</p>
+      <p style="font-size:12.5px;color:#999;margin:0;">We translate your requirement into a production spec — material, process, finishing, tolerance.</p>
     </div>
     <div class="why-block" style="margin-top:0;text-align:center;padding:28px 20px;">
       <div style="font-size:36px;font-weight:500;color:#ffffff;letter-spacing:-1px;line-height:1;margin-bottom:6px;">Q'</div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8b8b8;margin-bottom:8px;">Q'nnect</div>
-      <p style="font-size:12.5px;color:#999;margin:0;">Distributed vendors, partners &amp; local teams — coordinated, tracked, proven.</p>
+      <p style="font-size:12.5px;color:#999;margin:0;">We match it to qualified, available capacity — and manage it through to execution.</p>
     </div>
   </div>
 
@@ -1426,8 +1615,34 @@
   <span class="section-anchor" id="why" aria-hidden="true"></span>
   <div class="section-label" style="margin-top:44px;"></div>
   <div class="why-block">
-    <p>Campaigns run on WhatsApp. Vendors miss deadlines. Nobody knows what's done.</p>
-    <p>ThINQ' fixes this — the <strong>Q'nnected INQ'frastructure</strong> for physical brand presence. Not a print marketplace. The execution layer that connects brand intent to on-ground proof, everywhere.</p>
+    <p>Briefs go out on WhatsApp. Printers get called one by one. Quotes take days, capacity is a guess, and nobody knows what's actually available until someone picks up the phone.</p>
+    <p><strong>ThINQ' isn't a print catalogue or a vendor directory.</strong> It's a live capacity exchange — the requirement goes in, a production specification comes out, and it's matched against real, qualified, available capacity across the network. Not who do I call — who can make this, right now.</p>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;font-size:11.5px;">
+      <span style="color:#666;">Traditional:</span>
+      <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Find supplier</span>
+      <span style="color:#444;">→</span>
+      <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Call</span>
+      <span style="color:#444;">→</span>
+      <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Explain</span>
+      <span style="color:#444;">→</span>
+      <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Quote</span>
+      <span style="color:#444;">→</span>
+      <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Compare</span>
+      <span style="color:#444;">→</span>
+      <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Follow up</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;">
+      <span style="color:#666;">ThINQ':</span>
+      <span class="tag">Requirement</span>
+      <span style="color:#00bfff;">→</span>
+      <span class="tag">Specification</span>
+      <span style="color:#00bfff;">→</span>
+      <span class="tag">Capacity Match</span>
+      <span style="color:#00bfff;">→</span>
+      <span class="tag">Quote</span>
+      <span style="color:#00bfff;">→</span>
+      <span class="tag">Execute</span>
+    </div>
   </div>
 
   <!-- COLLAPSE CONTROLS -->
@@ -1444,7 +1659,7 @@
     <button class="collapsible-toggle" onclick="toggleSection('cs-platform')" aria-expanded="true">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">01</span>
-        <span class="collapsible-toggle-title">Platform Detail <span class="collapsible-toggle-meta">— INK Framework, Problem &amp; Modules</span></span>
+        <span class="collapsible-toggle-title">Categories &amp; Capacity <span class="collapsible-toggle-meta">— What ThINQ' Can Produce, The Network &amp; The Platform</span></span>
       </div>
       <div class="collapsible-toggle-right">
         <span class="collapsible-status">Expanded</span>
@@ -1454,82 +1669,87 @@
     <div class="collapsible-body">
     <div class="collapsible-body-inner">
 
-  <!-- INK FRAMEWORK -->
-  <div class="section-label" style="margin-top:0;">INK = Identity·Network·Knowledge</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;" class="ink-framework-grid">
-    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
-      <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Identity</h4>
-      <p>Signage, packaging, print, store branding — every physical face of your brand.</p>
-    </div>
-    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
-      <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Network</h4>
-      <p>Print partners, installers, local vendors — coordinated and scaling consistently across every location.</p>
-    </div>
-    <div class="who-card" style="border-top:2px solid var(--brand-blue);">
-      <h4 style="color:var(--brand-blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Knowledge</h4>
-      <p>Brand guidelines, asset standards, compliance controls — every output reflects the intended brand, always.</p>
-    </div>
+  <!-- CATEGORIES -->
+  <div class="section-label" style="margin-top:0;">What ThINQ' Can Produce</div>
+  <div class="who-grid" style="margin-bottom:32px;">
+    <div class="who-card"><h4>Print</h4><p>Digital · Offset · Large Format · UV · Promotional</p></div>
+    <div class="who-card"><h4>Pack</h4><p>Boxes · Cartons · Pouches · Bags · Packaging</p></div>
+    <div class="who-card"><h4>Label</h4><p>Product · Barcode · QR · Security · Variable Data</p></div>
+    <div class="who-card"><h4>Sticker</h4><p>Die-cut · Promotional · Window · Floor · Tamper-proof</p></div>
+    <div class="who-card"><h4>Sign</h4><p>Acrylic · Metal · LED · 3D · Wayfinding</p></div>
+    <div class="who-card"><h4>Display</h4><p>POSM · Standees · Kiosks · Retail Displays</p></div>
+    <div class="who-card"><h4>Space</h4><p>Office · Retail · Wall · Glass · Store Branding</p></div>
+    <div class="who-card"><h4>Merch</h4><p>Apparel · Bags · Gifts · Corporate Kits</p></div>
+    <div class="who-card"><h4>Mobility</h4><p>Cars · Autos · Buses · Trucks · Fleets</p></div>
+    <div class="who-card"><h4>Media</h4><p>Billboards · OOH · Transit · Mall · Retail · DOOH</p></div>
+    <div class="who-card"><h4>Install</h4><p>Production Deployment · Store Rollouts · OOH · Maintenance</p></div>
   </div>
 
-  <!-- ENTERPRISE PAIN POINTS -->
-  <div class="section-label" style="margin-top:40px;">The Enterprise Problem</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:28px;">
-    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
-      <div style="font-size:18px;margin-bottom:6px;">⚡</div>
-      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Inconsistent Branding</div>
-      <div style="font-size:11.5px;color:#888;">Every branch looks different. No central control.</div>
-    </div>
-    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
-      <div style="font-size:18px;margin-bottom:6px;">🧩</div>
-      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Multiple Local Vendors</div>
-      <div style="font-size:11.5px;color:#888;">Fragmented vendors, no unified workflow.</div>
-    </div>
-    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
-      <div style="font-size:18px;margin-bottom:6px;">📉</div>
-      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">No Spend Visibility</div>
-      <div style="font-size:11.5px;color:#888;">No tracking on what's spent, where, or why.</div>
-    </div>
-    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
-      <div style="font-size:18px;margin-bottom:6px;">🐢</div>
-      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Delayed Rollouts</div>
-      <div style="font-size:11.5px;color:#888;">Campaigns miss launch windows. Deadlines slip.</div>
-    </div>
-    <div style="background:#100808;border:1px solid #2a1010;border-radius:5px;padding:16px 18px;">
-      <div style="font-size:18px;margin-bottom:6px;">🚫</div>
-      <div style="font-size:12px;font-weight:700;color:#e0c0c0;margin-bottom:4px;">Brand Compliance Gaps</div>
-      <div style="font-size:11.5px;color:#888;">No proof. No audit trail. No accountability.</div>
-    </div>
+  <!-- CAPACITY NETWORK -->
+  <div class="section-label" style="margin-top:0;">A Network Built Around Capability — Not Supplier Names</div>
+  <p class="supplies-intro" style="margin-bottom:20px;">
+    ThINQ' doesn't list supplier names. It indexes what each production partner can actually make, right now — equipment, materials, tolerances, and available capacity.
+  </p>
+  <div class="who-grid" style="margin-bottom:24px;">
+    <div class="who-card"><h4>Digital Printers</h4><p>Capacity · Equipment · Materials · Size · Lead time</p></div>
+    <div class="who-card"><h4>Offset Printers</h4><p>Press · GSM · Volume · Finishing</p></div>
+    <div class="who-card"><h4>Packaging Converters</h4><p>Substrate · Format · MOQ · Capacity</p></div>
+    <div class="who-card"><h4>Label Printers</h4><p>Technology · Materials · Volume · Finishing</p></div>
+    <div class="who-card"><h4>Laser Cutters</h4><p>Material · Thickness · Bed size · Capacity</p></div>
+    <div class="who-card"><h4>CNC Shops</h4><p>Material · Dimensions · Tolerance · Capacity</p></div>
+    <div class="who-card"><h4>Acrylic Fabricators</h4><p>Products · Thickness · Finishing · Capacity</p></div>
+    <div class="who-card"><h4>Metal Fabricators</h4><p>Material · Process · Size · Capacity</p></div>
+    <div class="who-card"><h4>Woodworkers</h4><p>Material · CNC · Fabrication · Capacity</p></div>
+    <div class="who-card"><h4>Textile Printers</h4><p>Fabric · Printing technology · Volume</p></div>
+    <div class="who-card"><h4>Embroidery Units</h4><p>Machines · Stitch capacity · Apparel types</p></div>
+    <div class="who-card"><h4>Signage Manufacturers</h4><p>Acrylic · ACP · LED · Metal · 3D</p></div>
+    <div class="who-card"><h4>Installation Teams</h4><p>Location · Crew · Capability · Availability</p></div>
+    <div class="who-card"><h4>OOH Media Owners</h4><p>Inventory · Location · Audience · Availability</p></div>
   </div>
-  <div class="why-block" style="margin-top:0;margin-bottom:32px;">
-    <p><strong>ThINQ' solves all five.</strong> One platform. Every location. Every vendor. Every proof — verified.</p>
+
+  <!-- CAPACITY PASSPORT -->
+  <div class="section-label" style="margin-top:36px;">The Capacity Passport</div>
+  <p class="supplies-intro" style="margin-bottom:20px;">
+    Every production partner on ThINQ' carries a live Capacity Passport — not a directory listing. This is what makes ThINQ' a capacity exchange, not a catalogue.
+  </p>
+  <div class="supply-card" style="max-width:420px;">
+    <div class="supply-card-icon">🪪</div>
+    <h4>ABC Digital — Chennai</h4>
+    <p>Digital Printing on HP Indigo. Materials: paper, synthetic, vinyl. Finishing: cut, fold, laminate, bind.</p>
+    <div class="supply-tags">
+      <span class="supply-tag">Capacity: 100K sheets/mo</span>
+      <span class="supply-tag">Available: 35K sheets</span>
+      <span class="supply-tag">Lead time: 2–4 days</span>
+      <span class="supply-tag">ThINQ' Score: 96</span>
+    </div>
   </div>
 
   <!-- PLATFORM (part of What It Is) -->
   <div class="section-label" style="margin-top:40px;">The Platform</div>
   <p class="supplies-intro" style="margin-bottom:20px;">
-    Three interfaces, three roles — enterprise admin, vendor partner, location manager — each seeing exactly what they need, nothing they don't.
+    Three interfaces, three roles — buyer, production partner, and ThINQ' ops — each seeing exactly what they need, nothing they don't.
   </p>
 
   <div class="supplies-grid">
 
     <div class="supply-card">
-      <div class="supply-card-icon">📊</div>
-      <h4>Campaign Dashboard</h4>
-      <p>Every campaign, location, and vendor — live. One screen. Full control.</p>
+      <div class="supply-card-icon">🧮</div>
+      <h4>Capacity Engine</h4>
+      <p>Every requirement runs against live capacity — capability, availability, price, lead time, location, quality — in seconds.</p>
       <div class="supply-tags">
-        <span class="supply-tag">Campaign Overview</span>
-        <span class="supply-tag">Completion %</span>
-        <span class="supply-tag">SLA Alerts</span>
-        <span class="supply-tag">Multi-Campaign</span>
+        <span class="supply-tag">Spec Matching</span>
+        <span class="supply-tag">Live Availability</span>
+        <span class="supply-tag">Qualified Options</span>
+        <span class="supply-tag">Auto Quote</span>
       </div>
     </div>
 
     <div class="supply-card">
       <div class="supply-card-icon">📋</div>
-      <h4>Work Order View</h4>
-      <p>Every location. Every vendor. Every deadline. One view — with a full proof trail.</p>
+      <h4>Job Dashboard</h4>
+      <p>Every job, every stage — Production → QC → Delivery → Installation — in one view, with a full proof trail.</p>
       <div class="supply-tags">
-        <span class="supply-tag">Multi-Vendor</span>
+        <span class="supply-tag">Multi-Job</span>
         <span class="supply-tag">State Machine</span>
         <span class="supply-tag">Deadline Mgmt</span>
         <span class="supply-tag">Issue Tracking</span>
@@ -1538,13 +1758,13 @@
 
     <div class="supply-card">
       <div class="supply-card-icon">🤝</div>
-      <h4>Vendor Portal</h4>
-      <p>Partners see only their orders. Upload proof, track SLA, raise issues — nothing else in the way.</p>
+      <h4>Capacity Partner Portal</h4>
+      <p>Partners see only relevant, qualified RFQs. Accept, quote, upload proof, track their ThINQ' Score — nothing else in the way.</p>
       <div class="supply-tags">
         <span class="supply-tag">Partner Login</span>
-        <span class="supply-tag">Order Feed</span>
+        <span class="supply-tag">RFQ Feed</span>
         <span class="supply-tag">Proof Upload</span>
-        <span class="supply-tag">SLA Score</span>
+        <span class="supply-tag">Capacity Passport</span>
       </div>
     </div>
 
@@ -1562,51 +1782,104 @@
 
   </div>
 
-  <div class="supplies-why-block" style="margin-top:16px; margin-bottom:0;">
-    <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00e5a0;margin-bottom:16px;">Tech Stack &amp; Build</p>
+  <div class="supplies-why-block" style="margin-top:16px; margin-bottom:0; background:transparent; border-left:none; padding:0;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00e5a0;margin-bottom:16px;">Platform Mock-Screens — By User</p>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px;">
+    <div class="mockscreens-grid">
 
-      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Frontend &amp; API</div>
-        <div style="font-size:12.5px;color:#c0d8cc;">Next.js 14 — App Router, server components, SSR for enterprise dashboards.</div>
+      <!-- Buyer -->
+      <div class="mockscreen-card">
+        <div class="mockscreen-chrome">
+          <span class="mockscreen-dot"></span><span class="mockscreen-dot"></span><span class="mockscreen-dot"></span>
+          <span class="mockscreen-role">Buyer Dashboard</span>
+        </div>
+        <div class="mockscreen-body">
+          <div class="mockscreen-nav">
+            <div class="mockscreen-nav-item active"></div>
+            <div class="mockscreen-nav-item"></div>
+            <div class="mockscreen-nav-item"></div>
+            <div class="mockscreen-nav-item"></div>
+          </div>
+          <div class="mockscreen-main">
+            <div class="mockscreen-heading">Active Requirements</div>
+            <div class="mockscreen-sub">3 briefs in matching · 2 in production</div>
+            <div class="mockscreen-stats">
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">12</div><div class="mockscreen-stat-label">Live Jobs</div></div>
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">48</div><div class="mockscreen-stat-label">Assets</div></div>
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">6</div><div class="mockscreen-stat-label">Locations</div></div>
+            </div>
+            <div class="mockscreen-rows">
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:78%;"></div><span class="mockscreen-pill">Matching</span></div>
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:45%;"></div><span class="mockscreen-pill">QC</span></div>
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:92%;"></div><span class="mockscreen-pill">Delivered</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mockscreen-caption"><strong>For enterprises &amp; brand teams</strong> — brief, match, track and reorder from one screen, across every location.</div>
       </div>
 
-      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Database</div>
-        <div style="font-size:12.5px;color:#c0d8cc;">PostgreSQL with row-level security. Redis for caching &amp; session management.</div>
+      <!-- Capacity Partner -->
+      <div class="mockscreen-card">
+        <div class="mockscreen-chrome">
+          <span class="mockscreen-dot"></span><span class="mockscreen-dot"></span><span class="mockscreen-dot"></span>
+          <span class="mockscreen-role">Capacity Partner Portal</span>
+        </div>
+        <div class="mockscreen-body">
+          <div class="mockscreen-nav">
+            <div class="mockscreen-nav-item"></div>
+            <div class="mockscreen-nav-item active"></div>
+            <div class="mockscreen-nav-item"></div>
+            <div class="mockscreen-nav-item"></div>
+          </div>
+          <div class="mockscreen-main">
+            <div class="mockscreen-heading">Qualified RFQ Feed</div>
+            <div class="mockscreen-sub">ThINQ&#39; Score 94 · Tier 1 partner</div>
+            <div class="mockscreen-stats">
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">5</div><div class="mockscreen-stat-label">New RFQs</div></div>
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">94</div><div class="mockscreen-stat-label">Score</div></div>
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">3</div><div class="mockscreen-stat-label">Due Today</div></div>
+            </div>
+            <div class="mockscreen-rows">
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:60%;"></div><span class="mockscreen-pill">Accept</span></div>
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:35%;"></div><span class="mockscreen-pill">Quote</span></div>
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:80%;"></div><span class="mockscreen-pill">Proof</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mockscreen-caption"><strong>For production partners</strong> — only relevant, qualified RFQs. Accept, quote, upload proof, track score.</div>
       </div>
 
-      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Job Queue</div>
-        <div style="font-size:12.5px;color:#c0d8cc;">BullMQ on Redis — deadline alerts, SLA breach triggers, async notification jobs.</div>
+      <!-- ThINQ' Ops -->
+      <div class="mockscreen-card">
+        <div class="mockscreen-chrome">
+          <span class="mockscreen-dot"></span><span class="mockscreen-dot"></span><span class="mockscreen-dot"></span>
+          <span class="mockscreen-role">ThINQ&#39; Ops Console</span>
+        </div>
+        <div class="mockscreen-body">
+          <div class="mockscreen-nav">
+            <div class="mockscreen-nav-item"></div>
+            <div class="mockscreen-nav-item"></div>
+            <div class="mockscreen-nav-item active"></div>
+            <div class="mockscreen-nav-item"></div>
+          </div>
+          <div class="mockscreen-main">
+            <div class="mockscreen-heading">Network Health</div>
+            <div class="mockscreen-sub">All regions · 11 categories</div>
+            <div class="mockscreen-stats">
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">210</div><div class="mockscreen-stat-label">Partners</div></div>
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">37</div><div class="mockscreen-stat-label">Open Jobs</div></div>
+              <div class="mockscreen-stat"><div class="mockscreen-stat-num">2</div><div class="mockscreen-stat-label">Flagged</div></div>
+            </div>
+            <div class="mockscreen-rows">
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:88%;"></div><span class="mockscreen-pill">Capacity</span></div>
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:52%;"></div><span class="mockscreen-pill">Issue</span></div>
+              <div class="mockscreen-row-item"><div class="mockscreen-row-bar" style="--fill:70%;"></div><span class="mockscreen-pill">Audit</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mockscreen-caption"><strong>For the ThINQ&#39; team</strong> — full org isolation, RBAC, audit trail, and live view across the entire network.</div>
       </div>
 
-      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Proof Storage</div>
-        <div style="font-size:12.5px;color:#c0d8cc;">AWS S3 for photo, PDF &amp; GPS proof uploads. Signed URLs, versioned, audit-safe.</div>
-      </div>
-
-      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Auth &amp; Multi-Tenancy</div>
-        <div style="font-size:12.5px;color:#c0d8cc;">Clerk — SSO, invite-based onboarding, org isolation, RBAC. Enterprise-ready from day one.</div>
-      </div>
-
-      <div style="background:#071810;border:1px solid #0a2a1a;border-radius:4px;padding:12px 14px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;margin-bottom:4px;">Vendor Comms</div>
-        <div style="font-size:12.5px;color:#c0d8cc;">WhatsApp &amp; email alerts notify vendors of new orders and deadlines — deeplinks bring them straight into the web portal to act.</div>
-      </div>
-
-    </div>
-
-    <div style="display:flex;gap:24px;flex-wrap:wrap;padding-top:14px;border-top:1px solid #0a2a1a;">
-      <div>
-        <span style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#ffffff;border:1px solid #003d20;background:#051a10;padding:5px 12px;border-radius:2px;">10-14 weeks</span>
-      </div>
-     
-      <div style="margin-left:auto;align-self:center;">
-        <span style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#00e5a0;border:1px solid #003d20;background:#051a10;padding:5px 12px;border-radius:2px;">MVP build timeline</span>
-      </div>
     </div>
   </div>
 
@@ -1619,7 +1892,7 @@
     <button class="collapsible-toggle" onclick="toggleSection('cs-how')" aria-expanded="true">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">02</span>
-        <span class="collapsible-toggle-title">How It Works <span class="collapsible-toggle-meta">— 6 Core Modules</span></span>
+        <span class="collapsible-toggle-title">How It Works <span class="collapsible-toggle-meta">— Think → Ink → Q'nnect → Execute → Repeat</span></span>
       </div>
       <div class="collapsible-toggle-right">
         <span class="collapsible-status">Expanded</span>
@@ -1631,85 +1904,94 @@
 
   <!-- HOW IT WORKS -->
   <span class="section-anchor" id="how" aria-hidden="true"></span>
-  <div class="section-label" style="margin-top:0;">How It Works</div>
+  <div class="section-label" style="margin-top:0;">From Think to Repeat</div>
   <div class="how-grid">
     <div class="how-card">
       <div class="how-card-header">
         <span class="badge badge-b2b">01</span>
-        <span>Campaign Engine</span>
+        <span>Think</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">▸</span> Launch a campaign — name, dates, budget, locations</li>
-        <li><span class="step-num">▸</span> Platform auto-generates work orders for every location</li>
-        <li><span class="step-num">▸</span> Attach brand guidelines and specs at campaign level</li>
-        <li><span class="step-num">▸</span> Live completion % across all locations</li>
-        <li><span class="step-num">▸</span> One-click campaign rollup — CSV or PDF export</li>
+        <li><span class="step-num">▸</span> Tell us what you need — brief, artwork, or CAD/design</li>
+        <li><span class="step-num">▸</span> Set quantity, material, location and deadline</li>
+        <li><span class="step-num">▸</span> Upload once — start from a category if you're not sure</li>
       </ul>
     </div>
     <div class="how-card">
       <div class="how-card-header">
         <span class="badge badge-b2b">02</span>
-        <span>Work Order Engine</span>
+        <span>Ink</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">▸</span> Each location gets its own work order — auto-assigned</li>
-        <li><span class="step-num">▸</span> Multiple vendors per order: print, brand, delivery</li>
-        <li><span class="step-num">▸</span> Clear states: Draft → Assigned → In Progress → Done</li>
-        <li><span class="step-num">▸</span> Rejected? Back to vendor with a reason — instantly</li>
-        <li><span class="step-num">▸</span> Deliverable specs and assets attached per order</li>
+        <li><span class="step-num">▸</span> Requirement translated into a production specification</li>
+        <li><span class="step-num">▸</span> Material, process, finishing, dimensions defined</li>
+        <li><span class="step-num">▸</span> Capacity and quality thresholds attached</li>
       </ul>
     </div>
     <div class="how-card">
       <div class="how-card-header">
         <span class="badge badge-b2c">03</span>
-        <span>Vendor Portal</span>
+        <span>Q'nnect</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">▸</span> Dedicated vendor login — isolated from enterprise data</li>
-        <li><span class="step-num">▸</span> See orders, specs, and deadlines in one clean view</li>
-        <li><span class="step-num">▸</span> Upload proof directly — photo, PDF, receipt</li>
-        <li><span class="step-num">▸</span> Track your own SLA scorecard in real time</li>
-        <li><span class="step-num">▸</span> Raise issues without leaving the portal</li>
+        <li><span class="step-num">▸</span> Spec matched against live capability and capacity</li>
+        <li><span class="step-num">▸</span> Ranked by price, lead time, location and quality</li>
+        <li><span class="step-num">▸</span> Compare and approve a qualified option</li>
       </ul>
     </div>
     <div class="how-card">
       <div class="how-card-header">
-        <span class="badge badge-b2c">04</span>
-        <span>Proof of Completion</span>
+        <span class="badge badge-supplies">04</span>
+        <span>Execute</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">▸</span> Every order needs evidence — photo, PDF, GPS tag</li>
-        <li><span class="step-num">▸</span> Vendor submits. Admin approves or rejects with reason</li>
-        <li><span class="step-num">▸</span> Rejected submissions loop back — no gaps in the trail</li>
-        <li><span class="step-num">▸</span> Full audit log on every submission, every order</li>
-        <li><span class="step-num">▸</span> Compliance-ready export at any point</li>
+        <li><span class="step-num">▸</span> Production → QC → Delivery → Installation</li>
+        <li><span class="step-num">▸</span> Every stage tracked, every proof timestamped</li>
+        <li><span class="step-num">▸</span> Issues raised and resolved without leaving the job</li>
       </ul>
     </div>
     <div class="how-card">
       <div class="how-card-header">
         <span class="badge badge-supplies">05</span>
-        <span>Dashboard &amp; Analytics</span>
+        <span>Repeat</span>
       </div>
       <ul class="step-list">
-        <li><span class="step-num">▸</span> See every location's completion status instantly</li>
-        <li><span class="step-num">▸</span> Vendor SLA scores — who's on time, who isn't</li>
-        <li><span class="step-num">▸</span> Overdue alerts before deadlines are missed</li>
-        <li><span class="step-num">▸</span> Campaign rollup across all locations at once</li>
-        <li><span class="step-num">▸</span> Export any view — CSV or PDF, one click</li>
+        <li><span class="step-num">▸</span> Specification saved to your Asset Library</li>
+        <li><span class="step-num">▸</span> Reorder in one click, same approved spec</li>
+        <li><span class="step-num">▸</span> Re-matched to capacity every time — never stale</li>
       </ul>
     </div>
-    <div class="how-card">
-      <div class="how-card-header">
-        <span class="badge badge-supplies">06</span>
-        <span>Auth &amp; Multi-Tenancy</span>
+  </div>
+
+  <!-- CAPACITY MATCH EXAMPLE -->
+  <div class="section-label" style="margin-top:36px;">The Capacity Engine, In Practice</div>
+  <div class="why-block" style="margin-top:0;">
+    <p style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#666;margin-bottom:10px;">Your requirement</p>
+    <div class="supply-tags" style="margin-bottom:18px;">
+      <span class="supply-tag">10,000 premium labels</span>
+      <span class="supply-tag">75 × 50 mm</span>
+      <span class="supply-tag">Waterproof</span>
+      <span class="supply-tag">Matte finish</span>
+      <span class="supply-tag">Chennai</span>
+      <span class="supply-tag">7 days</span>
+    </div>
+    <p style="font-size:13px;color:#d8e8f0;margin-bottom:16px;">↓ <strong>ThINQ' Capacity Engine</strong> — 42 qualified production options ↓</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;" class="ink-trio">
+      <div class="metric-card">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00bfff;margin-bottom:8px;">Recommended</div>
+        <div class="metric-value" style="font-size:14px;">Partner A</div>
+        <div class="metric-label">98% quality · 4-day lead time · 18,000 avail. capacity</div>
       </div>
-      <ul class="step-list">
-        <li><span class="step-num">▸</span> Each enterprise is fully isolated — no data bleed</li>
-        <li><span class="step-num">▸</span> Three roles: admin, location manager, vendor partner</li>
-        <li><span class="step-num">▸</span> SSO-ready — onboard teams in minutes via invite</li>
-        <li><span class="step-num">▸</span> Row-level security baked into the database layer</li>
-        <li><span class="step-num">▸</span> WhatsApp + email alerts notify vendors — deeplinks into the portal to act</li>
-      </ul>
+      <div class="metric-card">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Option</div>
+        <div class="metric-value" style="font-size:14px;">Partner B</div>
+        <div class="metric-label">96% quality · 5-day lead time · 30,000 avail. capacity</div>
+      </div>
+      <div class="metric-card">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Option</div>
+        <div class="metric-value" style="font-size:14px;">Partner C</div>
+        <div class="metric-label">94% quality · 7-day lead time · 50,000 avail. capacity</div>
+      </div>
     </div>
   </div>
 
@@ -1722,7 +2004,7 @@
     <button class="collapsible-toggle" onclick="toggleSection('cs-who')" aria-expanded="true">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">03</span>
-        <span class="collapsible-toggle-title">Who It's For <span class="collapsible-toggle-meta">— Target Segments &amp; B2C Extension</span></span>
+        <span class="collapsible-toggle-title">For Businesses &amp; Partners <span class="collapsible-toggle-meta">— Segments, Rollouts, Media &amp; Asset Library</span></span>
       </div>
       <div class="collapsible-toggle-right">
         <span class="collapsible-status">Expanded</span>
@@ -1738,90 +2020,122 @@
   <div class="who-grid">
     <div class="who-card">
       <h4>Retail Chains</h4>
-      <p>Run seasonal campaigns across every store — assign vendors, track execution, collect proof. All in one platform.</p>
+      <p>Source seasonal store materials across every location — matched to capacity, tracked to proof. One exchange, not a call list.</p>
     </div>
     <div class="who-card">
       <h4>Franchise Networks</h4>
-      <p>Push brand rollouts to every franchise — owned or partner — with built-in vendor coordination and compliance trail.</p>
+      <p>Push brand rollouts to every franchise — owned or partner — with the same spec matched to local capacity everywhere.</p>
     </div>
     <div class="who-card">
       <h4>Healthcare Groups</h4>
-      <p>Keep signage, branding, and campaign materials consistent across every campus and branch — without the chase.</p>
+      <p>Keep signage and branding consistent across every campus and branch — sourced once, produced everywhere.</p>
     </div>
     <div class="who-card">
       <h4>Education Networks</h4>
-      <p>Coordinate events, campaigns, and brand materials across institutions simultaneously — one platform, full visibility.</p>
+      <p>Coordinate events, signage, and brand materials across institutions simultaneously — full visibility, one exchange.</p>
     </div>
     <div class="who-card">
       <h4>QSR &amp; F&amp;B</h4>
       <p>Seasonal promos, menu updates, POS material changes — executed across hundreds of outlets, tracked to completion.</p>
     </div>
     <div class="who-card">
-      <h4>Creators &amp; Consumers</h4>
-      <p>Buy the outcome, not the process. Wedding Pack, Creator Launch, Event Branding — ThINQ' coordinates execution so you don't have to.</p>
+      <h4>Agencies &amp; Brand Teams</h4>
+      <p>One network for every physical brand requirement — briefs in, capacity matched, execution proven, nothing chased over email.</p>
     </div>
   </div>
 
-
-  <!-- B2C EXTENSION -->
-  <span class="section-anchor" id="b2c" aria-hidden="true"></span>
-  <div class="section-label" style="margin-top:8px;">B2C Extension</div>
-  <div class="supplies-section">
-
-    <p class="supplies-intro">
-      The same Q'nnected INQ'frastructure that runs enterprise campaigns powers consumer outcomes too.
-      ThINQ' B2C layer is built on one idea: <strong>buy the result, not the process</strong>. Consumers pick a Space, place an order. ThINQ' routes, assigns, and delivers.
-    </p>
-
-    <div class="supplies-grid">
-
-      <div class="supply-card">
-        <div class="supply-card-icon">💍</div>
-        <h4>Wedding &amp; Events Space</h4>
-        <p>Invites, signage, backdrops, welcome boards, packaging — every piece for the big day, coordinated through one order with one deadline.</p>
-        <div class="supply-tags">
-          <span class="supply-tag">Invitations</span>
-          <span class="supply-tag">Signage</span>
-          <span class="supply-tag">Backdrops</span>
-          <span class="supply-tag">Venue Branding</span>
-          <span class="supply-tag">Packaging</span>
-        </div>
-      </div>
-
-      <div class="supply-card">
-        <div class="supply-card-icon">🎂</div>
-        <h4>Birthday &amp; Celebration Space</h4>
-        <p>Pick a theme, set a date. Banners, standees, photo prints, merchandise — delivered ready to go. Zero vendor management.</p>
-        <div class="supply-tags">
-          <span class="supply-tag">Banners</span>
-          <span class="supply-tag">Standees</span>
-          <span class="supply-tag">Photo Prints</span>
-          <span class="supply-tag">Merchandise</span>
-          <span class="supply-tag">Décor</span>
-        </div>
-      </div>
-
-      <div class="supply-card">
-        <div class="supply-card-icon">🎬</div>
-        <h4>Creator Launch Space</h4>
-        <p>Merch drops, pop-up kits, collateral, packaging — your physical launch, fully executed through ThINQ' verified partner network.</p>
-        <div class="supply-tags">
-          <span class="supply-tag">Merch Drops</span>
-          <span class="supply-tag">Pop-Up Kits</span>
-          <span class="supply-tag">Brand Collateral</span>
-          <span class="supply-tag">Packaging</span>
-          <span class="supply-tag">Stickers &amp; Labels</span>
-        </div>
-      </div>
-
+  <!-- FOR BUSINESSES -->
+  <div class="section-label" style="margin-top:32px;">For Businesses — One Network for Physical Brand Procurement</div>
+  <p class="supplies-intro" style="margin-bottom:20px;">
+    Manage 100+ assets, 20+ locations, and multiple production partners as one project. ThINQ' handles brief → production → QC → logistics → installation → proof.
+  </p>
+  <div class="supply-card" style="max-width:460px;margin-bottom:8px;">
+    <div class="supply-card-icon">🏬</div>
+    <h4>Example: Store Launch — Chennai</h4>
+    <p>A single enterprise project, matched across the network and executed to one deadline.</p>
+    <div class="supply-tags">
+      <span class="supply-tag">20 storefront signs</span>
+      <span class="supply-tag">40 acrylic displays</span>
+      <span class="supply-tag">200 posters</span>
+      <span class="supply-tag">500 window graphics</span>
+      <span class="supply-tag">5,000 stickers</span>
+      <span class="supply-tag">20 installation jobs</span>
     </div>
+  </div>
 
-    <div class="supplies-why-block">
-      <p>
-        <strong>B2C</strong> is the long-term network dividend — not the starting point. The same vendor relationships and execution - Q'nnected INQ'frastructure built for enterprise powers consumer spaces at Phase 4–5.
-      </p>
+  <!-- FOR PRODUCTION PARTNERS -->
+  <div class="section-label" style="margin-top:36px;">For Production Partners — Turn Capacity Into Business</div>
+  <div class="supplies-grid" style="margin-bottom:8px;">
+    <div class="supply-card">
+      <div class="supply-card-icon">📤</div>
+      <h4>List Your Capacity</h4>
+      <p>Capabilities, machines, materials, production capacity, availability, geographic coverage and lead times — indexed into your Capacity Passport.</p>
+      <div class="supply-tags">
+        <span class="supply-tag">Capabilities</span>
+        <span class="supply-tag">Machines</span>
+        <span class="supply-tag">Materials</span>
+        <span class="supply-tag">Availability</span>
+      </div>
     </div>
+    <div class="supply-card">
+      <div class="supply-card-icon">📥</div>
+      <h4>Receive Qualified Work</h4>
+      <p>Only relevant, spec-matched RFQs — not a firehose of unqualified leads. Repeat orders flow straight from returning buyers.</p>
+      <div class="supply-tags">
+        <span class="supply-tag">Qualified Jobs</span>
+        <span class="supply-tag">Relevant RFQs</span>
+        <span class="supply-tag">Capacity-Matched</span>
+        <span class="supply-tag">Repeat Orders</span>
+      </div>
+    </div>
+  </div>
 
+  <!-- PHYSICAL BRAND, ANYWHERE -->
+  <div class="section-label" style="margin-top:36px;">Physical Brand, Anywhere — One Spec, Multiple Locations</div>
+  <p class="supplies-intro" style="margin-bottom:16px;">
+    A single approved specification — for example, a <strong>500-store rollout</strong> — is automatically distributed across the network, produced locally, and installed locally, with QC held central.
+  </p>
+  <div class="who-grid" style="margin-bottom:8px;">
+    <div class="who-card" style="text-align:center;"><h4>North</h4><p>Partner A</p></div>
+    <div class="who-card" style="text-align:center;"><h4>South</h4><p>Partner B</p></div>
+    <div class="who-card" style="text-align:center;"><h4>West</h4><p>Partner C</p></div>
+  </div>
+  <div class="who-grid" style="margin-top:12px;">
+    <div class="who-card" style="text-align:center;grid-column:1;"><h4>East</h4><p>Partner D</p></div>
+  </div>
+
+  <!-- THINQ FIELD -->
+  <div class="section-label" style="margin-top:36px;">ThINQ' Field — Production Doesn't End at the Factory</div>
+  <p class="supplies-intro" style="margin-bottom:16px;">
+    ThINQ' coordinates delivery, installation, store deployment, OOH installation, campaign activation, removal and maintenance — with proof of execution on every job: timestamp, GPS, photograph, installer, asset ID.
+  </p>
+
+  <!-- ASSET LIBRARY -->
+  <div class="section-label" style="margin-top:36px;">Brand Asset Library — Specify Once, Reorder Anytime</div>
+  <p class="supplies-intro" style="margin-bottom:16px;">
+    Every artwork, specification, approved supplier, production cost, QC history and installation instruction is stored against a SKU — ready to reorder without re-briefing.
+  </p>
+  <div class="supply-card" style="max-width:420px;">
+    <div class="supply-card-icon">📦</div>
+    <h4>SKU: THQ-STORE-SIGN-001</h4>
+    <p>Acrylic · 600 × 400 mm · UV print · LED · approved supplier · approved artwork.</p>
+    <div class="supply-tags"><span class="supply-tag">Reorder →</span></div>
+  </div>
+
+  <!-- THINQ MEDIA -->
+  <div class="section-label" style="margin-top:36px;">ThINQ' Media — The Expansion Layer</div>
+  <p class="supplies-intro" style="margin-bottom:16px;">
+    Discover and book physical advertising inventory — billboards, hoardings, bus shelters, transit, malls, retail, wallscape and DOOH — filtered by location, audience, duration and budget, then booked straight into an execution job.
+  </p>
+  <div class="supply-tags" style="margin-bottom:8px;">
+    <span class="supply-tag">Billboards</span>
+    <span class="supply-tag">Hoardings</span>
+    <span class="supply-tag">Bus Shelters</span>
+    <span class="supply-tag">Transit</span>
+    <span class="supply-tag">Malls</span>
+    <span class="supply-tag">Retail</span>
+    <span class="supply-tag">Wallscape</span>
+    <span class="supply-tag">DOOH</span>
   </div>
 
     </div><!-- /collapsible-body-inner -->
@@ -1848,23 +2162,23 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:32px;">
     <div class="metric-card" style="border-top:2px solid #1a3a4a;position:relative;">
       <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 1</div>
-      <div class="metric-value" style="font-size:15px;font-weight:700;">Print Management</div>
-      <div class="metric-label">Order printed materials anywhere.</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;">Job &amp; Capacity Match</div>
+      <div class="metric-label">Requirement in, qualified capacity out — for print &amp; pack.</div>
     </div>
     <div class="metric-card" style="border-top:2px solid #1a3050;">
       <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 2</div>
-      <div class="metric-value" style="font-size:15px;font-weight:700;">Brand Asset Distribution</div>
-      <div class="metric-label">Control and distribute approved brand assets.</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;">Category Expansion</div>
+      <div class="metric-label">Sign, display, space, merch and mobility join the exchange.</div>
     </div>
     <div class="metric-card" style="border-top:2px solid var(--brand-blue);">
       <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand-blue);margin-bottom:8px;">Stage 3 — Now</div>
-      <div class="metric-value" style="font-size:15px;font-weight:700;color:var(--brand-blue);">Physical Brand Presence</div>
-      <div class="metric-label">Ensure every location represents your brand consistently.</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;color:var(--brand-blue);">Execution Network</div>
+      <div class="metric-label">Field installation, proof of execution and multi-location rollouts.</div>
     </div>
     <div class="metric-card" style="border-top:2px solid #0a3a2a;opacity:0.7;">
       <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#444;margin-bottom:8px;">Stage 4 — Horizon</div>
-      <div class="metric-value" style="font-size:15px;font-weight:700;color:#555;">Brand Experience Network</div>
-      <div class="metric-label">Manage every physical customer touchpoint through one platform.</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;color:#555;">Physical Brand OS</div>
+      <div class="metric-label">Asset Library, ThINQ' Media and full network automation.</div>
     </div>
   </div>
 
@@ -1880,25 +2194,25 @@
   </div>
 
   <p class="market-intro">
-    ThINQ' starts as an <strong>Enterprise Brand Execution Platform</strong> and scales into the Q'nnected INQ'frastructure for physical brand presence — across every category, every city, every format.
+    ThINQ' starts as a <strong>focused capacity exchange</strong> for print, label and packaging, and scales into the full Physical Brand Production &amp; Execution Exchange — across every category, every city, every format.
   </p>
 
   <!-- PHASE 0 -->
   <div class="market-tier launch-tier">
     <div class="tier-heading">
       <div class="tier-dot"></div>
-      <h3>Phase 0 — Enterprise SaaS Launch</h3>
+      <h3>Phase 0 — Capacity Exchange Launch</h3>
       <span class="tier-phase">0–6 Months</span>
     </div>
 
     <div class="metrics-grid">
       <div class="metric-card">
-        <div class="metric-value">₹50k–2L</div>
-        <div class="metric-label">Pilot setup fee per enterprise account</div>
+        <div class="metric-value">5–12%</div>
+        <div class="metric-label">Execution fee per transaction, applied at job completion</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">₹50k–2L</div>
-        <div class="metric-label">Monthly enterprise subscription</div>
+        <div class="metric-value">₹0 Setup</div>
+        <div class="metric-label">No platform set-up or subscription fee — revenue tied to executed jobs</div>
       </div>
       <div class="metric-card">
         <div class="metric-value">2 Pilots</div>
@@ -1907,15 +2221,15 @@
     </div>
 
     <div class="tags-row">
-      <span class="tag">Campaign Engine</span>
-      <span class="tag">Work Order Engine</span>
-      <span class="tag">Vendor Portal</span>
-      <span class="tag">Proof of Completion</span>
-      <span class="tag">Dashboard &amp; Analytics</span>
+      <span class="tag">Job Creation</span>
+      <span class="tag">Capacity Engine</span>
+      <span class="tag">Capacity Passport</span>
+      <span class="tag">Proof of Execution</span>
+      <span class="tag">Job Dashboard</span>
     </div>
 
     <p class="tier-note">
-      Five core modules. Two reference accounts. Prove execution value — then scale.
+      Print, label and packaging live first. Two reference accounts, a qualified capacity base — revenue earned per job executed, not on access. Prove the match, then scale.
     </p>
   </div>
 
@@ -1925,7 +2239,7 @@
   <div class="market-tier">
     <div class="tier-heading">
       <div class="tier-dot"></div>
-      <h3>Phase 1 — Enterprise Moat</h3>
+      <h3>Phase 1 — Network Density</h3>
       <span class="tier-phase">6–18 Months</span>
     </div>
 
@@ -1936,23 +2250,23 @@
       </div>
       <div class="metric-card">
         <div class="metric-value">₹5–12L</div>
-        <div class="metric-label">MRR target by Month 12</div>
+        <div class="metric-label">Monthly execution revenue run-rate by Month 12</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">SLA Intel</div>
-        <div class="metric-label">Vendor scorecards, turnaround &amp; completion rates live</div>
+        <div class="metric-value">Capacity Intel</div>
+        <div class="metric-label">Partner ThINQ' Scores, turnaround &amp; fill-rate live</div>
       </div>
     </div>
 
     <div class="tags-row">
-      <span class="tag">Vendor Intelligence</span>
-      <span class="tag">Preferred Vendor Support</span>
-      <span class="tag">SLA Scorecard</span>
-      <span class="tag">Managed Campaign Fee</span>
+      <span class="tag">Capacity Intelligence</span>
+      <span class="tag">Preferred Partner Network</span>
+      <span class="tag">ThINQ' Score</span>
+      <span class="tag">Managed Transaction Fee</span>
     </div>
 
     <p class="tier-note">
-      Works with existing vendor relationships. Enterprises specify their own partners — ThINQ' orchestrates. Optional 5–10% managed campaign fee on top of SaaS.
+      Works with existing supplier relationships — enterprises can bring their own partners onto the exchange. Execution fee scales with volume and category — 5–10% per transaction, charged only on jobs actually run through the exchange.
     </p>
   </div>
 
@@ -1962,7 +2276,7 @@
   <div class="market-tier">
     <div class="tier-heading">
       <div class="tier-dot"></div>
-      <h3>Phase 2–3 — Network Fulfillment &amp; Full Brand Presence</h3>
+      <h3>Phase 2–3 — Category &amp; Multi-Location Expansion</h3>
       <span class="tier-phase">18 Months–5 Years</span>
     </div>
 
@@ -1973,25 +2287,25 @@
       </div>
       <div class="metric-card">
         <div class="metric-value">₹30L+</div>
-        <div class="metric-label">MRR target at Month 24</div>
+        <div class="metric-label">Monthly execution revenue run-rate at Month 24</div>
       </div>
       <div class="metric-card">
         <div class="metric-value">Multi-Cat</div>
-        <div class="metric-label">Signage, vehicle branding, merchandise, installation</div>
+        <div class="metric-label">Sign, Display, Space, Merch, Mobility, Install</div>
       </div>
     </div>
 
     <div class="tags-row">
-      <span class="tag">Vendor Discovery</span>
+      <span class="tag">Capacity Discovery</span>
       <span class="tag">Partner Referral Margin</span>
-      <span class="tag">Store Graphics</span>
-      <span class="tag">Vehicle Branding</span>
+      <span class="tag">Multi-Location Rollouts</span>
+      <span class="tag">ThINQ' Field</span>
       <span class="tag">Merchandise</span>
       <span class="tag">Exhibition Setups</span>
     </div>
 
     <p class="tier-note">
-      ThINQ' recommends vendors for new cities and categories — store graphics, POS, gifting, installation. Campaign execution across multiple categories, not just print jobs.
+      ThINQ' onboards capacity for new cities and categories — signage, vehicle branding, merchandise, installation. One spec, matched and executed across every location.
     </p>
   </div>
 
@@ -2001,44 +2315,36 @@
   <div class="market-tier launch-tier">
     <div class="tier-heading">
       <div class="tier-dot"></div>
-      <h3>Phase 4–5 — Q'nnected INQ'frastructure + B2C</h3>
+      <h3>Phase 4–5 — Physical Brand Operating System</h3>
       <span class="tier-phase">5–10 Years</span>
     </div>
 
     <div class="metrics-grid">
       <div class="metric-card">
-        <div class="metric-value">OS Layer</div>
-        <div class="metric-label">The Q'nnected INQ'frastructure for physical brand presence</div>
+        <div class="metric-value">Exchange OS</div>
+        <div class="metric-label">The production &amp; execution exchange for physical brand presence</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">Auto-Route</div>
-        <div class="metric-label">Auto vendor selection, routing, tracking &amp; evidence</div>
+        <div class="metric-value">Auto-Match</div>
+        <div class="metric-label">Auto capacity selection, routing, tracking &amp; evidence</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">B2C Stream</div>
-        <div class="metric-label">Wedding, Birthday, Creator Launch outcome packages</div>
+        <div class="metric-value">Media Stream</div>
+        <div class="metric-label">ThINQ' Media booking layered on the same execution network</div>
       </div>
     </div>
 
     <div class="tags-row">
       <span class="tag">Network OS</span>
-      <span class="tag">Auto-Routing</span>
-      <span class="tag">B2C Streams</span>
-      <span class="tag">SaaS + Marketplace</span>
-      <span class="tag">Outcome Packages</span>
+      <span class="tag">Auto-Matching</span>
+      <span class="tag">Media Exchange</span>
+      <span class="tag">Transaction-Based Exchange</span>
+      <span class="tag">Asset Library Reorders</span>
     </div>
 
     <p class="tier-note">
-      Consumers buy the outcome, not the process. One order. One deadline. ThINQ' handles the rest.
+      Specify once, reorder anytime. Book media on the same network that produces and installs. Revenue stays tied to jobs executed — ThINQ' handles the rest.
     </p>
-  </div>
-
-  <!-- OPPORTUNITY STATEMENT -->
-  <div class="why-block" style="margin-top:32px;">
-    <p>
-      <strong>ThINQ' powers the last mile of branding.</strong> Not a print marketplace. Not a vendor directory. The <strong>Q'nnected INQ'frastructure</strong> — from brand guidelines to on-ground proof, at scale.
-    </p>
-    <p style="margin-top:12px;font-size:13px;color:#888;font-style:italic;">"Ideas become visible through Ink. ThINQ' makes sure they look the same — everywhere."</p>
   </div>
 
     </div><!-- /collapsible-body-inner -->
@@ -2066,7 +2372,7 @@
 
   <!-- Thesis -->
   <div class="why-block" style="margin-bottom:28px;">
-    <p><strong>Not a print marketplace.</strong> A large, fragmented operational problem — brand execution across distributed locations — with near-zero tech penetration. That's the thesis.</p>
+    <p><strong>Not a print catalogue. A capacity exchange.</strong> Physical brand production is a large, fragmented market run on phone calls and guesswork — with a requirement-to-capacity matching gap and near-zero tech penetration. That's the thesis.</p>
   </div>
 
   <!-- 6 pillars — 3×2 desktop · 2×3 tablet · 1×6 mobile. Always fills evenly. -->
@@ -2074,27 +2380,27 @@
   <div class="wt-pillar-grid" style="margin-bottom:28px;">
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4><span style="color:var(--brand-blue);margin-right:8px;">01</span>Large, Fragmented Market</h4>
-      <p>Enterprises still run brand execution on email and spreadsheets. No category leader owns this. Spend is live, processes are broken, tech penetration is near zero.</p>
+      <p>Enterprises still find production capacity by phone and referral. No category leader owns this. Spend is live, discovery is broken, tech penetration is near zero.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
-      <h4><span style="color:var(--brand-blue);margin-right:8px;">02</span>Recurring Operational Spend</h4>
-      <p>Banks, retailers, hospitals, franchise chains — they never stop ordering brand materials. Predictable, repeat demand. Subscription revenue, not one-off transactions.</p>
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">02</span>Recurring Transaction Demand</h4>
+      <p>Banks, retailers, hospitals, franchise chains — they never stop ordering brand materials. Predictable, repeat demand, compounded by the Asset Library reorder loop.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
-      <h4><span style="color:var(--brand-blue);margin-right:8px;">03</span>Vendor Data Moat</h4>
-      <p>Every campaign builds SLA history, pricing benchmarks, and capacity data. That intelligence compounds with every transaction — impossible for a late entrant to replicate.</p>
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">03</span>Capacity Data Moat</h4>
+      <p>Every job builds ThINQ' Score history, pricing benchmarks, and live capacity data. That intelligence compounds with every match — impossible for a late entrant to replicate.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4><span style="color:var(--brand-blue);margin-right:8px;">04</span>Multiple Revenue Levers</h4>
-      <p>SaaS · Setup fee · Transaction % · Supplier membership · Analytics · Managed services. Six revenue paths. No single-source dependency.</p>
+      <p>Transaction-based execution fee on every job · Category-specific execution charges as applicable · Capacity partner membership · Media Exchange commission · Managed services. No single-source dependency.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
       <h4><span style="color:var(--brand-blue);margin-right:8px;">05</span>Expansion Beyond Print</h4>
-      <p>Signage, merchandise, installation, retail fixtures — the same platform, a wider market. No rebuild required.</p>
+      <p>Sign, display, space, merch, mobility, media — eleven categories, one capacity engine. No rebuild required to add a category.</p>
     </div>
     <div class="who-card" style="border-top:2px solid var(--brand-blue);">
-      <h4><span style="color:var(--brand-blue);margin-right:8px;">06</span>Enterprise Workflow Lock-in</h4>
-      <p>Once SLA tracking, approvals, and proof-of-completion are embedded in daily ops, switching cost is high. Retention from workflow dependency — not just product stickiness.</p>
+      <h4><span style="color:var(--brand-blue);margin-right:8px;">06</span>Reorder Lock-in</h4>
+      <p>Once a spec lives in the Asset Library with an approved partner and QC history, switching cost is high. Retention from the reorder loop — not just platform stickiness.</p>
     </div>
   </div>
 
@@ -2103,50 +2409,49 @@
   <div class="wt-qa-stack" style="margin-bottom:28px;">
     <div class="wt-qa-row">
       <div class="wt-qa-q">Is print a declining industry?</div>
-      <div class="wt-qa-a">Not about print growth — it's operational efficiency. Enterprises already spend on physical execution. ThINQ' improves how that spend is managed. Efficiency software for stable-spend categories is a proven model.</div>
+      <div class="wt-qa-a">Not about print growth — it's capacity discovery. Enterprises already spend on physical execution across print, packaging, signage and more. ThINQ' improves how that demand finds capacity. Marketplace software for a stable-spend, undiscoverable category is a proven model.</div>
     </div>
     <div class="wt-qa-row">
-      <div class="wt-qa-q">Won't SAP Ariba or Coupa solve this?</div>
-      <div class="wt-qa-a">Generic procurement handles PO workflow — not vendor networks, production routing, or SLA tracking for brand jobs. Vertical SaaS beats horizontal platforms in niche ops categories. Every time.
+      <div class="wt-qa-q">Isn't this just requirement-to-capacity matching for branding?</div>
+      <div class="wt-qa-a">Structurally, yes — and that's the point. That model has already proven out for industrial manufacturing categories like CNC and injection molding. ThINQ' applies the same model to a category the industrial players don't touch: physical brand production — print, packaging, signage, display, mobility and media.
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
-          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Ariba — generic PO</span>
-          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Coupa — spend mgmt</span>
-          <span class="tag">ThINQ' — brand execution OS</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Industrial capacity exchanges — manufacturing</span>
+          <span class="tag">ThINQ' — physical brand production</span>
         </div>
       </div>
     </div>
     <div class="wt-qa-row">
       <div class="wt-qa-q">What about Printo, Printstop, Gelato, or RRD?</div>
-      <div class="wt-qa-a"><strong>They print. ThINQ' orchestrates.</strong> Printo, Printstop, Gelato, RRD — fulfilment businesses. None manages campaign workflows, multi-vendor coordination, or proof-of-completion for enterprise ops. ThINQ' routes work <em>to</em> them — they're the network, not the competition.
+      <div class="wt-qa-a"><strong>They fulfil one category. ThINQ' exchanges capacity across eleven.</strong> Printo, Printstop, Gelato, RRD each own their own production and sell it directly. ThINQ' doesn't own presses — it routes demand across a qualified network. They're supply on the exchange, not the competition.
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
           <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Printo / Printstop — retail fulfilment</span>
-          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Gelato / RRD — production network</span>
-          <span class="tag">ThINQ' — campaign &amp; execution OS</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Gelato / RRD — owned production</span>
+          <span class="tag">ThINQ' — capacity exchange</span>
         </div>
       </div>
     </div>
     <div class="wt-qa-row">
-      <div class="wt-qa-q">Can you sign enterprises and suppliers at the same time?</div>
-      <div class="wt-qa-a"><strong>Enterprise demand first. Suppliers second.</strong> Secure accounts, then onboard vendors to serve committed demand. No speculative supply build — the classic cold-start failure, avoided by design.</div>
+      <div class="wt-qa-q">Can you sign buyers and capacity partners at the same time?</div>
+      <div class="wt-qa-a"><strong>Buyer demand first. Capacity second.</strong> Secure enterprise accounts, then onboard qualified partners to serve committed demand. No speculative supply build — the classic marketplace cold-start failure, avoided by design.</div>
     </div>
     <div class="wt-qa-row" style="border-bottom:none;">
       <div class="wt-qa-q">We already work with local partners directly — why do we need ThINQ'?</div>
       <div class="wt-qa-a">
-        <strong>Local partners solve fulfilment. ThINQ' solves operations.</strong>
+        <strong>Local partners solve one job. ThINQ' solves finding the right one, every time.</strong>
         <p style="margin-top:10px;font-size:13px;color:#b8b8b8;line-height:1.7;">
-          Brief on WhatsApp. Confirmation on a call. Proof three days late on email. Nobody knows if Location 47 is done. The campaign closes, and someone builds a spreadsheet to figure out what happened.
+          Brief on WhatsApp. Call three printers. Wait for quotes. Guess who actually has capacity this week. Repeat next quarter, from scratch, because nobody saved the spec.
         </p>
         <p style="margin-top:8px;font-size:13px;color:#b8b8b8;line-height:1.7;">
-          ThINQ' doesn't replace your vendors — <strong>it brings them into a governed workflow</strong>. Same relationships. Structured briefs, real-time status, SLA accountability, and timestamped proof for every location.
+          ThINQ' doesn't replace your favourite partners — <strong>it puts them on the exchange alongside qualified alternatives</strong>, with live capacity, a Capacity Passport, and a saved spec you can reorder in one click.
         </p>
         <p style="margin-top:8px;font-size:13px;color:#b8b8b8;line-height:1.7;">
-          The real cost isn't vendor cost — it's <strong>coordination cost</strong>. ThINQ' eliminates the chase.
+          The real cost isn't production cost — it's <strong>discovery cost</strong>. ThINQ' eliminates the search.
         </p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
           <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Status on WhatsApp</span>
-          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Proof over email</span>
-          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Reporting from memory</span>
-          <span class="tag">ThINQ' — same vendors, governed ops</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Calling around for quotes</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Re-briefing from scratch</span>
+          <span class="tag">ThINQ' — live capacity, saved spec</span>
         </div>
       </div>
     </div>
@@ -2154,8 +2459,8 @@
 
   <!-- Closing -->
   <div class="why-block" style="text-align:center;padding:28px 32px;margin-bottom:0;">
-    <p style="font-size:14px;color:#d8e8f0;font-style:italic;">"Governance, visibility, and fulfilment orchestration for <strong>physical brand operations</strong> — at every location, at scale."</p>
-    <p style="margin-top:10px;font-size:12px;color:#555;">Enterprise infrastructure. Not a print business.</p>
+    <p style="font-size:14px;color:#d8e8f0;font-style:italic;">"Your brand requirement. The right production capacity. <strong>One execution network.</strong>"</p>
+    <p style="margin-top:10px;font-size:12px;color:#555;">A capacity exchange. Not a print business.</p>
   </div>
 
     </div><!-- /collapsible-body-inner -->
@@ -2171,29 +2476,29 @@
     <div class="contact-eyebrow">Phase 0 · Launching 2026</div>
     <h3 class="contact-headline">Get In <span class="contact-accent">Touch</span></h3>
     <p class="contact-intro">
-      We're looking for the right people to build this with — enterprises ready to ditch the chaos, vendors ready to scale, investors who see the network, and builders who want to build something that matters.
+      We're looking for the right people to build this with — businesses ready to stop searching for suppliers, production partners ready to turn capacity into business, investors who see the exchange, and builders who want to build something that matters.
     </p>
 
     <div class="contact-audience-grid">
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Enterprise Clients</h3>
-        <p>50–500 locations. Campaigns running on chaos. ThINQ' replaces the spreadsheet stack — and gives you proof every location is done.</p>
+        <p>50–500 locations. Sourcing physical production one phone call at a time. ThINQ' replaces the search — and gives you proof every job is done.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
-        <h3>Vendor Partners</h3>
-        <p>No more WhatsApp briefs. Structured work orders, clear deadlines, one portal to upload proof.</p>
+        <h3>Production Partners</h3>
+        <p>No more cold outreach. Qualified, spec-matched RFQs, a Capacity Passport, and one portal to quote and upload proof.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Investors &amp; Advisors</h3>
-        <p>Brand intent to on-ground execution — the gap is enormous. ThINQ' closes it, and scales into infrastructure for every physical brand operation.</p>
+        <p>Requirement to on-ground execution — the discovery gap is enormous. ThINQ' closes it, and scales into the exchange for every physical brand category.</p>
       </div>
       <div class="contact-audience-card">
         <div class="contact-audience-icon">◈</div>
         <h3>Builders &amp; Team</h3>
-        <p>Small team. High ownership. Category-defining SaaS from scratch. If that's your kind of problem — let's talk.</p>
+        <p>Small team. High ownership. Category-defining marketplace from scratch. If that's your kind of problem — let's talk.</p>
       </div>
     </div>
 
