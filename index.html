@@ -2983,11 +2983,189 @@
 
   // Map each nav anchor to the collapsible section (if any) it lives inside
   var sectionAnchorMap = {
+    what: 'cs-platform',
     how: 'cs-how',
     who: 'cs-who',
     roadmap: 'cs-roadmap',
     'why-thinq': 'cs-why'
   };
+
+  /* ── AUTO-COLLAPSE ON SCROLL-PAST / SECTION SWITCH ──
+     Only one collapsible section is meant to stay expanded at a time.
+     When the page scrolls past an expanded section into the next one, or
+     when a different section is opened from the nav menu, the
+     previously-expanded section snaps back to its default collapsed
+     state.
+
+     The collapse itself is a plain class removal — the exact same thing
+     "Collapse All" already does, with its normal CSS transition. No
+     instant/forced-reflow tricks and no manual scroll-position math:
+     those were added in earlier passes and turned out to be the actual
+     source of the jump-to-top/jump-to-bottom bug, likely by fighting
+     Chrome's own handling of the sticky toggle + animated max-height
+     during layout. Keeping this plain avoids that entirely. */
+
+  function collapseSection(section) {
+    if (!section || !section.classList.contains('open')) return;
+    var btn = section.querySelector('.collapsible-toggle');
+    var status = section.querySelector('.collapsible-status');
+    section.classList.remove('open');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (status) status.textContent = 'Expand';
+  }
+
+  function collapseOtherOpenSections(exceptId) {
+    document.querySelectorAll('.collapsible-section.open').forEach(function (s) {
+      if (s.id !== exceptId) collapseSection(s);
+    });
+  }
+
+  /* ── SCROLL-TRIGGERED AUTO-COLLAPSE: SNAP TO THE COLLAPSED ROW ──
+     Trying to preserve the reader's exact mid-scroll position when a
+     section auto-collapses kept fighting the section's own sticky
+     toggle + animated max-height and throwing the scroll to the footer
+     or back to the top. Rather than patch that fight, sidestep it: give
+     the collapse a single, deterministic landing spot instead of an
+     arbitrary preserved one — the section's own collapsed row, pinned
+     to the top just below the sticky header/toolbar. That's exactly
+     where it sits once collapsed, so the result reads as "this section
+     tucked itself away" rather than an unrelated jump. The collapse
+     happens instantly (no animation, no transition to fight), then the
+     scroll position is set directly in the same synchronous step. */
+
+  function getStickyOffset() {
+    var header = document.querySelector('header');
+    var toolbar = document.querySelector('.sections-toolbar');
+    return (header ? header.offsetHeight : 0) + (toolbar ? toolbar.offsetHeight : 0);
+  }
+
+  function collapseSectionAndSnap(section) {
+    if (!section || !section.classList.contains('open')) return;
+    var btn = section.querySelector('.collapsible-toggle');
+    var status = section.querySelector('.collapsible-status');
+    var body = section.querySelector('.collapsible-body');
+
+    if (body) body.style.transition = 'none'; // collapse instantly — we're about to set scroll ourselves
+
+    section.classList.remove('open');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (status) status.textContent = 'Expand';
+
+    void section.offsetHeight; // force the collapse to settle synchronously before we measure
+
+    var offset = getStickyOffset();
+    var targetY = window.scrollY + section.getBoundingClientRect().top - offset;
+    window.scrollTo(0, Math.max(0, targetY)); // land exactly on this section's collapsed row
+
+    if (body) {
+      requestAnimationFrame(function () {
+        body.style.transition = ''; // restore the normal animation for the next manual toggle
+      });
+    }
+  }
+
+  function collapseOtherOpenSectionsOnScroll(exceptId) {
+    document.querySelectorAll('.collapsible-section.open').forEach(function (s) {
+      if (s.id !== exceptId) collapseSectionAndSnap(s);
+    });
+  }
+
+  var scrollSpySections = Array.prototype.slice.call(document.querySelectorAll('.collapsible-section'));
+  var activeSectionId = null;
+
+  // A short cooldown after each auto-collapse. Without it, the layout
+  // change from collapsing a section can itself cause the browser to
+  // adjust scroll position, which can re-trigger this same logic before
+  // the previous collapse has settled — a feedback loop that's very
+  // likely what was throwing the page to the very top or bottom.
+  var collapseLocked = false;
+  var collapseLockTimer = null;
+  function lockAutoCollapse() {
+    collapseLocked = true;
+    clearTimeout(collapseLockTimer);
+    collapseLockTimer = setTimeout(function () {
+      collapseLocked = false;
+    }, 700); // a little longer than the 0.45s collapse transition
+  }
+
+  // Fully suspends the scroll-spy while a nav click is smooth-scrolling
+  // the page to a target section. That scroll can take well over 700ms
+  // when jumping from Home down to a far-off section (e.g. Roadmap),
+  // and it passes through every section in between on the way — each of
+  // which crosses the activation band and would otherwise re-trigger
+  // handleActiveSectionChange, auto-collapsing the section the click just
+  // opened before the scroll even arrives. A time-based lock can't cover
+  // an unknown-length scroll, so this suspends the spy outright instead,
+  // for exactly as long as the browser is still actually scrolling.
+  var scrollSpySuspended = false;
+
+  function waitForScrollSettle(callback) {
+    var lastY = window.scrollY;
+    var stableFrames = 0;
+    var REQUIRED_STABLE_FRAMES = 6; // ~100ms with no movement at 60fps
+    var startTime = performance.now();
+    var MAX_WAIT_MS = 3000; // safety net in case scroll never visibly settles
+
+    function check() {
+      var y = window.scrollY;
+      if (Math.abs(y - lastY) < 1) {
+        stableFrames++;
+      } else {
+        stableFrames = 0;
+        lastY = y;
+      }
+      if (stableFrames >= REQUIRED_STABLE_FRAMES || (performance.now() - startTime) > MAX_WAIT_MS) {
+        callback();
+        return;
+      }
+      requestAnimationFrame(check);
+    }
+    requestAnimationFrame(check);
+  }
+
+  function handleActiveSectionChange(newActiveId) {
+    if (scrollSpySuspended) return;
+    if (newActiveId === activeSectionId || collapseLocked) return;
+    activeSectionId = newActiveId;
+    collapseOtherOpenSectionsOnScroll(activeSectionId);
+    lockAutoCollapse();
+  }
+
+  // IntersectionObserver instead of a scroll/rAF poll: it only fires when
+  // a section crosses the activation band near the top of the viewport,
+  // not on every scroll tick, which removes most of the surface area for
+  // a retrigger loop in the first place.
+  var sectionObserver = null;
+  function setupSectionObserver() {
+    if (sectionObserver) sectionObserver.disconnect();
+
+    var header = document.querySelector('header');
+    var toolbar = document.querySelector('.sections-toolbar');
+    var topOffset = (header ? header.offsetHeight : 0) + (toolbar ? toolbar.offsetHeight : 0) + 1;
+
+    sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          handleActiveSectionChange(entry.target.id);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '-' + Math.ceil(topOffset) + 'px 0px -60% 0px',
+      threshold: 0
+    });
+
+    scrollSpySections.forEach(function (s) { sectionObserver.observe(s); });
+  }
+
+  setupSectionObserver();
+  window.addEventListener('load', setupSectionObserver);
+
+  var resizeObserverTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeObserverTimer);
+    resizeObserverTimer = setTimeout(setupSectionObserver, 250);
+  });
 
   // Expands the target section if it's currently collapsed, leaving every
   // other section exactly as it was. Calls back once safe to scroll —
@@ -2996,6 +3174,13 @@
   function openSectionIfCollapsed(anchorId, callback) {
     var csId = sectionAnchorMap[anchorId];
     var section = csId ? document.getElementById(csId) : null;
+
+    // Navigating to a section makes it the active one — collapse
+    // whatever else was left expanded, whether the target has a
+    // collapsible section of its own (e.g. Contact) or not.
+    activeSectionId = csId || null;
+    collapseOtherOpenSections(activeSectionId);
+    lockAutoCollapse();
 
     if (!section || section.classList.contains('open')) {
       callback();
@@ -3024,7 +3209,12 @@
     function doScroll() {
       var target = document.getElementById(id);
       if (target) {
+        scrollSpySuspended = true; // hold off the spy for the whole scroll, however long it takes
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        waitForScrollSettle(function () {
+          scrollSpySuspended = false;
+          lockAutoCollapse(); // brief grace period right as we land, same as any other collapse
+        });
       }
     }
 
