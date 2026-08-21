@@ -1566,6 +1566,38 @@
     z-index: 60;
   }
 
+  /* Expand All / Collapse All read as a two-way toggle: whichever one
+     matches the sections' actual current state (all open / all closed)
+     is shown selected, so it's always clear which state the page is in
+     — including on first load, before the reader has clicked anything,
+     when the sections start collapsed and Collapse All is selected to
+     match. Mixed state (some sections opened individually) shows neither
+     as selected, since neither describes the page anymore. */
+  .toolbar-btn {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid var(--border-default);
+    color: var(--text-faint);
+    padding: 5px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .toolbar-btn:not(.active):hover {
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+  }
+
+  .toolbar-btn.active {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: var(--bg-header);
+  }
+
   /* ── COLLAPSIBLE SECTIONS ── */
   .collapsible-section {
     margin-top: 40px;
@@ -1937,8 +1969,8 @@
   <div class="sections-toolbar">
     <span style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-disabled);">Sections</span>
     <div style="display:flex;gap:8px;">
-      <button onclick="expandAll()" style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:none;border:1px solid var(--border-default);color:var(--text-faint);padding:5px 12px;border-radius:2px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--brand-blue)';this.style.color='var(--brand-blue)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.color='var(--text-faint)'">Expand All</button>
-      <button onclick="collapseAll()" style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:none;border:1px solid var(--border-default);color:var(--text-faint);padding:5px 12px;border-radius:2px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--brand-blue)';this.style.color='var(--brand-blue)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.color='var(--text-faint)'">Collapse All</button>
+      <button id="expandAllBtn" class="toolbar-btn" onclick="expandAll()">Expand All</button>
+      <button id="collapseAllBtn" class="toolbar-btn active" onclick="collapseAll()">Collapse All</button>
     </div>
   </div>
 
@@ -3306,6 +3338,31 @@
     resizeObserverTimer = setTimeout(setupSectionObserver, 250);
   });
 
+  // ── EXPAND ALL / COLLAPSE ALL — SELECTED STATE ──
+  // Whichever button matches the sections' actual state (all open / all
+  // closed) shows selected — including on first load, when everything
+  // starts collapsed and Collapse All is selected to match. If sections
+  // end up mixed (opened individually, or auto-collapsed one at a time
+  // on scroll), neither button is selected, since neither claim is true
+  // anymore. A MutationObserver on each section's class list keeps this
+  // correct no matter which code path changed it, rather than needing a
+  // sync call threaded through every place `open` gets toggled.
+  function syncToolbarSelection() {
+    var expandBtn = document.getElementById('expandAllBtn');
+    var collapseBtn = document.getElementById('collapseAllBtn');
+    if (!expandBtn || !collapseBtn) return;
+    var sections = document.querySelectorAll('.collapsible-section');
+    var openCount = document.querySelectorAll('.collapsible-section.open').length;
+    expandBtn.classList.toggle('active', sections.length > 0 && openCount === sections.length);
+    collapseBtn.classList.toggle('active', openCount === 0);
+  }
+
+  var toolbarSyncObserver = new MutationObserver(syncToolbarSelection);
+  document.querySelectorAll('.collapsible-section').forEach(function (s) {
+    toolbarSyncObserver.observe(s, { attributes: true, attributeFilter: ['class'] });
+  });
+  syncToolbarSelection(); // all sections start collapsed — selects Collapse All
+
   // Expands the target section if it's currently collapsed, leaving every
   // other section exactly as it was. Calls back once safe to scroll —
   // immediately if nothing needed opening, or after the expand transition
@@ -3320,6 +3377,7 @@
     activeSectionId = csId || null;
     collapseOtherOpenSections(activeSectionId);
     lockAutoCollapse();
+
 
     if (!section || section.classList.contains('open')) {
       callback();
