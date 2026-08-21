@@ -3282,6 +3282,19 @@
     });
 
     scrollSpySections.forEach(function (s) { sectionObserver.observe(s); });
+
+    // Why ThINQ' is the last collapsible section — there's no section
+    // after it inside <main> to "become active" and trigger its
+    // auto-collapse the way every other section triggers on the one
+    // before it. Observing the Contact block right after it gives the
+    // spy that same trigger: once Contact enters the activation band,
+    // handleActiveSectionChange treats it exactly like any other newly
+    // active section and collapses whatever was open before it (Why
+    // ThINQ', if that's what's open) — without adding Contact to
+    // scrollSpySections itself, since it isn't a real collapsible
+    // section and shouldn't be treated as an Expand/Collapse All target.
+    var trailingSentinel = document.getElementById('contact');
+    if (trailingSentinel) sectionObserver.observe(trailingSentinel);
   }
 
   setupSectionObserver();
