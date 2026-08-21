@@ -362,12 +362,13 @@
     display: block;
   }
 
-  .theme-toggle .icon-sun { display: none; }
-  .theme-toggle .icon-moon { display: block; }
+  /* dark theme active → show the sun (tap to switch to light) */
+  .theme-toggle .icon-sun { display: block; }
+  .theme-toggle .icon-moon { display: none; }
 
-  /* light theme active → show the sun (tap to go back to dark) */
-  html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
-  html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+  /* light theme active → show the moon (tap to switch to dark) */
+  html[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+  html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
   /* ── HAMBURGER / CLOSE (X) BUTTON ── */
   .hamburger {
@@ -430,6 +431,12 @@
     left: 0;
     right: 0;
     bottom: 0;
+    /* clears the sticky header (which stays above the drawer so the
+       close/theme buttons remain reachable) so the drawer's own logo
+       and nav never render underneath the header bar */
+    padding-top: var(--header-height);
+    box-sizing: border-box;
+    overflow-y: auto;
     background: var(--bg-overlay);
     z-index: 150;
     -webkit-box-orient: vertical;
@@ -541,7 +548,8 @@
   }
 
   /* ── HERO ── */
-  .hero { padding: 52px 0 0; }
+  .hero { padding: 20px 0 0; }
+  .hero .section-label { margin-top: 0; }
   .hero h1 {
     font-size: clamp(28px, 3.5vw, 32px);
     font-weight: 500;
@@ -1447,7 +1455,7 @@
       grid-template-columns: 1fr;
     }
 
-    .hero { padding: 32px 0 0; }
+    .hero { padding: 12px 0 0; }
     .hero h1 { font-size: 26px; }
 
     .section-label { margin-top: 36px; }
@@ -1671,7 +1679,7 @@
   }
 
   /* Hero section stays uncollapsed — just tighten spacing */
-  .hero { padding: 52px 0 0; }
+  .hero { padding: 20px 0 0; }
 
   /* Thin accent line on left of open section */
   .collapsible-section.open {
@@ -1890,14 +1898,14 @@
   </div>
 
   <!-- COLLAPSIBLE: PLATFORM DETAIL -->
-  <div class="collapsible-section open" id="cs-platform">
-    <button class="collapsible-toggle" onclick="toggleSection('cs-platform')" aria-expanded="true">
+  <div class="collapsible-section" id="cs-platform">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-platform')" aria-expanded="false">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">01</span>
         <span class="collapsible-toggle-title">Categories &amp; Capacity <span class="collapsible-toggle-meta">— What ThINQ' Can Produce, The Network &amp; The Platform</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Expanded</span>
+        <span class="collapsible-status">Collapsed</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2123,14 +2131,14 @@
   </div><!-- /cs-platform -->
 
   <!-- COLLAPSIBLE: HOW IT WORKS -->
-  <div class="collapsible-section open" id="cs-how">
-    <button class="collapsible-toggle" onclick="toggleSection('cs-how')" aria-expanded="true">
+  <div class="collapsible-section" id="cs-how">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-how')" aria-expanded="false">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">02</span>
         <span class="collapsible-toggle-title">How It Works <span class="collapsible-toggle-meta">— Think → Ink → Q'nnect → Execute → Repeat</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Expanded</span>
+        <span class="collapsible-status">Collapsed</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2264,14 +2272,14 @@
   </div><!-- /cs-how -->
 
   <!-- COLLAPSIBLE: WHO IT'S FOR -->
-  <div class="collapsible-section open" id="cs-who">
-    <button class="collapsible-toggle" onclick="toggleSection('cs-who')" aria-expanded="true">
+  <div class="collapsible-section" id="cs-who">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-who')" aria-expanded="false">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">03</span>
         <span class="collapsible-toggle-title">For Businesses &amp; Partners <span class="collapsible-toggle-meta">— Segments, Rollouts, Media &amp; Asset Library</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Expanded</span>
+        <span class="collapsible-status">Collapsed</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2427,14 +2435,14 @@
   </div><!-- /cs-who -->
 
   <!-- COLLAPSIBLE: ROADMAP & REVENUE -->
-  <div class="collapsible-section open" id="cs-roadmap">
-    <button class="collapsible-toggle" onclick="toggleSection('cs-roadmap')" aria-expanded="true">
+  <div class="collapsible-section" id="cs-roadmap">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-roadmap')" aria-expanded="false">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">04</span>
         <span class="collapsible-toggle-title">Roadmap &amp; Revenue <span class="collapsible-toggle-meta">— 5-Phase Expansion</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Expanded</span>
+        <span class="collapsible-status">Collapsed</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2636,14 +2644,14 @@
   </div><!-- /cs-roadmap -->
 
   <!-- COLLAPSIBLE: WHY THINQ (INVESTOR CASE) -->
-  <div class="collapsible-section open" id="cs-why">
-    <button class="collapsible-toggle" onclick="toggleSection('cs-why')" aria-expanded="true">
+  <div class="collapsible-section" id="cs-why">
+    <button class="collapsible-toggle" onclick="toggleSection('cs-why')" aria-expanded="false">
       <div class="collapsible-toggle-left">
         <span class="collapsible-toggle-number">05</span>
         <span class="collapsible-toggle-title">Why ThINQ' <span class="collapsible-toggle-meta">— The Investment Case</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Expanded</span>
+        <span class="collapsible-status">Collapsed</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
