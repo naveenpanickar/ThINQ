@@ -1753,12 +1753,12 @@
   <nav aria-label="Main navigation">
     <ul class="header-nav">
       <li><a href="#">Home</a></li>
-      <li><a href="#what">What It Is</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#who">Who It's For</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#why-thinq">Why ThINQ'</a></li>
-      <li><a href="#contact">Get In Touch</a></li>
+      <li><a href="#what" onclick="scrollToSection(event,'what')">What It Is</a></li>
+      <li><a href="#how" onclick="scrollToSection(event,'how')">How It Works</a></li>
+      <li><a href="#who" onclick="scrollToSection(event,'who')">Who It's For</a></li>
+      <li><a href="#roadmap" onclick="scrollToSection(event,'roadmap')">Roadmap</a></li>
+      <li><a href="#why-thinq" onclick="scrollToSection(event,'why-thinq')">Why ThINQ'</a></li>
+      <li><a href="#contact" onclick="scrollToSection(event,'contact')">Get In Touch</a></li>
     </ul>
   </nav>
 
@@ -1905,7 +1905,7 @@
         <span class="collapsible-toggle-title">Categories &amp; Capacity <span class="collapsible-toggle-meta">— What ThINQ' Can Produce, The Network &amp; The Platform</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Collapsed</span>
+        <span class="collapsible-status">Expand</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2138,7 +2138,7 @@
         <span class="collapsible-toggle-title">How It Works <span class="collapsible-toggle-meta">— Think → Ink → Q'nnect → Execute → Repeat</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Collapsed</span>
+        <span class="collapsible-status">Expand</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2279,7 +2279,7 @@
         <span class="collapsible-toggle-title">For Businesses &amp; Partners <span class="collapsible-toggle-meta">— Segments, Rollouts, Media &amp; Asset Library</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Collapsed</span>
+        <span class="collapsible-status">Expand</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2442,12 +2442,14 @@
         <span class="collapsible-toggle-title">Roadmap &amp; Revenue <span class="collapsible-toggle-meta">— 5-Phase Expansion</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Collapsed</span>
+        <span class="collapsible-status">Expand</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
     <div class="collapsible-body">
     <div class="collapsible-body-inner">
+
+  <span class="section-anchor" id="roadmap" aria-hidden="true"></span>
 
   <!-- EVOLUTION NARRATIVE -->
   <div class="section-label" style="margin-top:0;">The Evolution</div>
@@ -2474,8 +2476,7 @@
     </div>
   </div>
 
-  <!-- ROADMAP SECTION -->
-  <span class="section-anchor" id="roadmap" aria-hidden="true"></span>
+  <!-- ROADMAP SUB-SECTION -->
   <br>
 
   <div class="market-header">
@@ -2651,7 +2652,7 @@
         <span class="collapsible-toggle-title">Why ThINQ' <span class="collapsible-toggle-meta">— The Investment Case</span></span>
       </div>
       <div class="collapsible-toggle-right">
-        <span class="collapsible-status">Collapsed</span>
+        <span class="collapsible-status">Expand</span>
         <div class="collapsible-chevron"><svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="var(--brand-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
     </button>
@@ -2845,11 +2846,11 @@
     if (isOpen) {
       section.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
-      if (status) status.textContent = 'Collapsed';
+      if (status) status.textContent = 'Expand'; // now closed — offer to expand
     } else {
       section.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
-      if (status) status.textContent = 'Expanded';
+      if (status) status.textContent = 'Collapse'; // now open — offer to collapse
     }
   }
 
@@ -2859,7 +2860,7 @@
       var btn = s.querySelector('.collapsible-toggle');
       var status = s.querySelector('.collapsible-status');
       if (btn) btn.setAttribute('aria-expanded', 'true');
-      if (status) status.textContent = 'Expanded';
+      if (status) status.textContent = 'Collapse';
     });
   }
 
@@ -2869,7 +2870,7 @@
       var btn = s.querySelector('.collapsible-toggle');
       var status = s.querySelector('.collapsible-status');
       if (btn) btn.setAttribute('aria-expanded', 'false');
-      if (status) status.textContent = 'Collapsed';
+      if (status) status.textContent = 'Expand';
     });
   }
 
@@ -2912,16 +2913,62 @@
     document.body.style.overflow = '';
   }
 
-  // Close menu first, then scroll to section — prevents overlay blocking the scroll target
+  // Map each nav anchor to the collapsible section (if any) it lives inside
+  var sectionAnchorMap = {
+    how: 'cs-how',
+    who: 'cs-who',
+    roadmap: 'cs-roadmap',
+    'why-thinq': 'cs-why'
+  };
+
+  // Expands the target section if it's currently collapsed, leaving every
+  // other section exactly as it was. Calls back once safe to scroll —
+  // immediately if nothing needed opening, or after the expand transition
+  // finishes so scrollIntoView lands on the final (expanded) position.
+  function openSectionIfCollapsed(anchorId, callback) {
+    var csId = sectionAnchorMap[anchorId];
+    var section = csId ? document.getElementById(csId) : null;
+
+    if (!section || section.classList.contains('open')) {
+      callback();
+      return;
+    }
+
+    section.classList.add('open');
+    var btn = section.querySelector('.collapsible-toggle');
+    var status = section.querySelector('.collapsible-status');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+    if (status) status.textContent = 'Collapse'; // now open — offer to collapse
+
+    // collapsible-body transition is 0.45s — wait for it before measuring
+    // scroll position so we land on the fully-expanded section, not mid-animation
+    setTimeout(callback, 480);
+  }
+
+  // Close menu first (mobile only), expand the target section if needed,
+  // then scroll to it — prevents overlay/animation blocking the scroll target
   function scrollToSection(e, id) {
     e.preventDefault();
-    closeMenu();
-    setTimeout(function() {
+    var menu = document.getElementById('mobileMenu');
+    var wasMenuOpen = menu.classList.contains('open');
+    if (wasMenuOpen) closeMenu();
+
+    function doScroll() {
       var target = document.getElementById(id);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 320); // wait for menu close transition (0.3s) to complete
+    }
+
+    function afterMenuClosed() {
+      openSectionIfCollapsed(id, doScroll);
+    }
+
+    if (wasMenuOpen) {
+      setTimeout(afterMenuClosed, 320); // wait for menu close transition (0.3s) to complete
+    } else {
+      afterMenuClosed();
+    }
   }
 
   // Close menu on Escape key
