@@ -2912,9 +2912,10 @@
     var isOpen = section.classList.contains('open');
 
     if (isOpen) {
-      section.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      if (status) status.textContent = 'Expand'; // now closed — offer to expand
+      // Manually collapsing mid-scroll has the exact same "sticky toggle
+      // + shrinking body" disorientation risk as scroll-triggered
+      // auto-collapse — same treatment, same smooth settle.
+      collapseSectionForUX(section);
     } else {
       section.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
@@ -3020,18 +3021,27 @@
     });
   }
 
-  /* ── SCROLL-TRIGGERED AUTO-COLLAPSE: SNAP TO THE COLLAPSED ROW ──
-     Trying to preserve the reader's exact mid-scroll position when a
-     section auto-collapses kept fighting the section's own sticky
-     toggle + animated max-height and throwing the scroll to the footer
-     or back to the top. Rather than patch that fight, sidestep it: give
-     the collapse a single, deterministic landing spot instead of an
-     arbitrary preserved one — the section's own collapsed row, pinned
-     to the top just below the sticky header/toolbar. That's exactly
-     where it sits once collapsed, so the result reads as "this section
-     tucked itself away" rather than an unrelated jump. The collapse
-     happens instantly (no animation, no transition to fight), then the
-     scroll position is set directly in the same synchronous step. */
+  /* ── COLLAPSING A SECTION WITHOUT DISORIENTING THE READER ──
+     Two different situations call for two different treatments:
+
+     1) The section is already scrolled well above the viewport (the
+        common case for scroll-triggered auto-collapse, once the reader
+        has moved on to the next section). It's invisible either way, so
+        animating it would just cause the *visible* content below to
+        visibly drift for 0.45s as the document reflows underneath.
+        Cleanest fix: collapse it instantly (no transition — there's
+        nothing to see) and land the scroll exactly on its collapsed
+        row in that same synchronous step. Zero visible drift.
+
+     2) The section (or at least its sticky toggle) is currently visible
+        — a manual click, or an auto-collapse firing while it's still
+        partly in view. Here an instant cut would look jarring, since
+        the reader is watching it happen. Instead let the normal 0.45s
+        max-height transition play out as a natural accordion collapse
+        — the sticky toggle stays pinned in place for almost all of it
+        — then, once it finishes, smoothly settle the scroll by whatever
+        small amount is needed to line the collapsed row up under the
+        header. One graceful settle at the end, not a fight throughout. */
 
   function getStickyOffset() {
     var header = document.querySelector('header');
@@ -3039,8 +3049,12 @@
     return (header ? header.offsetHeight : 0) + (toolbar ? toolbar.offsetHeight : 0);
   }
 
-  function collapseSectionAndSnap(section) {
-    if (!section || !section.classList.contains('open')) return;
+  function isSectionOffscreenAbove(section) {
+    return section.getBoundingClientRect().bottom < getStickyOffset();
+  }
+
+  // Case 1 — already off-screen: instant, invisible collapse + one clean snap.
+  function collapseSectionInstantAndSnap(section) {
     var btn = section.querySelector('.collapsible-toggle');
     var status = section.querySelector('.collapsible-status');
     var body = section.querySelector('.collapsible-body');
@@ -3064,9 +3078,64 @@
     }
   }
 
+  // Case 2 — currently visible/stuck: play the real collapse animation,
+  // then smoothly settle onto the collapsed row once it's done.
+  function collapseSectionSmoothly(section) {
+    var btn = section.querySelector('.collapsible-toggle');
+    var status = section.querySelector('.collapsible-status');
+    var body = section.querySelector('.collapsible-body');
+
+    scrollSpySuspended = true; // hold the spy off for the whole collapse + settle
+
+    section.classList.remove('open'); // plays the normal 0.45s max-height animation
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (status) status.textContent = 'Expand';
+
+    var settled = false;
+    function settle() {
+      if (settled) return;
+      settled = true;
+      if (body) body.removeEventListener('transitionend', onTransitionEnd);
+
+      var offset = getStickyOffset();
+      var discrepancy = section.getBoundingClientRect().top - offset;
+
+      // Only nudge if the collapsed row didn't already land where it
+      // should — e.g. the sticky toggle released partway through and
+      // needs a gentle correction. If nothing moved, this is a no-op.
+      if (Math.abs(discrepancy) > 2) {
+        window.scrollTo({ top: Math.max(0, window.scrollY + discrepancy), behavior: 'smooth' });
+      }
+
+      waitForScrollSettle(function () {
+        scrollSpySuspended = false;
+        lockAutoCollapse();
+      });
+    }
+
+    function onTransitionEnd(e) {
+      if (e.target === body && e.propertyName === 'max-height') settle();
+    }
+
+    if (body) {
+      body.addEventListener('transitionend', onTransitionEnd);
+    }
+    setTimeout(settle, 550); // safety net if transitionend never fires (e.g. reduced motion)
+  }
+
+  // Picks the right treatment for whatever's actually on screen right now.
+  function collapseSectionForUX(section) {
+    if (!section || !section.classList.contains('open')) return;
+    if (isSectionOffscreenAbove(section)) {
+      collapseSectionInstantAndSnap(section);
+    } else {
+      collapseSectionSmoothly(section);
+    }
+  }
+
   function collapseOtherOpenSectionsOnScroll(exceptId) {
     document.querySelectorAll('.collapsible-section.open').forEach(function (s) {
-      if (s.id !== exceptId) collapseSectionAndSnap(s);
+      if (s.id !== exceptId) collapseSectionForUX(s);
     });
   }
 
