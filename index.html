@@ -3226,13 +3226,33 @@
   // adjust scroll position, which can re-trigger this same logic before
   // the previous collapse has settled — a feedback loop that's very
   // likely what was throwing the page to the very top or bottom.
+  //
+  // During that lock window, a fast/smooth scroll can carry the reader
+  // through more than one section's activation band before it lifts —
+  // e.g. straight past "Who It's For" into "Roadmap" — and those
+  // in-between activations used to just be dropped, silently, since the
+  // lock's job was to ignore everything while it held. That left
+  // whichever section got skipped stuck open with nothing left to ever
+  // trigger its collapse. `pendingActiveId` fixes that: it remembers the
+  // furthest section reached while locked, and once the lock lifts, that
+  // one gets applied for real — collapsing every open section behind it,
+  // not just the one right before it, so a fast scroll catches up in one
+  // step instead of losing sections along the way.
   var collapseLocked = false;
   var collapseLockTimer = null;
+  var pendingActiveId = null;
   function lockAutoCollapse() {
     collapseLocked = true;
     clearTimeout(collapseLockTimer);
     collapseLockTimer = setTimeout(function () {
       collapseLocked = false;
+      if (pendingActiveId !== null && pendingActiveId !== activeSectionId) {
+        var idToApply = pendingActiveId;
+        pendingActiveId = null;
+        applyActiveSectionChange(idToApply);
+      } else {
+        pendingActiveId = null;
+      }
     }, 700); // a little longer than the 0.45s collapse transition
   }
 
@@ -3271,22 +3291,40 @@
     requestAnimationFrame(check);
   }
 
-  function handleActiveSectionChange(newActiveId) {
-    if (scrollSpySuspended) return;
-    if (newActiveId === activeSectionId || collapseLocked) return;
-    var previousActiveId = activeSectionId;
+  // Position of a section id within scrollSpySections' document order.
+  // The trailing "contact" sentinel (and anything else not in the list)
+  // sorts after every real section, since reaching it means the reader
+  // has scrolled past all of them.
+  function sectionOrderIndex(id) {
+    for (var i = 0; i < scrollSpySections.length; i++) {
+      if (scrollSpySections[i].id === id) return i;
+    }
+    return scrollSpySections.length;
+  }
+
+  // Collapses every open section that sits before `newActiveId` in
+  // document order — normally just one (the section directly behind the
+  // reader), but on a fast scroll that skipped several activation bands
+  // while the lock held, this catches all of them up in one pass instead
+  // of leaving the skipped ones stuck open.
+  function applyActiveSectionChange(newActiveId) {
     activeSectionId = newActiveId;
-    // Collapse only the single section the reader just scrolled past —
-    // not every other section that happens to be open (e.g. right after
-    // Expand All). That way, scrolling through several expanded sections
-    // collapses them one by one as each is actually left behind, instead
-    // of all of them snapping shut together the moment the first new
-    // section becomes active.
-    if (previousActiveId && previousActiveId !== newActiveId) {
-      var previousSection = document.getElementById(previousActiveId);
-      if (previousSection) collapseSectionForUX(previousSection);
+    var targetIndex = sectionOrderIndex(newActiveId);
+    for (var i = 0; i < targetIndex; i++) {
+      collapseSectionForUX(scrollSpySections[i]);
     }
     lockAutoCollapse();
+  }
+
+  function handleActiveSectionChange(newActiveId) {
+    if (scrollSpySuspended) return;
+    if (newActiveId === activeSectionId) return;
+    if (collapseLocked) {
+      pendingActiveId = newActiveId; // remember the furthest point reached; applied once unlocked
+      return;
+    }
+    pendingActiveId = null;
+    applyActiveSectionChange(newActiveId);
   }
 
   // IntersectionObserver instead of a scroll/rAF poll: it only fires when
