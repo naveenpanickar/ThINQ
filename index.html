@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="description" content="ThINQ' — the Physical Brand Production &amp; Execution Exchange. Tell us what you need made. We turn it into a production spec, match it to the right capacity, and execute — anywhere.">
 <title>ThINQ' — Physical Brand Production &amp; Execution Exchange</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='%230a0a0a' stroke='%2300bfff' stroke-width='3'/%3E%3Cpath fill='%2300bfff' d='M26.6 41.71H30.5V49.0H26.6Z'/%3E%3Cpath fill='%2300bfff' fill-rule='evenodd' d='M28.55 43.39Q24.68 43.39 21.935 42.175Q19.19 40.96 17.735 38.71Q16.28 36.46 16.28 33.31Q16.28 30.13 17.735 27.88Q19.19 25.63 21.935 24.415Q24.68 23.2 28.55 23.2Q32.45 23.2 35.18 24.415Q37.91 25.63 39.365 27.88Q40.82 30.13 40.82 33.31Q40.82 36.46 39.365 38.71Q37.91 40.96 35.18 42.175Q32.45 43.39 28.55 43.39ZM28.55 39.94Q30.95 39.94 32.765 39.22Q34.58 38.5 35.615 37.03Q36.65 35.56 36.65 33.31Q36.65 31.06 35.615 29.59Q34.58 28.12 32.765 27.385Q30.95 26.65 28.55 26.65Q26.18 26.65 24.32 27.385Q22.46 28.12 21.41 29.59Q20.36 31.06 20.36 33.31Q20.36 35.56 21.41 37.03Q22.46 38.5 24.32 39.22Q26.18 39.94 28.55 39.94Z'/%3E%3Cpath fill='%2300bfff' d='M46.88 29.71H44.81L43.58 25.99V23.41H48.14V25.99Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -61,6 +62,29 @@
   }
 
   /* ── LOGO (shared between header & footer) ── */
+  .brand-lockup {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand-mark {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: block;
+  }
+  .brand-mark rect { fill: #0a0a0a; stroke: var(--brand-blue); }
+  .brand-mark path { fill: var(--brand-blue); }
+
+  header .brand-mark { width: 38px; height: 38px; }
+  .footer-logo .brand-mark { width: 26px; height: 26px; }
+  .mobile-menu-logo .brand-mark { width: 44px; height: 44px; }
+  .mobile-menu-logo .brand-lockup { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
   .logo {
     font-size: 42px;
     font-weight: 500;
@@ -70,6 +94,14 @@
   .logo .th { color: #fff; }
   .logo .in { color: var(--brand-blue); }
   .logo .q  { color: #fff; }
+
+  .q-glyph {
+    width: 1.062em;
+    height: 0.86em;
+    vertical-align: -0.2em;
+    fill: #fff;
+    display: inline-block;
+  }
 
   .tagline {
     font-size: 10px;
@@ -1494,10 +1526,20 @@
 <!-- MOBILE MENU DRAWER -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="mobile-menu-logo">
-    <div class="logo">
-      <span class="th">Th</span><span class="in">IN</span><span class="q">Q'</span>
+    <div class="brand-lockup">
+      <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="14" stroke-width="3"/>
+        <path d="M26.6 41.71H30.5V49.0H26.6Z"/>
+        <path fill-rule="evenodd" d="M28.55 43.39Q24.68 43.39 21.935 42.175Q19.19 40.96 17.735 38.71Q16.28 36.46 16.28 33.31Q16.28 30.13 17.735 27.88Q19.19 25.63 21.935 24.415Q24.68 23.2 28.55 23.2Q32.45 23.2 35.18 24.415Q37.91 25.63 39.365 27.88Q40.82 30.13 40.82 33.31Q40.82 36.46 39.365 38.71Q37.91 40.96 35.18 42.175Q32.45 43.39 28.55 43.39ZM28.55 39.94Q30.95 39.94 32.765 39.22Q34.58 38.5 35.615 37.03Q36.65 35.56 36.65 33.31Q36.65 31.06 35.615 29.59Q34.58 28.12 32.765 27.385Q30.95 26.65 28.55 26.65Q26.18 26.65 24.32 27.385Q22.46 28.12 21.41 29.59Q20.36 31.06 20.36 33.31Q20.36 35.56 21.41 37.03Q22.46 38.5 24.32 39.22Q26.18 39.94 28.55 39.94Z"/>
+        <path d="M46.88 29.71H44.81L43.58 25.99V23.41H48.14V25.99Z"/>
+      </svg>
+      <div>
+        <div class="logo">
+          <span class="th">Th</span><span class="in">IN</span><span class="q"><svg class="q-glyph" viewBox="0 0 31.86 25.8" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q'"><path d="M10.32 18.51H14.22V25.8H10.32Z"/><path fill-rule="evenodd" d="M12.27 20.19Q8.4 20.19 5.655 18.975Q2.91 17.76 1.455 15.51Q0 13.26 0 10.11Q0 6.93 1.455 4.68Q2.91 2.43 5.655 1.215Q8.4 0 12.27 0Q16.17 0 18.9 1.215Q21.63 2.43 23.085 4.68Q24.54 6.93 24.54 10.11Q24.54 13.26 23.085 15.51Q21.63 17.76 18.9 18.975Q16.17 20.19 12.27 20.19ZM12.27 16.74Q14.67 16.74 16.485 16.02Q18.3 15.3 19.335 13.83Q20.37 12.36 20.37 10.11Q20.37 7.86 19.335 6.39Q18.3 4.92 16.485 4.185Q14.67 3.45 12.27 3.45Q9.9 3.45 8.04 4.185Q6.18 4.92 5.13 6.39Q4.08 7.86 4.08 10.11Q4.08 12.36 5.13 13.83Q6.18 15.3 8.04 16.02Q9.9 16.74 12.27 16.74Z"/><path d="M30.6 6.51H28.53L27.3 2.79V0.21H31.86V2.79Z"/></svg></span>
+        </div>
+        <div class="tagline">Think · Ink · Q'nnect</div>
+      </div>
     </div>
-    <div class="tagline">Think · Ink · Q'nnect</div>
   </div>
   <nav>
     <a href="#" onclick="closeMenu()">Home</a>
@@ -1518,11 +1560,20 @@
 <header>
   <div class="header-inner">
   <div class="logo-block">
-    <div class="logo">
-      <span class="th">Th</span><span class="in">IN</span><span class="q">Q'</span>
+    <div class="brand-lockup">
+      <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="14" stroke-width="3"/>
+        <path d="M26.6 41.71H30.5V49.0H26.6Z"/>
+        <path fill-rule="evenodd" d="M28.55 43.39Q24.68 43.39 21.935 42.175Q19.19 40.96 17.735 38.71Q16.28 36.46 16.28 33.31Q16.28 30.13 17.735 27.88Q19.19 25.63 21.935 24.415Q24.68 23.2 28.55 23.2Q32.45 23.2 35.18 24.415Q37.91 25.63 39.365 27.88Q40.82 30.13 40.82 33.31Q40.82 36.46 39.365 38.71Q37.91 40.96 35.18 42.175Q32.45 43.39 28.55 43.39ZM28.55 39.94Q30.95 39.94 32.765 39.22Q34.58 38.5 35.615 37.03Q36.65 35.56 36.65 33.31Q36.65 31.06 35.615 29.59Q34.58 28.12 32.765 27.385Q30.95 26.65 28.55 26.65Q26.18 26.65 24.32 27.385Q22.46 28.12 21.41 29.59Q20.36 31.06 20.36 33.31Q20.36 35.56 21.41 37.03Q22.46 38.5 24.32 39.22Q26.18 39.94 28.55 39.94Z"/>
+        <path d="M46.88 29.71H44.81L43.58 25.99V23.41H48.14V25.99Z"/>
+      </svg>
+      <div>
+        <div class="logo">
+          <span class="th">Th</span><span class="in">IN</span><span class="q"><svg class="q-glyph" viewBox="0 0 31.86 25.8" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q'"><path d="M10.32 18.51H14.22V25.8H10.32Z"/><path fill-rule="evenodd" d="M12.27 20.19Q8.4 20.19 5.655 18.975Q2.91 17.76 1.455 15.51Q0 13.26 0 10.11Q0 6.93 1.455 4.68Q2.91 2.43 5.655 1.215Q8.4 0 12.27 0Q16.17 0 18.9 1.215Q21.63 2.43 23.085 4.68Q24.54 6.93 24.54 10.11Q24.54 13.26 23.085 15.51Q21.63 17.76 18.9 18.975Q16.17 20.19 12.27 20.19ZM12.27 16.74Q14.67 16.74 16.485 16.02Q18.3 15.3 19.335 13.83Q20.37 12.36 20.37 10.11Q20.37 7.86 19.335 6.39Q18.3 4.92 16.485 4.185Q14.67 3.45 12.27 3.45Q9.9 3.45 8.04 4.185Q6.18 4.92 5.13 6.39Q4.08 7.86 4.08 10.11Q4.08 12.36 5.13 13.83Q6.18 15.3 8.04 16.02Q9.9 16.74 12.27 16.74Z"/><path d="M30.6 6.51H28.53L27.3 2.79V0.21H31.86V2.79Z"/></svg></span>
+        </div>
+        <div class="tagline">Think · Ink · Q'nnect</div>
+      </div>
     </div>
-    <div class="tagline">Think · Ink · Q'nnect</div>
-   
   </div>
 
   <!-- DESKTOP NAV -->
@@ -1995,6 +2046,35 @@
     </div>
   </div>
 
+  <!-- SCALE PATH -->
+  <div class="section-label" style="margin-top:36px;">One Spec, Any Scale</div>
+  <p class="supplies-intro" style="margin-bottom:20px;">
+    The same requirement that produces a single sample can be pushed to a nationwide rollout — without re-briefing, re-quoting, or starting over.
+  </p>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;" class="ink-trio">
+    <div class="metric-card" style="text-align:center;">
+      <div class="metric-value" style="font-size:15px;">Sample</div>
+      <div class="metric-label">Make one, approve the spec</div>
+    </div>
+    <div class="metric-card" style="text-align:center;">
+      <div class="metric-value" style="font-size:15px;">Pilot</div>
+      <div class="metric-label">Test at 10–100 units</div>
+    </div>
+    <div class="metric-card" style="text-align:center;">
+      <div class="metric-value" style="font-size:15px;">Campaign</div>
+      <div class="metric-label">Produce at thousands</div>
+    </div>
+    <div class="metric-card" style="text-align:center;background:#081419;border-color:#0a2e3d;border-top:2px solid var(--brand-blue);box-shadow:0 0 0 1px rgba(0,191,255,0.15);position:relative;">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand-blue);margin-bottom:6px;">Peak Scale</div>
+      <div class="metric-value" style="font-size:15px;color:var(--brand-blue);">Rollout</div>
+      <div class="metric-label" style="color:#3a6070;">Deploy across every location</div>
+    </div>
+    <div class="metric-card" style="text-align:center;">
+      <div class="metric-value" style="font-size:15px;">Reorder</div>
+      <div class="metric-label">Same SKU, re-matched every time</div>
+    </div>
+  </div>
+
     </div><!-- /collapsible-body-inner -->
     </div><!-- /collapsible-body -->
   </div><!-- /cs-how -->
@@ -2037,6 +2117,26 @@
     <div class="who-card">
       <h4>QSR &amp; F&amp;B</h4>
       <p>Seasonal promos, menu updates, POS material changes — executed across hundreds of outlets, tracked to completion.</p>
+    </div>
+    <div class="who-card">
+      <h4>D2C &amp; E-commerce</h4>
+      <p>Product packaging, inserts, mailers and labels — spec'd once, reordered on demand as volumes scale.</p>
+    </div>
+    <div class="who-card">
+      <h4>Corporate &amp; Enterprise</h4>
+      <p>Office branding, employee kits and internal signage — sourced through one exchange instead of a dozen local vendors.</p>
+    </div>
+    <div class="who-card">
+      <h4>Real Estate &amp; Developers</h4>
+      <p>Site hoardings, wayfinding, sales-office branding and brochures — coordinated across every project site.</p>
+    </div>
+    <div class="who-card">
+      <h4>Hospitality</h4>
+      <p>In-room collateral, menus, signage and packaging — kept consistent property to property.</p>
+    </div>
+    <div class="who-card">
+      <h4>Events &amp; Experiential</h4>
+      <p>Backdrops, booths, badges and displays — matched to capacity that can turn around on event timelines.</p>
     </div>
     <div class="who-card">
       <h4>Agencies &amp; Brand Teams</h4>
@@ -2160,9 +2260,9 @@
   <!-- EVOLUTION NARRATIVE -->
   <div class="section-label" style="margin-top:0;">The Evolution</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:32px;">
-    <div class="metric-card" style="border-top:2px solid #1a3a4a;position:relative;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 1</div>
-      <div class="metric-value" style="font-size:15px;font-weight:700;">Job &amp; Capacity Match</div>
+    <div class="metric-card" style="border-top:2px solid var(--brand-blue);position:relative;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand-blue);margin-bottom:8px;">Stage 1 — Now</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;color:var(--brand-blue);">Job &amp; Capacity Match</div>
       <div class="metric-label">Requirement in, qualified capacity out — for print &amp; pack.</div>
     </div>
     <div class="metric-card" style="border-top:2px solid #1a3050;">
@@ -2170,9 +2270,9 @@
       <div class="metric-value" style="font-size:15px;font-weight:700;">Category Expansion</div>
       <div class="metric-label">Sign, display, space, merch and mobility join the exchange.</div>
     </div>
-    <div class="metric-card" style="border-top:2px solid var(--brand-blue);">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand-blue);margin-bottom:8px;">Stage 3 — Now</div>
-      <div class="metric-value" style="font-size:15px;font-weight:700;color:var(--brand-blue);">Execution Network</div>
+    <div class="metric-card" style="border-top:2px solid #1a3a4a;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:8px;">Stage 3</div>
+      <div class="metric-value" style="font-size:15px;font-weight:700;">Execution Network</div>
       <div class="metric-label">Field installation, proof of execution and multi-location rollouts.</div>
     </div>
     <div class="metric-card" style="border-top:2px solid #0a3a2a;opacity:0.7;">
@@ -2412,11 +2512,12 @@
       <div class="wt-qa-a">Not about print growth — it's capacity discovery. Enterprises already spend on physical execution across print, packaging, signage and more. ThINQ' improves how that demand finds capacity. Marketplace software for a stable-spend, undiscoverable category is a proven model.</div>
     </div>
     <div class="wt-qa-row">
-      <div class="wt-qa-q">Isn't this just requirement-to-capacity matching for branding?</div>
-      <div class="wt-qa-a">Structurally, yes — and that's the point. That model has already proven out for industrial manufacturing categories like CNC and injection molding. ThINQ' applies the same model to a category the industrial players don't touch: physical brand production — print, packaging, signage, display, mobility and media.
+      <div class="wt-qa-q">You don't own any production — how do you guarantee quality?</div>
+      <div class="wt-qa-a">Quality is enforced at three points, not assumed. Partners are onboarded with a verified Capacity Passport — equipment, materials, past QC record. Every job is checked against the approved spec before it ships, with photo proof logged. And a partner's ThINQ' Score — built from on-time delivery, defect rate and repeat-order approval — determines how much matched demand they see next. Bad output loses future work automatically; it doesn't need a support ticket to catch it.
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
-          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Industrial capacity exchanges — manufacturing</span>
-          <span class="tag">ThINQ' — physical brand production</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Capacity Passport — vetted at onboarding</span>
+          <span class="tag" style="color:#3a6070;border-color:#1a3a4a;background:transparent;">Spec-matched QC — checked per job</span>
+          <span class="tag">ThINQ' Score — earned, not claimed</span>
         </div>
       </div>
     </div>
@@ -2515,10 +2616,20 @@
 <footer>
   <div class="footer-inner">
   <div class="footer-logo">
-    <div class="logo">
-      <span class="th">Th</span><span class="in">IN</span><span class="q">Q'</span>
+    <div class="brand-lockup">
+      <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="14" stroke-width="3"/>
+        <path d="M26.6 41.71H30.5V49.0H26.6Z"/>
+        <path fill-rule="evenodd" d="M28.55 43.39Q24.68 43.39 21.935 42.175Q19.19 40.96 17.735 38.71Q16.28 36.46 16.28 33.31Q16.28 30.13 17.735 27.88Q19.19 25.63 21.935 24.415Q24.68 23.2 28.55 23.2Q32.45 23.2 35.18 24.415Q37.91 25.63 39.365 27.88Q40.82 30.13 40.82 33.31Q40.82 36.46 39.365 38.71Q37.91 40.96 35.18 42.175Q32.45 43.39 28.55 43.39ZM28.55 39.94Q30.95 39.94 32.765 39.22Q34.58 38.5 35.615 37.03Q36.65 35.56 36.65 33.31Q36.65 31.06 35.615 29.59Q34.58 28.12 32.765 27.385Q30.95 26.65 28.55 26.65Q26.18 26.65 24.32 27.385Q22.46 28.12 21.41 29.59Q20.36 31.06 20.36 33.31Q20.36 35.56 21.41 37.03Q22.46 38.5 24.32 39.22Q26.18 39.94 28.55 39.94Z"/>
+        <path d="M46.88 29.71H44.81L43.58 25.99V23.41H48.14V25.99Z"/>
+      </svg>
+      <div>
+        <div class="logo">
+          <span class="th">Th</span><span class="in">IN</span><span class="q"><svg class="q-glyph" viewBox="0 0 31.86 25.8" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q'"><path d="M10.32 18.51H14.22V25.8H10.32Z"/><path fill-rule="evenodd" d="M12.27 20.19Q8.4 20.19 5.655 18.975Q2.91 17.76 1.455 15.51Q0 13.26 0 10.11Q0 6.93 1.455 4.68Q2.91 2.43 5.655 1.215Q8.4 0 12.27 0Q16.17 0 18.9 1.215Q21.63 2.43 23.085 4.68Q24.54 6.93 24.54 10.11Q24.54 13.26 23.085 15.51Q21.63 17.76 18.9 18.975Q16.17 20.19 12.27 20.19ZM12.27 16.74Q14.67 16.74 16.485 16.02Q18.3 15.3 19.335 13.83Q20.37 12.36 20.37 10.11Q20.37 7.86 19.335 6.39Q18.3 4.92 16.485 4.185Q14.67 3.45 12.27 3.45Q9.9 3.45 8.04 4.185Q6.18 4.92 5.13 6.39Q4.08 7.86 4.08 10.11Q4.08 12.36 5.13 13.83Q6.18 15.3 8.04 16.02Q9.9 16.74 12.27 16.74Z"/><path d="M30.6 6.51H28.53L27.3 2.79V0.21H31.86V2.79Z"/></svg></span>
+        </div>
+        <div class="tagline">Think · Ink · Q'nnect</div>
+      </div>
     </div>
-    <div class="tagline">Think · Ink · Q'nnect</div>
   </div>
 
   <div class="footer-center">
