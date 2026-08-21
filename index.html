@@ -2923,7 +2923,39 @@
     }
   }
 
+  // The section whose row the reader was actually looking at when they
+  // hit Expand All / Collapse All — i.e. the first collapsible section
+  // (in document order) that hasn't fully scrolled past the sticky
+  // header + toolbar yet. That's the row we snap back to afterwards, so
+  // "Expand All" doesn't leave the reader stranded wherever the newly
+  // taller (or shorter) page happened to reflow them to.
+  function getFirstOnScreenSection() {
+    var offset = getStickyOffset();
+    for (var i = 0; i < scrollSpySections.length; i++) {
+      if (scrollSpySections[i].getBoundingClientRect().bottom > offset) {
+        return scrollSpySections[i];
+      }
+    }
+    return scrollSpySections.length ? scrollSpySections[scrollSpySections.length - 1] : null;
+  }
+
+  // After Expand/Collapse All finishes animating, scroll so `section`'s
+  // toggle row sits right under the sticky header — its "expanded start
+  // row" or "collapsed row" depending on which action just ran.
+  function settleScrollOnSection(section) {
+    if (!section) return;
+    var offset = getStickyOffset();
+    var targetY = window.scrollY + section.getBoundingClientRect().top - offset;
+    window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+    waitForScrollSettle(function () {
+      scrollSpySuspended = false;
+      lockAutoCollapse();
+    });
+  }
+
   function expandAll() {
+    var target = getFirstOnScreenSection();
+
     document.querySelectorAll('.collapsible-section').forEach(function(s) {
       s.classList.add('open');
       var btn = s.querySelector('.collapsible-toggle');
@@ -2931,9 +2963,22 @@
       if (btn) btn.setAttribute('aria-expanded', 'true');
       if (status) status.textContent = 'Collapse';
     });
+
+    if (target) {
+      activeSectionId = target.id; // keep the scroll-spy baseline in sync
+      scrollSpySuspended = true;   // hold the spy off until we've landed
+      lockAutoCollapse();
+      // Every section is expanding together (max-height transition is
+      // 0.6s — see .collapsible-section.open .collapsible-body), which
+      // can push the target row further down as sections above it grow.
+      // Wait for that to finish before measuring where its row now sits.
+      setTimeout(function () { settleScrollOnSection(target); }, 620);
+    }
   }
 
   function collapseAll() {
+    var target = getFirstOnScreenSection();
+
     document.querySelectorAll('.collapsible-section').forEach(function(s) {
       s.classList.remove('open');
       var btn = s.querySelector('.collapsible-toggle');
@@ -2941,6 +2986,14 @@
       if (btn) btn.setAttribute('aria-expanded', 'false');
       if (status) status.textContent = 'Expand';
     });
+
+    if (target) {
+      activeSectionId = target.id;
+      scrollSpySuspended = true;
+      lockAutoCollapse();
+      // Collapsing runs on the default 0.45s max-height transition.
+      setTimeout(function () { settleScrollOnSection(target); }, 480);
+    }
   }
 
 
@@ -3133,12 +3186,6 @@
     }
   }
 
-  function collapseOtherOpenSectionsOnScroll(exceptId) {
-    document.querySelectorAll('.collapsible-section.open').forEach(function (s) {
-      if (s.id !== exceptId) collapseSectionForUX(s);
-    });
-  }
-
   var scrollSpySections = Array.prototype.slice.call(document.querySelectorAll('.collapsible-section'));
   var activeSectionId = null;
 
@@ -3195,8 +3242,18 @@
   function handleActiveSectionChange(newActiveId) {
     if (scrollSpySuspended) return;
     if (newActiveId === activeSectionId || collapseLocked) return;
+    var previousActiveId = activeSectionId;
     activeSectionId = newActiveId;
-    collapseOtherOpenSectionsOnScroll(activeSectionId);
+    // Collapse only the single section the reader just scrolled past —
+    // not every other section that happens to be open (e.g. right after
+    // Expand All). That way, scrolling through several expanded sections
+    // collapses them one by one as each is actually left behind, instead
+    // of all of them snapping shut together the moment the first new
+    // section becomes active.
+    if (previousActiveId && previousActiveId !== newActiveId) {
+      var previousSection = document.getElementById(previousActiveId);
+      if (previousSection) collapseSectionForUX(previousSection);
+    }
     lockAutoCollapse();
   }
 
